@@ -1,0 +1,22 @@
+{
+  "name": "SJTYBleManager",
+  "version": "0.1.0",
+  "summary": "A short description of SJTYBleManager.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/caijialiang/SJTYBleManager",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "caijialiang": "1350027967@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/caijialiang/SJTYBleManager.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "SJTYBleManager/Classes/**/*"
+}

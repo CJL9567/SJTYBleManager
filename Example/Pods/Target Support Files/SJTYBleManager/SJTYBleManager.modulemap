@@ -1,0 +1,6 @@
+framework module SJTYBleManager {
+  umbrella header "SJTYBleManager-umbrella.h"
+
+  export *
+  module * { export * }
+}

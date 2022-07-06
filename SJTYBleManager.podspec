@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'SJTYBleManager'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of SJTYBleManager.'
+  s.summary          = '蓝牙连接库'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/caijialiang/SJTYBleManager'
+  s.homepage         = 'https://github.com/CJL9567/SJTYBleManager'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'caijialiang' => '1350027967@qq.com' }
-  s.source           = { :git => 'https://github.com/caijialiang/SJTYBleManager.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/CJL9567/SJTYBleManager.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'

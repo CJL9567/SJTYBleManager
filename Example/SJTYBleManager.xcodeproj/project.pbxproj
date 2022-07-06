@@ -37,9 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03D025B8A9A6C7F5DFF074DF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		03D025B8A9A6C7F5DFF074DF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		2EEB068C91D606AE9BE860DF /* Pods-SJTYBleManager_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJTYBleManager_Example.debug.xcconfig"; path = "Target Support Files/Pods-SJTYBleManager_Example/Pods-SJTYBleManager_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		3E1A11A5E183479DE68A65CA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		3E1A11A5E183479DE68A65CA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* SJTYBleManager_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SJTYBleManager_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -66,7 +66,7 @@
 		B17789EEC92C923BD47509B3 /* Pods-SJTYBleManager_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJTYBleManager_Example.release.xcconfig"; path = "Target Support Files/Pods-SJTYBleManager_Example/Pods-SJTYBleManager_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C457FD83F7F4D00BD06C5081 /* Pods-SJTYBleManager_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJTYBleManager_Tests.release.xcconfig"; path = "Target Support Files/Pods-SJTYBleManager_Tests/Pods-SJTYBleManager_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CCB6AD39759EAE26F7F8ED0A /* Pods-SJTYBleManager_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJTYBleManager_Tests.debug.xcconfig"; path = "Target Support Files/Pods-SJTYBleManager_Tests/Pods-SJTYBleManager_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		D84A3BFDE12A7568D667CF5A /* SJTYBleManager.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = SJTYBleManager.podspec; path = ../SJTYBleManager.podspec; sourceTree = "<group>"; };
+		D84A3BFDE12A7568D667CF5A /* SJTYBleManager.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SJTYBleManager.podspec; path = ../SJTYBleManager.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +193,6 @@
 				CCB6AD39759EAE26F7F8ED0A /* Pods-SJTYBleManager_Tests.debug.xcconfig */,
 				C457FD83F7F4D00BD06C5081 /* Pods-SJTYBleManager_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +257,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

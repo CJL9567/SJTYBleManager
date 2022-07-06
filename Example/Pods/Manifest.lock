@@ -1,0 +1,16 @@
+PODS:
+  - SJTYBleManager (0.1.0)
+
+DEPENDENCIES:
+  - SJTYBleManager (from `../`)
+
+EXTERNAL SOURCES:
+  SJTYBleManager:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SJTYBleManager: 2e74090b49c247f5791dd70b9ec2281a20487695
+
+PODFILE CHECKSUM: b578157001d265c92b3eb6faa8b0bcf2afa3a0f3
+
+COCOAPODS: 1.11.2
