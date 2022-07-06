@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,12 +19,58 @@
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Dxm-ko-gSh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="533.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVe-Nh-fh3">
+                                <rect key="frame" x="86" y="553.5" width="53" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9Zm-Sx-Mzl"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="刷新"/>
+                                <connections>
+                                    <action selector="refreshAction:" destination="whP-gf-Uak" eventType="touchUpInside" id="hAw-0P-K10"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbH-Ns-DcC">
+                                <rect key="frame" x="255" y="553.5" width="53" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5F1-E4-K7q"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="断开"/>
+                                <connections>
+                                    <action selector="disconnect:" destination="whP-gf-Uak" eventType="touchUpInside" id="u08-9b-gND"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kbH-Ns-DcC" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" multiplier="1.5" id="On2-UH-JYT"/>
+                            <constraint firstItem="Dxm-ko-gSh" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="SE2-Ag-fqY"/>
+                            <constraint firstItem="Dxm-ko-gSh" firstAttribute="height" secondItem="TpU-gO-2f1" secondAttribute="height" multiplier="0.8" id="hZp-HP-mfr"/>
+                            <constraint firstAttribute="trailing" secondItem="Dxm-ko-gSh" secondAttribute="trailing" id="k54-xn-vCV"/>
+                            <constraint firstItem="dVe-Nh-fh3" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" multiplier="0.6" id="mfa-gy-w7O"/>
+                            <constraint firstItem="dVe-Nh-fh3" firstAttribute="top" secondItem="Dxm-ko-gSh" secondAttribute="bottom" constant="20" id="rc2-QD-Ctg"/>
+                            <constraint firstItem="Dxm-ko-gSh" firstAttribute="top" secondItem="TpU-gO-2f1" secondAttribute="top" id="vgl-Ph-3AT"/>
+                            <constraint firstItem="kbH-Ns-DcC" firstAttribute="centerY" secondItem="dVe-Nh-fh3" secondAttribute="centerY" id="xr5-kT-1uv"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Dxm-ko-gSh" id="ti1-tr-csS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="305" y="433"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

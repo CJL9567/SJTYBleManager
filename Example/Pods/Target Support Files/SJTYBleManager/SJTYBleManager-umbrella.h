@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "SJTYBleManager.h"
 
 FOUNDATION_EXPORT double SJTYBleManagerVersionNumber;
 FOUNDATION_EXPORT const unsigned char SJTYBleManagerVersionString[];

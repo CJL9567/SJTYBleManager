@@ -21,6 +21,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
+		730CB8EE28759C450019F4DE /* TreeBleDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 730CB8ED28759C440019F4DE /* TreeBleDevice.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		8BA0CDC5092CBE015E1663CE /* Pods_SJTYBleManager_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759571CBCD0BE6F9BB007F37 /* Pods_SJTYBleManager_Example.framework */; };
 		F025FB6919F8BF9A60DA09BC /* Pods_SJTYBleManager_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D53F86B2CE4A5A7EDCB37AF /* Pods_SJTYBleManager_Tests.framework */; };
@@ -60,6 +61,8 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		730CB8EC28759C440019F4DE /* TreeBleDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeBleDevice.h; sourceTree = "<group>"; };
+		730CB8ED28759C440019F4DE /* TreeBleDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeBleDevice.m; sourceTree = "<group>"; };
 		759571CBCD0BE6F9BB007F37 /* Pods_SJTYBleManager_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SJTYBleManager_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D53F86B2CE4A5A7EDCB37AF /* Pods_SJTYBleManager_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SJTYBleManager_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +140,8 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* SJTYViewController.h */,
 				6003F5A6195388D20070C39A /* SJTYViewController.m */,
+				730CB8EC28759C440019F4DE /* TreeBleDevice.h */,
+				730CB8ED28759C440019F4DE /* TreeBleDevice.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -247,6 +252,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = caijialiang;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 73H8J786JX;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -365,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* SJTYAppDelegate.m in Sources */,
+				730CB8EE28759C450019F4DE /* TreeBleDevice.m in Sources */,
 				6003F5A7195388D20070C39A /* SJTYViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
@@ -494,13 +503,20 @@
 			baseConfigurationReference = 2EEB068C91D606AE9BE860DF /* Pods-SJTYBleManager_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 73H8J786JX;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SJTYBleManager/SJTYBleManager-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SJTYBleManager/SJTYBleManager.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public/SJTYBleManager\"",
+				);
 				INFOPLIST_FILE = "SJTYBleManager/SJTYBleManager-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT} ";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -510,13 +526,20 @@
 			baseConfigurationReference = B17789EEC92C923BD47509B3 /* Pods-SJTYBleManager_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 73H8J786JX;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SJTYBleManager/SJTYBleManager-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SJTYBleManager/SJTYBleManager.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public/SJTYBleManager\"",
+				);
 				INFOPLIST_FILE = "SJTYBleManager/SJTYBleManager-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT} ";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
