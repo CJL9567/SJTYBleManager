@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'SJTYBleManager_Example' do
+  pod 'SJTYBleManager', :path => '../'
+
+  target 'SJTYBleManager_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
