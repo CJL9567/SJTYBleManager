@@ -57,6 +57,11 @@
     return @"AE02";
 }
 
+
+-(NSString *)getBroadcastServiceUUID{
+    return @"AE30";
+}
+
 - (NSArray *)deviceName{
     return @[@"M8001-A",@"M8001-C",@"M8001-B"];
 }

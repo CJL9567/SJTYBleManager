@@ -21,7 +21,7 @@
 ///是否正在连接
 @property(assign,nonatomic)Boolean isConnecting;
 
-
+@property(assign,nonatomic)Boolean filterName;
 @end
 
 
@@ -47,11 +47,34 @@ static BleManager *_instance;
 }
 
 -(void)setFilterByName:(Boolean)filter{
-    [self.baseBleDevice setFilterByName:filter];
+    _filterName=filter;
+    if (filter) {
+        [self.babyBluetooth setFilterOnDiscoverPeripherals:^BOOL(NSString *peripheralName, NSDictionary *advertisementData, NSNumber *RSSI) {
+            if ([advertisementData objectForKey:@"kCBAdvDataLocalName"]) {
+                peripheralName = [NSString stringWithFormat:@"%@",[advertisementData objectForKey:@"kCBAdvDataLocalName"]];
+            }
+            NSArray* array = [self.baseBleDevice deviceName];
+            for (NSString *peripheral_name in array) {
+                if ([peripheralName containsString:peripheral_name]) {
+                    return YES;
+                }
+            }
+            
+            return NO;
+        }];
+    }
 }
 
 -(void)setFilterByUUID:(BOOL)filter{
-    [self.baseBleDevice setFilterByUUID:filter];
+    NSDictionary *scanForPeripheralsWithOptions = @{CBCentralManagerScanOptionAllowDuplicatesKey:@YES};
+      if (filter) {
+          //连接设备->
+          [self.babyBluetooth setBabyOptionsWithScanForPeripheralsWithOptions:scanForPeripheralsWithOptions connectPeripheralWithOptions:nil scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:[self.baseBleDevice  getBroadcastServiceUUID]]]  discoverWithServices:nil  discoverWithCharacteristics:nil];
+      }else{
+          //连接设备->
+          [self.babyBluetooth setBabyOptionsWithScanForPeripheralsWithOptions:scanForPeripheralsWithOptions connectPeripheralWithOptions:nil scanForPeripheralsWithServices:nil  discoverWithServices:nil  discoverWithCharacteristics:nil];
+      }
+    
 }
 
 -(void)stopScan{
@@ -111,7 +134,7 @@ static BleManager *_instance;
     
     //设置扫描到设备的委托
     [self.babyBluetooth setBlockOnDiscoverToPeripherals:^(CBCentralManager *central, CBPeripheral *peripheral, NSDictionary *advertisementData, NSNumber *RSSI) {
-        if (self.baseBleDevice.filterName) {
+        if (self.filterName) {
             NSString *peripheralName;
             if ([advertisementData objectForKey:@"kCBAdvDataLocalName"]) {
                 peripheralName = [NSString stringWithFormat:@"%@",[advertisementData objectForKey:@"kCBAdvDataLocalName"]];
@@ -210,12 +233,14 @@ static BleManager *_instance;
         if (self.autoConnected) {
             //自动连接
             if (!self.isMultiple) {
-                if ([peripheral.identifier.UUIDString isEqualToString:[[NSUserDefaults standardUserDefaults] valueForKey:@"UUID"]]) {
-                    if (!self.isConnecting) {
-                        [self connectedCBPeripheral:peripheral];
-                        self.isConnecting=YES;
-                        if (self.ConnecttingBlock) {
-                            self.ConnecttingBlock(peripheral);
+                if (!self.isConnected) {
+                    if ([self.reconnectUUIDArray containsObject:peripheral.identifier.UUIDString]) {
+                        if (!self.isConnecting) {
+                            self.isConnecting=YES;
+                            [self connectedCBPeripheral:peripheral];
+                            if (self.ConnecttingBlock) {
+                                self.ConnecttingBlock(peripheral);
+                            }
                         }
                     }
                 }
@@ -229,7 +254,6 @@ static BleManager *_instance;
                             self.ConnecttingBlock(peripheral);
                         }
                     }
-                    
                 }
             }
         }
@@ -262,7 +286,7 @@ static BleManager *_instance;
     
     NSString *path = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject] stringByAppendingPathComponent:@"Muti_UUIDS.archiver"];
     //将对象归档到指定路径
-    BOOL flag1 = [NSKeyedArchiver archiveRootObject:udidArrray toFile:path];
+    [NSKeyedArchiver archiveRootObject:udidArrray toFile:path];
     
 }
 
@@ -309,6 +333,8 @@ static BleManager *_instance;
                 BaseBleDevice *baseBleDevice = [[NSClassFromString(self.mutipleClass) alloc] initWithBluetooth];
                 baseBleDevice.activityCBPeripheral=peripheral;
                 [self.multipleArray addObject:baseBleDevice];
+            }else{
+                NSLog(@"⚠️⚠️⚠️⚠️=====请给 self.mutipleClass 赋值,否则将无法进行控制设备");
             }
         }
         
@@ -397,28 +423,7 @@ static BleManager *_instance;
     self.autoDisConnected=YES;
     self.isConnecting=NO;
     [self scanDevice];
-    if (!self.isMultiple) {
-        
-        [[NSUserDefaults standardUserDefaults] setObject:self.baseBleDevice.activityCBPeripheral.identifier.UUIDString forKey:@"UUID"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }else{
-        
-//        if (self.autoConnected) {
-//            for (NSDictionary * item in self.peripheralDataArray) {
-//                CBPeripheral *peripheral=  [item valueForKey:@"peripheral"];
-//                if (peripheral.state!=CBPeripheralStateConnected&&[self.reconnectUUIDArray containsObject:peripheral.identifier.UUIDString]) {
-//                    self.isConnecting=YES;
-//                    [self connectedCBPeripheral:peripheral];
-//                    if (self.ConnecttingBlock) {
-//                        self.ConnecttingBlock(peripheral);
-//                    }
-//                    break;
-//                }
-//            }
-//        }
-    }
-    
-    
+
     
 }
 

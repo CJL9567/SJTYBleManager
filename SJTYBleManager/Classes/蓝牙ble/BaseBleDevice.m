@@ -12,6 +12,22 @@
 @interface BaseBleDevice()
 @property (nonatomic,retain) NSQueue *queue;
 @property(nonatomic,strong)BabyBluetooth *babyBlutooth;
+
+
+
+@property (nonatomic,strong) CBCharacteristic * writeCharacteristic;
+
+@property (nonatomic,strong) CBCharacteristic * notifyCharacteristic;
+
+@property (nonatomic,strong) NSMutableArray<NSString*>* spiltDataArray;
+
+@property (nonatomic,strong) CBService * cbService;
+
+@property (nonatomic, copy) ReturnNotifyValueToViewBlock blockReturnNotifyValueToView;
+@property (nonatomic,copy)  FilterNotifyValueBlock blockFilterNotifyValue;
+
+@property (nonatomic,assign) BOOL iSpiltData;
+
 @end
 
 @implementation BaseBleDevice
@@ -23,10 +39,6 @@
         self.babyBlutooth = [BabyBluetooth shareBabyBluetooth];
         self.characteristicWriteType=CBCharacteristicWriteWithoutResponse;
         //扫描选项->CBCentralManagerScanOptionAllowDuplicatesKey:忽略同一个Peripheral端的多个发现事件被聚合成一个发现事件
-      NSDictionary *scanForPeripheralsWithOptions = @{CBCentralManagerScanOptionAllowDuplicatesKey:@YES};
-      //连接设备->
-      [self.babyBlutooth setBabyOptionsWithScanForPeripheralsWithOptions:scanForPeripheralsWithOptions connectPeripheralWithOptions:nil scanForPeripheralsWithServices:nil  discoverWithServices:nil  discoverWithCharacteristics:nil];
-        
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotifcationValue:) name:BabyNotificationAtDidUpdateValueForCharacteristic object:nil];
         
         self.queue = [[NSQueue alloc] init];
@@ -69,15 +81,6 @@
 }
 
 
--(void)setFilterByUUID:(BOOL)filter{
-    
-    NSDictionary *scanForPeripheralsWithOptions = @{CBCentralManagerScanOptionAllowDuplicatesKey:@YES};
-    //连接设备->
-    [self.babyBlutooth setBabyOptionsWithScanForPeripheralsWithOptions:scanForPeripheralsWithOptions connectPeripheralWithOptions:nil scanForPeripheralsWithServices:nil  discoverWithServices:@[[CBUUID UUIDWithString:[self  getBroadcastServiceUUID]]]  discoverWithCharacteristics:nil];
-    
-}
-
-
 -(void)setActivityCBPeripheral:(CBPeripheral *)activityCBPeripheral {
     _cbService=nil;
     _writeCharacteristic=nil;
@@ -88,20 +91,6 @@
     }
 }
 
--(void)setFilterByName:(BOOL)filter{
-    __weak typeof(self) weekSelf = self;
-    self.filterName=filter;
-    if (filter) {
-        [self.babyBlutooth setFilterOnDiscoverPeripherals:^BOOL(NSString *peripheralName, NSDictionary *advertisementData, NSNumber *RSSI) {
-            NSArray* array = [weekSelf deviceName];
-
-            if ([array containsObject:peripheralName]) {
-                return YES;
-            }
-            return NO;
-        }];
-    }
-}
 
 -(void)returnValue {
     
@@ -148,16 +137,21 @@
     self.blockFilterNotifyValue = filterBlock;
     
     BabyLog(@"发送的数据为:%@",[BaseUtils stringConvertForData:cmd]);
-    NSString * sendDataStr = [BaseUtils stringConvertForData:cmd];
-    
-    NSString * sendStr = [self.logDictionary objectForKey:sendLog];
-    
-    if (sendStr) {
-        
-        [self.logDictionary setObject:[NSString stringWithFormat:@"%@\n%@",sendStr,sendDataStr] forKey:sendLog];
-    } else {
-        [self.logDictionary setObject:sendDataStr forKey:sendLog];
+    if (cmd) {
+        if (self.activityCBPeripheral && self.activityCBPeripheral.state == CBPeripheralStateConnected &&self.writeCharacteristic!=nil) {
+            [self.activityCBPeripheral writeValue:cmd forCharacteristic:self.writeCharacteristic type:self.characteristicWriteType];
+        }
     }
+    
+}
+
+- (void)sendCommand:(NSData*)cmd
+       notifyBlock:(ReturnNotifyValueToViewBlock) notifyBlock
+        filterBlock:(FilterNotifyValueBlock) filterBlock iSpiltData:(Boolean)isPiltData{
+    self.blockReturnNotifyValueToView = notifyBlock;
+    self.blockFilterNotifyValue = filterBlock;
+    self.iSpiltData=isPiltData;
+    BabyLog(@"发送的数据为:%@",[BaseUtils stringConvertForData:cmd]);
     if (cmd) {
         if (self.activityCBPeripheral && self.activityCBPeripheral.state == CBPeripheralStateConnected &&self.writeCharacteristic!=nil) {
             [self.activityCBPeripheral writeValue:cmd forCharacteristic:self.writeCharacteristic type:self.characteristicWriteType];
@@ -167,28 +161,6 @@
 }
 
 
-- (void)sendData {
-    
-    if (![self.queue isEmpty]) {
-        NSData* cmd =  [self.queue dequeue];
-        BabyLog(@"发送的数据为:%@",[BaseUtils stringConvertForData:cmd]);
-        NSString * sendDataStr = [BaseUtils stringConvertForData:cmd];
-        
-        NSString * sendStr = [self.logDictionary objectForKey:sendLog];
-        
-        if (sendStr) {
-            
-            [self.logDictionary setObject:[NSString stringWithFormat:@"%@\n%@",sendStr,sendDataStr] forKey:sendLog];
-        } else {
-            [self.logDictionary setObject:sendDataStr forKey:sendLog];
-        }
-        if (cmd) {
-            if (self.activityCBPeripheral && self.activityCBPeripheral.state == CBPeripheralStateConnected&&self.writeCharacteristic!=nil) {
-                [self.activityCBPeripheral writeValue:cmd forCharacteristic:self.writeCharacteristic type:self.characteristicWriteType];
-            }
-        }
-    }
-}
 
 -(CBCharacteristic*)writeCharacteristic{
     if (_writeCharacteristic == nil) {
@@ -271,12 +243,7 @@
     return string;
 }
 
--(NSMutableDictionary*)logDictionary {
-    if (_logDictionary == nil) {
-        _logDictionary = [NSMutableDictionary dictionary];
-    }
-    return _logDictionary;
-}
+
 
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:BabyNotificationAtDidUpdateValueForCharacteristic object:nil];
@@ -292,13 +259,6 @@
         NSString * strData =  [BaseUtils stringConvertForData:characteristics.value];
         
         BabyLog(@"接受的数据为:%@",strData);
-        NSString * receiveStr = [self.logDictionary objectForKey:receiveLog];
-        
-        if (receiveStr) {
-            [self.logDictionary setObject:[NSString stringWithFormat:@"%@\n%@",receiveStr,strData] forKey:receiveLog];
-        } else {
-            [self.logDictionary setObject:strData forKey:receiveLog];
-        }
         
         if ([self iSpiltData]) {
             [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(returnValue) object:nil];

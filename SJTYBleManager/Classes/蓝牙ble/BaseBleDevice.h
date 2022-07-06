@@ -18,37 +18,16 @@
 #define receiveLog @"receiveCommand"
 
 typedef void(^ReturnNotifyValueToViewBlock)(NSData* data,NSString* stringData);
-typedef NSString*(^FilterNotifyValueBlock)();
+typedef NSString*(^FilterNotifyValueBlock)(void);
 
 @interface BaseBleDevice : NSObject
 
 @property (nonatomic,strong) CBPeripheral * activityCBPeripheral;
 
-@property (nonatomic,strong) CBCharacteristic * writeCharacteristic;
-
-@property (nonatomic,strong) CBCharacteristic * notifyCharacteristic;
-
-@property (nonatomic,strong) NSMutableArray<NSString*>* spiltDataArray;
-
-@property (nonatomic,strong) CBService * cbService;
-
-@property (nonatomic, copy) ReturnNotifyValueToViewBlock blockReturnNotifyValueToView;
-@property (nonatomic,copy)  FilterNotifyValueBlock blockFilterNotifyValue;
-
-@property (nonatomic,strong) NSMutableDictionary* logDictionary;
-
-
-
-@property(assign,nonatomic)Boolean filterName;
-
-@property (nonatomic,assign) BOOL iSpiltData;
-
 @property(assign,nonatomic)CBCharacteristicWriteType characteristicWriteType;
 
 /**
  初始化
-
- @param babyBlutooth 蓝牙管理
  @return 返回设备对象
  */
 - (instancetype) initWithBluetooth;
@@ -78,6 +57,12 @@ typedef NSString*(^FilterNotifyValueBlock)();
  */
 -(NSString*)getNotifiUUID;
 
+/**
+ 
+ 获取广播数据UUID 子类需覆盖次方法
+ 
+ @return writeUUID
+ */
 -(NSString *)getBroadcastServiceUUID;
 
 /**
@@ -87,23 +72,6 @@ typedef NSString*(^FilterNotifyValueBlock)();
  */
 
 -(NSArray*)deviceName;
-
-
-/**
- 设置是否名字过滤
-
- @param filter YES 是  NO否
- */
--(void)setFilterByName:(BOOL)filter;
-
-
-/**
- 设置是否按UUID过滤
-
- @param filter YES 是  NO否
- */
--(void)setFilterByUUID:(BOOL)filter;
-
 
 /**
  设置通知
@@ -123,6 +91,12 @@ typedef NSString*(^FilterNotifyValueBlock)();
 -(void)sendCommand:(NSData*)cmd
        notifyBlock:(ReturnNotifyValueToViewBlock) notifyBlock
        filterBlock:(FilterNotifyValueBlock) filterBlock;
+
+
+
+- (void)sendCommand:(NSData*)cmd
+       notifyBlock:(ReturnNotifyValueToViewBlock) notifyBlock
+filterBlock:(FilterNotifyValueBlock) filterBlock iSpiltData:(Boolean)isPiltData;
 
 
 //获取同步时间指令  hexYear + hexMonth + hexDay + hexHour + hexMin + hexSecond;

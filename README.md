@@ -22,7 +22,7 @@ pod 'SJTYBleManager'
 
 ## Author
 
-caijialiang, 1350027967@qq.com
+
 
 ## License
 
