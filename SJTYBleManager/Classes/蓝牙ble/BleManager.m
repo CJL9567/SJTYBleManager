@@ -36,6 +36,7 @@ static BleManager *_instance;
     dispatch_once(&oneToken, ^{
         share = [[BleManager alloc]init];
         [share babyDelegate];
+        share.characteristicWriteType=CBCharacteristicWriteWithoutResponse;
         [share.reconnectUUIDArray addObjectsFromArray:[share autoReconnectUUIDS]];
     });
    return share;
@@ -290,6 +291,10 @@ static BleManager *_instance;
     
 }
 
+-(void)setCharacteristicWriteType:(CBCharacteristicWriteType)characteristicWriteType{
+    _characteristicWriteType=characteristicWriteType;
+    
+}
 
 
 -(NSArray *)autoReconnectUUIDS{
@@ -316,7 +321,7 @@ static BleManager *_instance;
     if (!self.isMultiple) {
         //单连接
         self.baseBleDevice.activityCBPeripheral = peripheral;
-        
+        self.baseBleDevice.characteristicWriteType=self.characteristicWriteType;
     }else{
         Boolean isExist=NO;
         
@@ -332,6 +337,7 @@ static BleManager *_instance;
             if (self.mutipleClass!=nil) {
                 BaseBleDevice *baseBleDevice = [[NSClassFromString(self.mutipleClass) alloc] initWithBluetooth];
                 baseBleDevice.activityCBPeripheral=peripheral;
+                baseBleDevice.characteristicWriteType=self.characteristicWriteType;
                 [self.multipleArray addObject:baseBleDevice];
             }else{
                 NSLog(@"⚠️⚠️⚠️⚠️=====请给 self.mutipleClass 赋值,否则将无法进行控制设备");

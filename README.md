@@ -10,6 +10,18 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+    1、创建继承 BaseBleDevice 的设备对象,例如TreeBleDevice,并赋值给[BleManager shareManager].baseBleDevice
+    
+    [BleManager shareManager].baseBleDevice=[[TreeBleDevice alloc] initWithBluetooth];
+    [BleManager shareManager].isMultiple=NO;
+    [[BleManager shareManager] setFilterByName:YES];
+    [BleManager shareManager].mutipleClass=@"TreeBleDevice";
+    [BleManager shareManager].autoConnected=YES;
+    [[BleManager shareManager] scanDevice];
+    2、实现BleManager 相对应回调
+    例如 [BleManager shareManager].setReloadBlock:^(CBPeripheral * _Nonnull peripheral) {}];
+    
+    详情查看示例代码Example
 
 ## Installation
 

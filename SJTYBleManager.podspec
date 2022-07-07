@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SJTYBleManager'
-  s.version          = '1.0.3'
-  s.summary          = '蓝牙连接库'
+  s.version          = '1.0.4'
+  s.summary          = 'SJTYBleManager'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
