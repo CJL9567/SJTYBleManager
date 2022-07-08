@@ -16,12 +16,16 @@
 @property(nonatomic,strong)NSMutableArray *reconnectUUIDArray;
 
 ///为了防止信号刷新过快导致页面卡顿,接收到20次后刷新一次页面
-@property(assign,nonatomic)NSInteger rssiRefreshCount;
+@property(assign,nonatomic)Boolean rssiRefresh;
 
 ///是否正在连接
 @property(assign,nonatomic)Boolean isConnecting;
 
 @property(assign,nonatomic)Boolean filterName;
+
+///定时刷新信号值
+@property(nonatomic,strong)NSTimer *rssiTimer;
+
 @end
 
 
@@ -38,6 +42,8 @@ static BleManager *_instance;
         [share babyDelegate];
         share.characteristicWriteType=CBCharacteristicWriteWithoutResponse;
         [share.reconnectUUIDArray addObjectsFromArray:[share autoReconnectUUIDS]];
+        share.rssiTimer=[NSTimer timerWithTimeInterval:1 target:share selector:@selector(updateRssiRefresh) userInfo:nil repeats:YES];
+        [[NSRunLoop mainRunLoop] addTimer:share.rssiTimer forMode:NSRunLoopCommonModes];
     });
    return share;
 }
@@ -46,6 +52,14 @@ static BleManager *_instance;
 - (BabyBluetooth*)babyBluetooth {
     return  [BabyBluetooth shareBabyBluetooth];
 }
+
+
+-(void)updateRssiRefresh{
+        
+        
+    self.rssiRefresh=YES;
+}
+
 
 -(void)setFilterByName:(Boolean)filter{
     _filterName=filter;
@@ -268,14 +282,12 @@ static BleManager *_instance;
             }
         }
         //防止多设备时过度刷新
-        self.rssiRefreshCount++;
-        if (self.rssiRefreshCount==30) {
+        if (self.rssiRefresh) {
+            self.rssiRefresh=NO;
             if (self.ReloadRSSIBlock) {
                 self.ReloadRSSIBlock();
             }
-            self.rssiRefreshCount=0;
         }
-        
         
     }
 }

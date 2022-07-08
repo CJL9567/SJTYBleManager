@@ -101,6 +101,7 @@
     }else{
         cell.detailTextLabel.text=@"";
     }
+    
     cell.textLabel.text=peripheral.name;
     cell.detailTextLabel.textColor=[UIColor darkGrayColor];
 
