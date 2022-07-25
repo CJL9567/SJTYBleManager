@@ -28,7 +28,7 @@
 //    [[BleManager shareManager] setFilterByName:YES];
     [[BleManager shareManager] setFilterByUUID:YES];
     [BleManager shareManager].mutipleClass=@"TreeBleDevice";
-    [BleManager shareManager].autoConnected=YES;
+//    [BleManager shareManager].autoConnected=YES;
     [[BleManager shareManager] scanDevice];
 
     [self babyDelegate];
@@ -101,8 +101,8 @@
     }else{
         cell.detailTextLabel.text=@"";
     }
-    
-    cell.textLabel.text=peripheral.name;
+    NSDictionary *dict=[BleManager shareManager].peripheralDataArray[indexPath.row];
+    cell.textLabel.text= [dict valueForKey:@"peripheralName"];
     cell.detailTextLabel.textColor=[UIColor darkGrayColor];
 
     return cell;

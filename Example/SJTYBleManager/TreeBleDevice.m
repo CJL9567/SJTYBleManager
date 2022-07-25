@@ -26,44 +26,21 @@
     return self;
 }
 
+-(NSString *)getServiceUUID{
+    return @"FFB0";
+}
 
-/**
- 获取服务UUID 子类需覆盖次方法
-
- @return serviceUUID
- */
--(NSString*)getServiceUUID {
-    return @"AE30";
+-(NSString *)getWriteUUID{
+    return @"FFB2";
 }
 
 
-/**
-
- 获取写数据UUID 子类需覆盖次方法
-
- @return writeUUID
- */
--(NSString*)getWriteUUID {
-    return @"AE01";
+-(NSString *)getNotifiUUID{
+    return @"FFB1";
 }
-
-/**
- 获取通知数据UUID 子类需覆盖次方法
-
- @return writeUUID
- */
--(NSString*)getNotifiUUID {
-
-    return @"AE02";
-}
-
 
 -(NSString *)getBroadcastServiceUUID{
-    return @"AE30";
-}
-
-- (NSArray *)deviceName{
-    return @[@"M8001-A",@"M8001-C",@"M8001-B"];
+    return @"FFB0";
 }
 
 
