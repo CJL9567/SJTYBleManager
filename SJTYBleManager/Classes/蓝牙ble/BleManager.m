@@ -26,6 +26,9 @@
 ///定时刷新信号值
 @property(nonatomic,strong)NSTimer *rssiTimer;
 
+
+@property(assign,nonatomic)Boolean isReLoad;
+
 @end
 
 
@@ -97,6 +100,7 @@ static BleManager *_instance;
 }
 
 - (void)scanDevice {
+    self.isReLoad=NO;
     self.babyBluetooth.scanForPeripherals().begin();
 }
 
@@ -228,7 +232,10 @@ static BleManager *_instance;
       advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI {
     
     NSArray *peripherals = [self.peripheralDataArray valueForKey:@"peripheral"];
-    
+    if (!self.isReLoad) {
+        self.isReLoad=YES;
+        return;
+    }
     if (![peripherals containsObject:peripheral]) {
         
         NSString *peripheralName;
