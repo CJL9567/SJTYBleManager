@@ -66,6 +66,11 @@ static BleManager *_instance;
 
 -(void)setFilterByName:(Boolean)filter{
     _filterName=filter;
+    
+    NSDictionary *scanForPeripheralsWithOptions = @{CBCentralManagerScanOptionAllowDuplicatesKey:@YES};
+    //连接设备->
+    [self.babyBluetooth setBabyOptionsWithScanForPeripheralsWithOptions:scanForPeripheralsWithOptions connectPeripheralWithOptions:nil scanForPeripheralsWithServices:nil  discoverWithServices:nil  discoverWithCharacteristics:nil];
+    
     if (filter) {
         [self.babyBluetooth setFilterOnDiscoverPeripherals:^BOOL(NSString *peripheralName, NSDictionary *advertisementData, NSNumber *RSSI) {
             if ([advertisementData objectForKey:@"kCBAdvDataLocalName"]) {
@@ -236,6 +241,7 @@ static BleManager *_instance;
         self.isReLoad=YES;
         return;
     }
+    NSLog(@"===搜索到设备 %@",peripheral.name);
     if (![peripherals containsObject:peripheral]) {
         
         NSString *peripheralName;
