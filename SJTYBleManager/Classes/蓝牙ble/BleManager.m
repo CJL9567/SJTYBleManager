@@ -194,6 +194,7 @@ static BleManager *_instance;
     
     [self.babyBluetooth setBlockOnDidUpdateNotificationStateForCharacteristic:^(CBCharacteristic *characteristic, NSError *error) {
         NSLog(@"设置通知");
+        weakSelf.isConnected=YES;
         Boolean isconnected = NO;
         for (CBPeripheral *peripheral in weakSelf.peripheralArray) {
             for (CBService *sevice in peripheral.services) {
@@ -450,7 +451,7 @@ static BleManager *_instance;
 
 - (void)onNotifyFinish {
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
-    self.isConnected=YES;
+    
     self.autoDisConnected=YES;
     self.isConnecting=NO;
     [self scanDevice];
