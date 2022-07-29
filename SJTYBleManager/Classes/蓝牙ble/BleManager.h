@@ -44,8 +44,8 @@ typedef NS_ENUM(NSInteger, AuthorizationState) {
 @property(assign,nonatomic)Boolean autoConnected;
 
 @property(assign,nonatomic)CBCharacteristicWriteType characteristicWriteType;
-
-
+@property(assign,nonatomic)CBManagerState state;
+@property(assign,nonatomic)AuthorizationState authorizationState;
 -(void)setFilterByName:(Boolean)filter;
 
 -(void)setFilterByUUID:(BOOL)filter;

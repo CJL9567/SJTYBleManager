@@ -402,30 +402,40 @@ static BleManager *_instance;
     self.isConnected=NO;
     [self.peripheralDataArray removeAllObjects];
     if (@available(iOS 13.0, *)) {
+        
         if (manager.authorization==CBManagerAuthorizationAllowedAlways) {
+            self.authorizationState=AuthorizationAllowedAlways;
+            
             if (self.UpdateAuthorizationBlock) {
                 self.UpdateAuthorizationBlock(AuthorizationAllowedAlways);
             }
         }else if (manager.authorization==CBManagerAuthorizationDenied){
+            self.authorizationState=AuthorizationDenied;
              if (self.UpdateAuthorizationBlock) {
                  self.UpdateAuthorizationBlock(AuthorizationDenied);
              }
         }else if (manager.authorization==CBManagerAuthorizationRestricted){
+            self.authorizationState=AuthorizationRestricted;
              if (self.UpdateAuthorizationBlock) {
                  self.UpdateAuthorizationBlock(AuthorizationRestricted);
              }
         }else if (manager.authorization==CBManagerAuthorizationNotDetermined){
+            self.authorizationState=AuthorizationNotDetermined;
              if (self.UpdateAuthorizationBlock) {
                  self.UpdateAuthorizationBlock(AuthorizationNotDetermined);
              }
         }
+        self.state=manager.state;
         if (self.UpdateStateBlock) {
             self.UpdateStateBlock(manager.state);
         }
+        
     } else {
+        self.state=manager.state;
        if (self.UpdateStateBlock) {
            self.UpdateStateBlock(manager.state);
        }
+        
     }
 }
 
