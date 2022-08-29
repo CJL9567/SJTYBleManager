@@ -26,6 +26,7 @@
     return self;
 }
 
+
 -(NSString *)getServiceUUID{
     return @"FFB0";
 }
@@ -42,7 +43,6 @@
 -(NSString *)getBroadcastServiceUUID{
     return @"FFB0";
 }
-
 
 -(void)sendPowerToDevice:(Boolean)power{
     NSMutableString *sendDataString =[NSMutableString string];

@@ -29,6 +29,9 @@
 
 @property(assign,nonatomic)Boolean isReLoad;
 
+@property(nonatomic,strong)NSMutableArray *connectingArray;
+
+
 @end
 
 
@@ -202,7 +205,7 @@ static BleManager *_instance;
                     isconnected=YES;
                     [weakSelf.reconnectUUIDArray addObject:peripheral.identifier.UUIDString];
                     [weakSelf saveAutoReconnectUUID:weakSelf.reconnectUUIDArray];
-                    
+                    [self.connectingArray removeObject:peripheral];
                     if (weakSelf.ConnectedBlock) {
                         weakSelf.ConnectedBlock(peripheral.identifier.UUIDString);
                     }
@@ -443,8 +446,10 @@ static BleManager *_instance;
 - (void)connectedCBPeripheral:(CBPeripheral*)peripheral {
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
     [self.babyBluetooth cancelScan];
+    [self.connectingArray addObject:peripheral];
     self.babyBluetooth.having(peripheral).connectToPeripherals().discoverServices().discoverCharacteristics().begin();
     [self performSelector:@selector(onConnecTimeOut) withObject:nil afterDelay:5];
+    
 }
 
 
@@ -452,7 +457,10 @@ static BleManager *_instance;
 - (void)onConnecTimeOut {
     [self.peripheralDataArray removeAllObjects];
     [[BabyBluetooth shareBabyBluetooth] cancelAllPeripheralsConnection];
-    [self scanDevice];
+
+    for (CBPeripheral *peripheral in self.connectingArray) {
+        [[BabyBluetooth shareBabyBluetooth] cancelPeripheralConnection:peripheral];
+    }
     if (self.ConnectTimeOutBlock) {
         self.ConnectTimeOutBlock();
     }
@@ -494,6 +502,14 @@ static BleManager *_instance;
         _reconnectUUIDArray =[NSMutableArray array];
     }
     return _reconnectUUIDArray;
+}
+
+
+-(NSMutableArray *)connectingArray{
+    if (!_connectingArray) {
+        _connectingArray  =[NSMutableArray array];
+    }
+    return _connectingArray;
 }
 
 @end

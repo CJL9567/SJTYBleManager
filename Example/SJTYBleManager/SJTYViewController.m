@@ -25,8 +25,8 @@
     [self setupUI];
     [BleManager shareManager].baseBleDevice=[[TreeBleDevice alloc] initWithBluetooth];
     [BleManager shareManager].isMultiple=NO;
-    [[BleManager shareManager] setFilterByName:YES];
-//    [[BleManager shareManager] setFilterByUUID:YES];
+//    [[BleManager shareManager] setFilterByName:YES];
+    [[BleManager shareManager] setFilterByUUID:YES];
     [BleManager shareManager].mutipleClass=@"TreeBleDevice";
 //    [BleManager shareManager].autoConnected=YES;
     [[BleManager shareManager] scanDevice];
@@ -52,18 +52,18 @@
     }];
 
     [[BleManager shareManager] setConnectedBlock:^(NSString * _Nonnull UUID) {
-        if (![BleManager shareManager].isMultiple) {
-            TreeBleDevice *treeBleDevice=(TreeBleDevice *)[BleManager shareManager].baseBleDevice;
-            [treeBleDevice sendRGBToDevice:255 green:0 blue:0];
-        }else{
-            for (TreeBleDevice *treeBleDevice in [BleManager shareManager].multipleArray) {
-                
-                if ([treeBleDevice.activityCBPeripheral.identifier.UUIDString isEqualToString:UUID]) {
-                    [treeBleDevice sendRGBToDevice:255 green:0 blue:0];
-                    break;
-                }
-            }
-        }
+//        if (![BleManager shareManager].isMultiple) {
+//            TreeBleDevice *treeBleDevice=(TreeBleDevice *)[BleManager shareManager].baseBleDevice;
+//            [treeBleDevice sendRGBToDevice:255 green:0 blue:0];
+//        }else{
+//            for (TreeBleDevice *treeBleDevice in [BleManager shareManager].multipleArray) {
+//                
+//                if ([treeBleDevice.activityCBPeripheral.identifier.UUIDString isEqualToString:UUID]) {
+//                    [treeBleDevice sendRGBToDevice:255 green:0 blue:0];
+//                    break;
+//                }
+//            }
+//        }
         
         [weakSelf.tableView reloadData];
 
@@ -78,6 +78,9 @@
 
     }];
     
+    [[BleManager shareManager] setConnectTimeOutBlock:^{
+        [weakSelf.tableView reloadData];
+    }];
 
 }
 
