@@ -450,12 +450,12 @@ static BleManager *_instance;
 
 
 - (void)onConnecTimeOut {
-    if (self.ConnectTimeOutBlock) {
-        self.ConnectTimeOutBlock();
-    }
     [self.peripheralDataArray removeAllObjects];
     [[BabyBluetooth shareBabyBluetooth] cancelAllPeripheralsConnection];
     [self scanDevice];
+    if (self.ConnectTimeOutBlock) {
+        self.ConnectTimeOutBlock();
+    }
 }
 
 
