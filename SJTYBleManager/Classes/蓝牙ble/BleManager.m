@@ -455,11 +455,12 @@ static BleManager *_instance;
 
 
 - (void)onConnecTimeOut {
-    [self.peripheralDataArray removeAllObjects];
-    [[BabyBluetooth shareBabyBluetooth] cancelAllPeripheralsConnection];
-
     for (CBPeripheral *peripheral in self.connectingArray) {
         [[BabyBluetooth shareBabyBluetooth] cancelPeripheralConnection:peripheral];
+        NSInteger index= [[self.peripheralDataArray valueForKey:@"peripheral"] indexOfObject:peripheral];
+        if (index>=0&&index<self.peripheralDataArray.count ) {
+            [self.peripheralDataArray removeObjectAtIndex:index];
+        }
     }
     if (self.ConnectTimeOutBlock) {
         self.ConnectTimeOutBlock();

@@ -24,7 +24,7 @@
     
     [self setupUI];
     [BleManager shareManager].baseBleDevice=[[TreeBleDevice alloc] initWithBluetooth];
-    [BleManager shareManager].isMultiple=NO;
+    [BleManager shareManager].isMultiple=YES;
 //    [[BleManager shareManager] setFilterByName:YES];
     [[BleManager shareManager] setFilterByUUID:YES];
     [BleManager shareManager].mutipleClass=@"TreeBleDevice";

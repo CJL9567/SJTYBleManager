@@ -41,7 +41,7 @@
 }
 
 -(NSString *)getBroadcastServiceUUID{
-    return @"FFB0";
+    return @"FEE7";
 }
 
 -(void)sendPowerToDevice:(Boolean)power{
