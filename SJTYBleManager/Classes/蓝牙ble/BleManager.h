@@ -98,9 +98,6 @@ typedef NS_ENUM(NSInteger, AuthorizationState) {
 
 @property(nonatomic,copy)void(^UpdateAuthorizationBlock)(AuthorizationState  authorization);
 
-///多连接时将要连接的设备回调
-@property(nonatomic,copy)void(^MutipleSetPeripheralBlock)(CBPeripheral * peripheral);
-
 
 @end
 

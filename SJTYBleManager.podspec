@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SJTYBleManager'
-  s.version          = '1.0.12'
+  s.version          = '1.0.13'
   s.summary          = 'SJTYBleManager'
 
 # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'caijialiang' => '1350027967@qq.com' }
-  s.source           = { :git => 'git@github.com:CJL9567/SJTYBleManager.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/CJL9567/SJTYBleManager.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
