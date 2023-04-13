@@ -388,6 +388,23 @@ static BleManager *_instance;
     if (index>=0&&index<self.peripheralDataArray.count ) {
         [self.peripheralDataArray removeObjectAtIndex:index];
     }
+    
+    if(self.isMultiple){
+        ///如果是多连接状态下,断开蓝牙时清除设备
+        index = -1 ;
+        for (BaseBleDevice *baseBleDevice in self.multipleArray) {
+            if(baseBleDevice.activityCBPeripheral == peripheral){
+                index = [self.multipleArray indexOfObject:baseBleDevice];
+                break;
+            }
+        }
+        if(index>=0 && index <self.multipleArray.count-1){
+            [self.multipleArray removeObjectAtIndex:index];
+        }
+    }
+    
+   
+    
     [self scanDevice];
     if (self.autoDisConnected) {
         if (self.AutoDisConnectedBlock) {
