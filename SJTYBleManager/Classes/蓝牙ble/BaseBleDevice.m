@@ -9,6 +9,11 @@
 #import "BaseBleDevice.h"
 #import "NSQueue.h"
 #import "BabyBluetooth.h"
+#import "SJTYBLESecret.h"
+
+///通知 -- 设备非法 即非四聚通用开发的设备,此时需要断开蓝牙并通知非法设备
+#define BLE_DEVICE_ERROR  @"BLE_DEVICE_ERROR"
+
 @interface BaseBleDevice()
 @property (nonatomic,retain) NSQueue *queue;
 @property(nonatomic,strong)BabyBluetooth *babyBlutooth;
@@ -28,6 +33,8 @@
 
 @property (nonatomic,assign) BOOL iSpiltData;
 
+
+@property(assign,nonatomic)Boolean isChecked;
 @end
 
 @implementation BaseBleDevice
@@ -81,11 +88,24 @@
 }
 
 
+-(void)startTimer{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if(self.isVerify){
+            if(!self.isChecked){
+                [self.babyBlutooth cancelPeripheralConnection:self.activityCBPeripheral];
+                NSLog(@"=======此设备为非法设备");
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"BLE_DEVICE_ERROR" object:nil];
+            }
+        }
+    });
+}
+
 -(void)setActivityCBPeripheral:(CBPeripheral *)activityCBPeripheral {
     _cbService=nil;
     _writeCharacteristic=nil;
     _notifyCharacteristic=nil;
     _activityCBPeripheral = activityCBPeripheral;
+    _isChecked =NO;
     if (activityCBPeripheral!=nil) {
         [self performSelector:@selector(setNotify) withObject:self afterDelay:1];
     }
@@ -119,7 +139,7 @@
     if (self.activityCBPeripheral) {
         if (self.notifyCharacteristic) {
             __weak typeof(self) weekSelf = self;
-
+            [self startTimer];
             
             [self.babyBlutooth notify:weekSelf.activityCBPeripheral characteristic:weekSelf.notifyCharacteristic block:^(CBPeripheral *peripheral, CBCharacteristic *characteristics, NSError *error) {
                 
@@ -259,7 +279,15 @@
         NSString * strData =  [BaseUtils stringConvertForData:characteristics.value];
         
         BabyLog(@"接受的数据为:%@",strData);
-        
+        Byte *byte= (Byte *)[data bytes];
+        if(byte[0]==0xBB&&byte[1]==0xB6){
+            self.isChecked =YES;
+            if(self.isVerify){
+                if(data.length>3){
+                    [self sendVerifyData:[SJTYBLESecret secrect:[data subdataWithRange:NSMakeRange(2, data.length-3)]]];
+                }
+            }
+        }
         if ([self iSpiltData]) {
             [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(returnValue) object:nil];
             [self.spiltDataArray addObject:strData];
@@ -285,8 +313,23 @@
     }
 }
 
-- (void)receiveData:(NSData*)data {
+-(void)sendVerifyData:(NSData *)data {
+    NSMutableString *sendDataString =[NSMutableString string];
     
+    [sendDataString appendString:@"AAAA"];
+    [sendDataString appendString:[BaseUtils stringConvertForData:data]];
+    [sendDataString appendString:@"FF"];
+    
+    NSData *sendData=[BaseUtils stringToBytes:sendDataString];
+    [self sendCommand:sendData notifyBlock:^(NSData *data, NSString *stringData) {
+        
+    } filterBlock:^NSString *{
+        return @"";
+    }];
+    
+}
+
+- (void)receiveData:(NSData*)data {
     
 }
 

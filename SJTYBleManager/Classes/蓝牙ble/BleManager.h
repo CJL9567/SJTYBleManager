@@ -43,6 +43,9 @@ typedef NS_ENUM(NSInteger, AuthorizationState) {
 ///是否需要自动回连
 @property(assign,nonatomic)Boolean autoConnected;
 
+///是否需要进行四聚通用产品产品校验 默认为需要校验
+@property(assign,nonatomic)Boolean isVerify;
+
 @property(assign,nonatomic)CBCharacteristicWriteType characteristicWriteType;
 @property(assign,nonatomic)CBManagerState state;
 @property(assign,nonatomic)AuthorizationState authorizationState;

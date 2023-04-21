@@ -28,20 +28,27 @@
 
 
 -(NSString *)getServiceUUID{
-    return @"FFB0";
+//    return @"AE00";
+    return @"FFF0";
 }
 
 -(NSString *)getWriteUUID{
-    return @"FFB2";
+//    return @"AE01";
+    return @"FFF2";
 }
 
 
 -(NSString *)getNotifiUUID{
-    return @"FFB1";
+//    return @"AE02";
+    return @"FFF1";
 }
 
 -(NSString *)getBroadcastServiceUUID{
-    return @"FEE7";
+    return @"";
+}
+
+-(NSArray *)deviceName{
+    return @[@"AC695X_1",@"RL"];;
 }
 
 -(void)sendPowerToDevice:(Boolean)power{

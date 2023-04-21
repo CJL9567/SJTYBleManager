@@ -26,6 +26,9 @@ typedef NSString*(^FilterNotifyValueBlock)(void);
 
 @property(assign,nonatomic)CBCharacteristicWriteType characteristicWriteType;
 
+///是否需要进行四聚通用产品产品校验
+@property(assign,nonatomic)Boolean isVerify; 
+
 /**
  初始化
  @return 返回设备对象

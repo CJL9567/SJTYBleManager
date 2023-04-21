@@ -46,6 +46,7 @@ static BleManager *_instance;
     dispatch_once(&oneToken, ^{
         share = [[BleManager alloc]init];
         [share babyDelegate];
+        share.isVerify =true;
         share.characteristicWriteType=CBCharacteristicWriteWithoutResponse;
         [share.reconnectUUIDArray addObjectsFromArray:[share autoReconnectUUIDS]];
         share.rssiTimer=[NSTimer timerWithTimeInterval:1 target:share selector:@selector(updateRssiRefresh) userInfo:nil repeats:YES];
@@ -345,10 +346,13 @@ static BleManager *_instance;
 }
 
 
+
+
 #pragma mark 连接成功
 - (void)setPeripheral:(CBPeripheral *) peripheral{
     if (!self.isMultiple) {
         //单连接
+        self.baseBleDevice.isVerify = self.isVerify;
         self.baseBleDevice.activityCBPeripheral = peripheral;
         self.baseBleDevice.characteristicWriteType=self.characteristicWriteType;
     }else{
@@ -365,6 +369,7 @@ static BleManager *_instance;
         if (!isExist) {
             if (self.mutipleClass!=nil) {
                 BaseBleDevice *baseBleDevice = [[NSClassFromString(self.mutipleClass) alloc] initWithBluetooth];
+                baseBleDevice.isVerify = self.isVerify;
                 baseBleDevice.activityCBPeripheral=peripheral;
                 baseBleDevice.characteristicWriteType=self.characteristicWriteType;
                 [self.multipleArray addObject:baseBleDevice];

@@ -38,6 +38,8 @@
 		730CB8E3287537CC0019F4DE /* BaseBleDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 730CB8C7287537CC0019F4DE /* BaseBleDevice.m */; };
 		730CB8E4287537CC0019F4DE /* BleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 730CB8C8287537CC0019F4DE /* BleManager.m */; };
 		730CB8EB28759A3C0019F4DE /* SJTYBleManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 730CB8EA28759A3C0019F4DE /* SJTYBleManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73A6002529F236DD0067A86E /* SJTYBLESecret.h in Headers */ = {isa = PBXBuildFile; fileRef = 73A6002329F236DC0067A86E /* SJTYBLESecret.h */; };
+		73A6002629F236DD0067A86E /* SJTYBLESecret.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A6002429F236DD0067A86E /* SJTYBLESecret.m */; };
 		79FD297B81375A8D564504F711F073B5 /* Pods-SJTYBleManager_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FE94B09873F4508C93D81BCE9A4A21 /* Pods-SJTYBleManager_Tests-dummy.m */; };
 		87E9F5F73E4DF4EFDA4BB2F6613DA222 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		8863A7910A25CA8EDE5CA7600ECFA46C /* SJTYBleManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EFF941A5807CF6F00A3AA7DB31FE92B0 /* SJTYBleManager-umbrella.h */; };
@@ -108,6 +110,8 @@
 		730CB8C7287537CC0019F4DE /* BaseBleDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseBleDevice.m; sourceTree = "<group>"; };
 		730CB8C8287537CC0019F4DE /* BleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BleManager.m; sourceTree = "<group>"; };
 		730CB8EA28759A3C0019F4DE /* SJTYBleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SJTYBleManager.h; path = SJTYBleManager/Classes/SJTYBleManager.h; sourceTree = "<group>"; };
+		73A6002329F236DC0067A86E /* SJTYBLESecret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJTYBLESecret.h; sourceTree = "<group>"; };
+		73A6002429F236DD0067A86E /* SJTYBLESecret.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJTYBLESecret.m; sourceTree = "<group>"; };
 		78FD37980B022BDCB0652877C1AE3794 /* Pods-SJTYBleManager_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SJTYBleManager_Tests-Info.plist"; sourceTree = "<group>"; };
 		792A5CD4840D111410645DBED54A0E47 /* Pods-SJTYBleManager_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SJTYBleManager_Example-Info.plist"; sourceTree = "<group>"; };
 		7E7FE8A4A7A925FFA5C8B621B1611394 /* Pods-SJTYBleManager_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SJTYBleManager_Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -231,6 +235,8 @@
 		730CB8C1287537CC0019F4DE /* 蓝牙ble */ = {
 			isa = PBXGroup;
 			children = (
+				73A6002329F236DC0067A86E /* SJTYBLESecret.h */,
+				73A6002429F236DD0067A86E /* SJTYBLESecret.m */,
 				730CB8C2287537CC0019F4DE /* NSQueue.h */,
 				730CB8C3287537CC0019F4DE /* BaseBleDevice.h */,
 				730CB8C5287537CC0019F4DE /* BleManager.h */,
@@ -351,6 +357,7 @@
 				8863A7910A25CA8EDE5CA7600ECFA46C /* SJTYBleManager-umbrella.h in Headers */,
 				730CB8D2287537CC0019F4DE /* BabyBluetooth.h in Headers */,
 				730CB8CC287537CC0019F4DE /* BabyRhythm.h in Headers */,
+				73A6002529F236DD0067A86E /* SJTYBLESecret.h in Headers */,
 				730CB8DE287537CC0019F4DE /* NSQueue.h in Headers */,
 				730CB8DA287537CC0019F4DE /* BabyOptions.h in Headers */,
 				730CB8D1287537CC0019F4DE /* BabyDefine.h in Headers */,
@@ -506,6 +513,7 @@
 				730CB8D7287537CC0019F4DE /* BabySpeaker.m in Sources */,
 				730CB8E2287537CC0019F4DE /* NSQueue.m in Sources */,
 				730CB8DC287537CC0019F4DE /* BabyDefine.m in Sources */,
+				73A6002629F236DD0067A86E /* SJTYBLESecret.m in Sources */,
 				730CB8D5287537CC0019F4DE /* BabyPeripheralManager.m in Sources */,
 				730CB8E4287537CC0019F4DE /* BleManager.m in Sources */,
 				730CB8CE287537CC0019F4DE /* BabyToy.m in Sources */,
