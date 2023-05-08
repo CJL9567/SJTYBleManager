@@ -30,7 +30,7 @@
     [BleManager shareManager].mutipleClass=@"TreeBleDevice";
 //    [BleManager shareManager].autoConnected=YES;
     [[BleManager shareManager] scanDevice];
-    [BleManager shareManager].isVerify = NO;
+    [BleManager shareManager].isVerify = YES;
     [self babyDelegate];
     
 }
@@ -148,9 +148,9 @@
 //    [[BleManager shareManager].multipleArray removeAllObjects];
 //    [self.tableView reloadData];
 //    [[BleManager shareManager] disConnectAllPeripheral];
-    CBPeripheral *peripheral=[BleManager shareManager].peripheralArray[1];
+//    CBPeripheral *peripheral=[BleManager shareManager].peripheralArray[1];
 
-    [[BleManager shareManager] disConnectPeripheral:peripheral];
+    [[BleManager shareManager] disConnectAllPeripheral];
 }
 
 @end

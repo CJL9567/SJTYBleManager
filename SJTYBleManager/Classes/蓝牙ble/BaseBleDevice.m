@@ -89,15 +89,19 @@
 
 
 -(void)startTimer{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if(self.isVerify){
-            if(!self.isChecked){
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//
+//    });
+    if(self.isVerify){
+        if(!self.isChecked){
+            if (self.activityCBPeripheral!=nil) {
                 [self.babyBlutooth cancelPeripheralConnection:self.activityCBPeripheral];
-                NSLog(@"=======此设备为非法设备");
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"BLE_DEVICE_ERROR" object:nil];
             }
+            
+            NSLog(@"=======此设备为非法设备");
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"BLE_DEVICE_ERROR" object:nil];
         }
-    });
+    }
 }
 
 -(void)setActivityCBPeripheral:(CBPeripheral *)activityCBPeripheral {
@@ -139,8 +143,8 @@
     if (self.activityCBPeripheral) {
         if (self.notifyCharacteristic) {
             __weak typeof(self) weekSelf = self;
-            [self startTimer];
-            
+//            [self startTimer];
+            [self  performSelector:@selector(startTimer) withObject:nil afterDelay:10];
             [self.babyBlutooth notify:weekSelf.activityCBPeripheral characteristic:weekSelf.notifyCharacteristic block:^(CBPeripheral *peripheral, CBCharacteristic *characteristics, NSError *error) {
                 
             }];
@@ -285,6 +289,7 @@
             if(self.isVerify){
                 if(data.length>3){
                     [self sendVerifyData:[SJTYBLESecret secrect:[data subdataWithRange:NSMakeRange(2, data.length-3)]]];
+                    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(startTimer) object:nil];
                 }
             }
         }

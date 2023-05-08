@@ -29,18 +29,18 @@
 
 -(NSString *)getServiceUUID{
 //    return @"AE00";
-    return @"FFF0";
+    return @"AE30";
 }
 
 -(NSString *)getWriteUUID{
 //    return @"AE01";
-    return @"FFF2";
+    return @"AE01";
 }
 
 
 -(NSString *)getNotifiUUID{
-//    return @"AE02";
-    return @"FFF1";
+    return @"AE02";
+//    return @"FFF1";
 }
 
 -(NSString *)getBroadcastServiceUUID{
@@ -48,7 +48,7 @@
 }
 
 -(NSArray *)deviceName{
-    return @[@"AC695X_1",@"RL"];;
+    return @[@"Fish master"];;
 }
 
 -(void)sendPowerToDevice:(Boolean)power{
