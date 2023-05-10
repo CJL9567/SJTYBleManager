@@ -404,7 +404,7 @@ static BleManager *_instance;
                 break;
             }
         }
-        if(index>=0 && index <self.multipleArray.count-1){
+        if(index>=0 && index <self.multipleArray.count){
             [self.multipleArray removeObjectAtIndex:index];
         }
     }
