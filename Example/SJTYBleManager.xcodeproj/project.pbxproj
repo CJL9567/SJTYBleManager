@@ -507,6 +507,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SJTYBleManager/JLOTA",
+					"$(PROJECT_DIR)/SJTYBleManager",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SJTYBleManager/SJTYBleManager-Prefix.pch";
@@ -534,6 +535,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SJTYBleManager/JLOTA",
+					"$(PROJECT_DIR)/SJTYBleManager",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SJTYBleManager/SJTYBleManager-Prefix.pch";

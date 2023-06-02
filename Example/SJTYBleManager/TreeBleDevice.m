@@ -27,20 +27,34 @@
 }
 
 
--(NSString *)getServiceUUID{
+//-(NSString *)getServiceUUID{
 //    return @"AE00";
-    return @"AE30";
+////    return @"AE30";
+//}
+//
+//-(NSString *)getWriteUUID{
+////    return @"AE01";
+//    return @"AE01";
+//}
+//
+//
+//-(NSString *)getNotifiUUID{
+//    return @"AE02";
+////    return @"FFF1";
+//}
+
+-(NSString *)getServiceUUID{
+    return @"0000FFE0-0000-0000-0000-000000000000";
+
 }
 
 -(NSString *)getWriteUUID{
-//    return @"AE01";
-    return @"AE01";
+    return @"0000FFE2-0000-0000-0000-000000000000";
 }
 
 
 -(NSString *)getNotifiUUID{
-    return @"AE02";
-//    return @"FFF1";
+    return @"0000FFE1-0000-0000-0000-000000000000";
 }
 
 -(NSString *)getBroadcastServiceUUID{
@@ -48,7 +62,7 @@
 }
 
 -(NSArray *)deviceName{
-    return @[@"Fish master"];;
+    return @[@"Fish master",@"AC695X_1",@"mbody"];;
 }
 
 -(void)sendPowerToDevice:(Boolean)power{

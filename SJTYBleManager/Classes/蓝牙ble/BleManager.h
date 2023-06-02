@@ -76,7 +76,7 @@ typedef NS_ENUM(NSInteger, AuthorizationState) {
 -(void)refresh;
 
 /// 搜索到新的设备
-@property(nonatomic,copy)void(^ReloadBlock)(CBPeripheral * peripheral);
+@property(nonatomic,copy)void(^ReloadBlock)(CBPeripheral * peripheral,NSString *peripheralName,NSData *advDataManufacturerData);
 
 /// 连接成功
 @property(nonatomic,copy)void(^ConnecttingBlock)(CBPeripheral * peripheral);

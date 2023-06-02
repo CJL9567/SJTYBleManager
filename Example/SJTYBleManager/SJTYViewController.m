@@ -9,6 +9,8 @@
 #import "SJTYViewController.h"
 #import <SJTYBleManager/SJTYBleManager.h>
 #import "TreeBleDevice.h"
+//#import "JLOTAManager.h"
+
 @interface SJTYViewController ()
 <UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -24,14 +26,15 @@
     
     [self setupUI];
     [BleManager shareManager].baseBleDevice=[[TreeBleDevice alloc] initWithBluetooth];
-    [BleManager shareManager].isMultiple=YES;
+    [BleManager shareManager].isMultiple=NO;
     [[BleManager shareManager] setFilterByName:YES];
 //    [[BleManager shareManager] setFilterByUUID:YES];
     [BleManager shareManager].mutipleClass=@"TreeBleDevice";
 //    [BleManager shareManager].autoConnected=YES;
     [[BleManager shareManager] scanDevice];
-    [BleManager shareManager].isVerify = YES;
+    [BleManager shareManager].isVerify = NO;
     [self babyDelegate];
+    
     
 }
 
@@ -42,20 +45,22 @@
 
 
 -(void)babyDelegate{
-
+    
     __weak typeof(self)weakSelf=self;
-    [[BleManager shareManager] setReloadBlock:^(CBPeripheral * _Nonnull peripheral) {
+    [[BleManager shareManager] setReloadBlock:^(CBPeripheral * _Nonnull peripheral, NSString * _Nonnull peripheralName) {
+        [weakSelf.tableView reloadData];
 //        if (weakSelf.connectIndex==0) {
 //            [[BleManager shareManager] connectedCBPeripheral:peripheral];
 //        }
-        [weakSelf.tableView reloadData];
+        
     }];
 
     [[BleManager shareManager] setConnectedBlock:^(NSString * _Nonnull UUID) {
-//        if (![BleManager shareManager].isMultiple) {
-//            TreeBleDevice *treeBleDevice=(TreeBleDevice *)[BleManager shareManager].baseBleDevice;
+        if (![BleManager shareManager].isMultiple) {
+            TreeBleDevice *treeBleDevice=(TreeBleDevice *)[BleManager shareManager].baseBleDevice;
 //            [treeBleDevice sendRGBToDevice:255 green:0 blue:0];
-//        }else{
+        }
+//        else{
 //            for (TreeBleDevice *treeBleDevice in [BleManager shareManager].multipleArray) {
 //                
 //                if ([treeBleDevice.activityCBPeripheral.identifier.UUIDString isEqualToString:UUID]) {

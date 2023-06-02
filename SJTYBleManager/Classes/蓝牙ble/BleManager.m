@@ -262,8 +262,17 @@ static BleManager *_instance;
         [item setValue:RSSI forKey:@"RSSI"];
         [item setValue:advertisementData forKey:@"advertisementData"];
         [item setValue:peripheralName forKey:@"peripheralName"];
+        
+        NSDictionary *advertisementDataDict= (NSDictionary *)[advertisementData valueForKey:@"advertisementData"];
+        NSData *advDataManufacturerData;
+        if ([advertisementDataDict valueForKey:@"kCBAdvDataManufacturerData"]!=nil) {
+            
+            advDataManufacturerData=[advertisementDataDict valueForKey:@"kCBAdvDataManufacturerData"];
+            
+        }
+        
         [self.peripheralDataArray addObject:item];
-        [self reload:peripheral];
+        [self reload:peripheral peripheralName:peripheralName advDataManufacturerData:advDataManufacturerData];
         if (self.autoConnected) {
             //自动连接
             if (!self.isMultiple) {
@@ -340,9 +349,9 @@ static BleManager *_instance;
 
 
 
--(void)reload:(CBPeripheral *)peripheral{
+-(void)reload:(CBPeripheral *)peripheral peripheralName:(NSString *)peripheralName advDataManufacturerData:(NSData *)advDataManufacturerData{
     if (self.ReloadBlock) {
-        self.ReloadBlock(peripheral);
+        self.ReloadBlock(peripheral,peripheralName,advDataManufacturerData);
     }
 }
 
