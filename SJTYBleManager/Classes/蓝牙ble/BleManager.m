@@ -18,6 +18,10 @@
 ///为了防止信号刷新过快导致页面卡顿,接收到20次后刷新一次页面
 @property(assign,nonatomic)Boolean rssiRefresh;
 
+
+
+
+
 ///是否正在连接
 @property(assign,nonatomic)Boolean isConnecting;
 
@@ -233,7 +237,6 @@ static BleManager *_instance;
         [weakSelf onUpdateState:central];
     }];
     
-   
 }
 
 
@@ -307,6 +310,7 @@ static BleManager *_instance;
             CBPeripheral *peri=dict[@"peripheral"];
             if (peri==peripheral) {
                 [dict setValue:RSSI forKey:@"RSSI"];
+                [dict setValue:advertisementData forKey:@"advertisementData"];
             }
         }
         //防止多设备时过度刷新
@@ -315,6 +319,22 @@ static BleManager *_instance;
             if (self.ReloadRSSIBlock) {
                 self.ReloadRSSIBlock();
             }
+        }
+        
+    }
+    
+    if(self.ReloadAdvDataBlock){
+        NSString *peripheralName;
+        if ([advertisementData objectForKey:@"kCBAdvDataLocalName"]) {
+            peripheralName = [NSString stringWithFormat:@"%@",[advertisementData objectForKey:@"kCBAdvDataLocalName"]];
+        }else if(!([peripheral.name isEqualToString:@""] || peripheral.name == nil)){
+            peripheralName = peripheral.name;
+        }
+        
+        NSData *advDataManufacturerData;
+        if ([advertisementData valueForKey:@"kCBAdvDataManufacturerData"]!=nil) {
+             advDataManufacturerData=[advertisementData valueForKey:@"kCBAdvDataManufacturerData"];
+            self.ReloadAdvDataBlock(peripheral, peripheralName, advDataManufacturerData);
         }
         
     }
@@ -467,6 +487,11 @@ static BleManager *_instance;
         
     } else {
         self.state=manager.state;
+        if(manager.state==CBManagerStatePoweredOff){
+            if(self.isMultiple){
+                [self.multipleArray removeAllObjects];
+            }
+        }
        if (self.UpdateStateBlock) {
            self.UpdateStateBlock(manager.state);
        }

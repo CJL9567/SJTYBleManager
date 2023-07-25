@@ -101,6 +101,9 @@ typedef NS_ENUM(NSInteger, AuthorizationState) {
 
 @property(nonatomic,copy)void(^UpdateAuthorizationBlock)(AuthorizationState  authorization);
 
+/// 更新广播信息
+@property(nonatomic,copy)void(^ReloadAdvDataBlock)(CBPeripheral * peripheral,NSString *peripheralName,NSData *advDataManufacturerData);
+
 
 @end
 

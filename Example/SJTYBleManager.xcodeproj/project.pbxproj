@@ -22,6 +22,8 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		730CB8EE28759C450019F4DE /* TreeBleDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 730CB8ED28759C440019F4DE /* TreeBleDevice.m */; };
+		73B7D6092A570224001CE7CE /* BleDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B7D6082A570224001CE7CE /* BleDevice.m */; };
+		73B7D60B2A5702E4001CE7CE /* water.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 73B7D60A2A5702E4001CE7CE /* water.mp3 */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		8BA0CDC5092CBE015E1663CE /* Pods_SJTYBleManager_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759571CBCD0BE6F9BB007F37 /* Pods_SJTYBleManager_Example.framework */; };
 		F025FB6919F8BF9A60DA09BC /* Pods_SJTYBleManager_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D53F86B2CE4A5A7EDCB37AF /* Pods_SJTYBleManager_Tests.framework */; };
@@ -63,6 +65,9 @@
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		730CB8EC28759C440019F4DE /* TreeBleDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeBleDevice.h; sourceTree = "<group>"; };
 		730CB8ED28759C440019F4DE /* TreeBleDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeBleDevice.m; sourceTree = "<group>"; };
+		73B7D6072A570224001CE7CE /* BleDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BleDevice.h; sourceTree = "<group>"; };
+		73B7D6082A570224001CE7CE /* BleDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BleDevice.m; sourceTree = "<group>"; };
+		73B7D60A2A5702E4001CE7CE /* water.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = water.mp3; sourceTree = "<group>"; };
 		759571CBCD0BE6F9BB007F37 /* Pods_SJTYBleManager_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SJTYBleManager_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D53F86B2CE4A5A7EDCB37AF /* Pods_SJTYBleManager_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SJTYBleManager_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +140,9 @@
 		6003F593195388D20070C39A /* Example for SJTYBleManager */ = {
 			isa = PBXGroup;
 			children = (
+				73B7D60A2A5702E4001CE7CE /* water.mp3 */,
+				73B7D6072A570224001CE7CE /* BleDevice.h */,
+				73B7D6082A570224001CE7CE /* BleDevice.m */,
 				6003F59C195388D20070C39A /* SJTYAppDelegate.h */,
 				6003F59D195388D20070C39A /* SJTYAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -289,6 +297,7 @@
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				73B7D60B2A5702E4001CE7CE /* water.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +384,7 @@
 				6003F59E195388D20070C39A /* SJTYAppDelegate.m in Sources */,
 				730CB8EE28759C450019F4DE /* TreeBleDevice.m in Sources */,
 				6003F5A7195388D20070C39A /* SJTYViewController.m in Sources */,
+				73B7D6092A570224001CE7CE /* BleDevice.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

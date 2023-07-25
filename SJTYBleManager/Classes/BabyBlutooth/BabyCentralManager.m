@@ -374,9 +374,6 @@
 - (void)peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
     
     [[NSNotificationCenter defaultCenter]postNotificationName:BabyNotificationAtDidWriteValueForCharacteristic object:@{@"characteristic":characteristic,@"error":error?error:@""}];
-    
-    //    BabyLog(@">>>didWriteValueForCharacteristic");
-    //    BabyLog(@">>>uuid:%@,new value:%@",characteristic.UUID,characteristic.value);
     if ([currChannel blockOnDidWriteValueForCharacteristic]) {
         [currChannel blockOnDidWriteValueForCharacteristic](characteristic,error);
     }
