@@ -266,11 +266,11 @@ static BleManager *_instance;
         [item setValue:advertisementData forKey:@"advertisementData"];
         [item setValue:peripheralName forKey:@"peripheralName"];
         
-        NSDictionary *advertisementDataDict= (NSDictionary *)[advertisementData valueForKey:@"advertisementData"];
+//        NSDictionary *advertisementDataDict= (NSDictionary *)[advertisementData valueForKey:@"advertisementData"];
         NSData *advDataManufacturerData;
-        if ([advertisementDataDict valueForKey:@"kCBAdvDataManufacturerData"]!=nil) {
+        if ([advertisementData valueForKey:@"kCBAdvDataManufacturerData"]!=nil) {
             
-            advDataManufacturerData=[advertisementDataDict valueForKey:@"kCBAdvDataManufacturerData"];
+            advDataManufacturerData=[advertisementData valueForKey:@"kCBAdvDataManufacturerData"];
             
         }
         
