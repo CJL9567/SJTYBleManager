@@ -65,6 +65,11 @@ typedef NS_ENUM(NSInteger, AuthorizationState) {
 /// @param peripheral 指定设备
 - (void)connectedCBPeripheral:(CBPeripheral*)peripheral;
 
+/// 连接设备
+/// @param peripheral 指定设备
+/// @param timeOut 超时时长
+- (void)connectedCBPeripheral:(CBPeripheral*)peripheral timeOut:(NSInteger)timeOut;
+
 /// 断开指定设备
 /// @param peripheral 指定设备
 -(void)disConnectPeripheral:(CBPeripheral *)peripheral;

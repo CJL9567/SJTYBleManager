@@ -45,7 +45,7 @@
 
 [BleManager shareManager].isVerify =NO;
 [BleManager shareManager].autoConnected=NO;
-//[[BleManager shareManager] setFilterByName:YES];
+[[BleManager shareManager] setFilterByName:YES];
 [[BleManager shareManager] scanDevice];
 
 }
@@ -76,7 +76,9 @@
     }];
     
     [[BleManager shareManager] setReloadBlock:^(CBPeripheral * _Nonnull peripheral, NSString * _Nonnull peripheralName, NSData * _Nonnull advDataManufacturerData) {
-
+        if(![BleManager shareManager].isConnected){
+            [[BleManager shareManager] connectedCBPeripheral:peripheral timeOut:10];
+        }
         [weakSelf.tableView reloadData];
 //        if (weakSelf.connectIndex==0) {
 //            [[BleManager shareManager] connectedCBPeripheral:peripheral];

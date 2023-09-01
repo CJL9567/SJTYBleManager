@@ -11,20 +11,20 @@
 
 
 -(NSString *)getWriteUUID{
-    return @"AE01";
+    return @"FFF6";
 }
 
 -(NSString *)getNotifiUUID{
-    return @"AE02";
+    return @"FFF6";
 }
 
 -(NSString *)getServiceUUID{
-    return @"AE00";
+    return @"FFF0";
 }
 
 
 -(NSArray *)deviceName{
-    return @[@"JL"];
+    return @[@"FS"];
 }
 
 -(void)sendFileName:(NSInteger)fileSize  fileName:(NSString *)fileName block:(void(^)(void))block{

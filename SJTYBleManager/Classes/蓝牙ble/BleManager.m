@@ -509,6 +509,19 @@ static BleManager *_instance;
     
 }
 
+/// 连接设备
+/// @param peripheral 指定设备
+/// @param timeOut 超时时长
+- (void)connectedCBPeripheral:(CBPeripheral*)peripheral timeOut:(NSInteger)timeOut{
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [self.babyBluetooth cancelScan];
+    [self.connectingArray addObject:peripheral];
+    self.babyBluetooth.having(peripheral).connectToPeripherals().discoverServices().discoverCharacteristics().begin();
+    if(timeOut==0){
+        timeOut=5;
+    }
+    [self performSelector:@selector(onConnecTimeOut) withObject:nil afterDelay:timeOut];
+}
 
 
 - (void)onConnecTimeOut {
