@@ -273,7 +273,11 @@ static BleManager *_instance;
             advDataManufacturerData=[advertisementData valueForKey:@"kCBAdvDataManufacturerData"];
             
         }
-        
+        if (self.needContainsAdvData) {
+            if(advDataManufacturerData==nil){
+                return;
+            }
+        }
         [self.peripheralDataArray addObject:item];
         [self reload:peripheral peripheralName:peripheralName advDataManufacturerData:advDataManufacturerData];
         if (self.autoConnected) {

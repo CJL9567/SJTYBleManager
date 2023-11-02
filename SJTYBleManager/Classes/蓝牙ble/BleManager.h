@@ -43,6 +43,10 @@ typedef NS_ENUM(NSInteger, AuthorizationState) {
 ///是否需要自动回连
 @property(assign,nonatomic)Boolean autoConnected;
 
+///搜索设备时是否需要有广播数据
+@property(assign,nonatomic)Boolean needContainsAdvData;
+
+
 ///是否需要进行四聚通用产品产品校验 默认为需要校验
 @property(assign,nonatomic)Boolean isVerify;
 
