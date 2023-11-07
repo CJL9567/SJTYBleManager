@@ -43,27 +43,7 @@
 ////    return @"FFF1";
 //}
 
--(NSString *)getServiceUUID{
-    return @"0000FFE0-0000-0000-0000-000000000000";
 
-}
-
--(NSString *)getWriteUUID{
-    return @"0000FFE2-0000-0000-0000-000000000000";
-}
-
-
--(NSString *)getNotifiUUID{
-    return @"0000FFE1-0000-0000-0000-000000000000";
-}
-
--(NSString *)getBroadcastServiceUUID{
-    return @"";
-}
-
--(NSArray *)deviceName{
-    return @[@"Fish master",@"AC695X_1",@"mbody"];;
-}
 
 -(void)sendPowerToDevice:(Boolean)power{
     NSMutableString *sendDataString =[NSMutableString string];

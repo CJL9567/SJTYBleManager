@@ -10,21 +10,26 @@
 @implementation BleDevice
 
 
+-(NSString *)getServiceUUID{
+    return @"FFF0";
+
+}
+
 -(NSString *)getWriteUUID{
     return @"FFF6";
 }
+
 
 -(NSString *)getNotifiUUID{
     return @"FFF6";
 }
 
--(NSString *)getServiceUUID{
-    return @"FFF0";
+-(NSString *)getBroadcastServiceUUID{
+    return @"";
 }
 
-
 -(NSArray *)deviceName{
-    return @[@"FS"];
+    return @[@"FSRKB"];
 }
 
 -(void)sendFileName:(NSInteger)fileSize  fileName:(NSString *)fileName block:(void(^)(void))block{

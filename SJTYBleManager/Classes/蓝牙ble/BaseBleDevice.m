@@ -47,6 +47,7 @@
         self.characteristicWriteType=CBCharacteristicWriteWithoutResponse;
         //扫描选项->CBCentralManagerScanOptionAllowDuplicatesKey:忽略同一个Peripheral端的多个发现事件被聚合成一个发现事件
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotifcationValue:) name:BabyNotificationAtDidUpdateValueForCharacteristic object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didDisconnectPeripheralNotifcationValue:) name:BabyNotificationAtDidDisconnectPeripheral object:nil];
         
         self.queue = [[NSQueue alloc] init];
         
@@ -89,17 +90,12 @@
 
 
 -(void)startTimer{
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//
-//    });
     if(self.isVerify){
         if(!self.isChecked){
-            if (self.activityCBPeripheral!=nil) {
-                [self.babyBlutooth cancelPeripheralConnection:self.activityCBPeripheral];
-            }
-            
             NSLog(@"=======此设备为非法设备");
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"BLE_DEVICE_ERROR" object:nil];
+            if (self.activityCBPeripheral!=nil) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"BLE_DEVICE_ERROR" object:@{@"peripheral":self.activityCBPeripheral}];
+            }
         }
     }
 }
@@ -271,6 +267,7 @@
 
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:BabyNotificationAtDidUpdateValueForCharacteristic object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:BabyNotificationAtDidDisconnectPeripheral object:nil];
 }
 
 -(void)receiveNotifcationValue:(NSNotification*)notification {
@@ -316,6 +313,17 @@
         }
         [self receiveData:data];
     }
+}
+
+
+
+-(void)didDisconnectPeripheralNotifcationValue:(NSNotification*)notification{
+    NSDictionary*dic = notification.object;
+    CBPeripheral* peripheral = dic[@"peripheral"];
+    if (self.activityCBPeripheral==peripheral) {
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(startTimer) object:nil];
+    }
+    
 }
 
 -(void)sendVerifyData:(NSData *)data {

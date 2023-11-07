@@ -43,9 +43,9 @@
 -(void)initBle{
 [BleManager shareManager].baseBleDevice = [[BleDevice alloc] initWithBluetooth];
 
-[BleManager shareManager].isVerify =NO;
+[BleManager shareManager].isVerify =YES;
 [BleManager shareManager].autoConnected=NO;
-[[BleManager shareManager] setFilterByName:YES];
+[[BleManager shareManager] setFilterByName:NO];
 [[BleManager shareManager] scanDevice];
 
 }
@@ -63,12 +63,12 @@
         Byte *byte = (Byte *)[advDataManufacturerData bytes];
         if(advDataManufacturerData.length==15){
             
-            if(byte[0]==0xc0 && ((byte[6]<<8)|byte[7])==2){
-                NSInteger weight = (byte[2])<<8|byte[3];
-                NSInteger status= byte[8];
-                NSString *binary =   [BaseUtils binaryToHex:[BaseUtils stringConvertForByte:status]];
-                NSLog(@"=======%@",[binary substringWithRange:NSMakeRange(7, 1)]);
-            }
+//            if(byte[0]==0xc0 && ((byte[6]<<8)|byte[7])==2){
+//                NSInteger weight = (byte[2])<<8|byte[3];
+//                NSInteger status= byte[8];
+//                NSString *binary =   [BaseUtils binaryToHex:[BaseUtils stringConvertForByte:status]];
+//                NSLog(@"=======%@",[binary substringWithRange:NSMakeRange(7, 1)]);
+//            }
             
         }
         
@@ -76,9 +76,15 @@
     }];
     
     [[BleManager shareManager] setReloadBlock:^(CBPeripheral * _Nonnull peripheral, NSString * _Nonnull peripheralName, NSData * _Nonnull advDataManufacturerData) {
-        if(![BleManager shareManager].isConnected){
-            [[BleManager shareManager] connectedCBPeripheral:peripheral timeOut:10];
-        }
+//        if ([peripheralName containsString:@"FSRKB"]) {
+//            if(advDataManufacturerData!=nil){
+//                NSLog(@"");
+//            }
+//        }
+        
+//        if(![BleManager shareManager].isConnected){
+//            [[BleManager shareManager] connectedCBPeripheral:peripheral timeOut:10];
+//        }
         [weakSelf.tableView reloadData];
 //        if (weakSelf.connectIndex==0) {
 //            [[BleManager shareManager] connectedCBPeripheral:peripheral];
@@ -86,7 +92,9 @@
 //        if(![BleManager shareManager].isConnected){
 //            [[BleManager shareManager] connectedCBPeripheral:peripheral];
 //        }
+    
     }];
+    
     
 
     [[BleManager shareManager] setConnectedBlock:^(NSString * _Nonnull UUID) {
@@ -170,23 +178,26 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     CBPeripheral *peripheral=[BleManager shareManager].peripheralArray[indexPath.row];
 
-    [[BleManager shareManager] connectedCBPeripheral:peripheral];
+    
+    if(peripheral.state!=CBPeripheralStateConnected){
+        [[BleManager shareManager] connectedCBPeripheral:peripheral];
+    }
 }
 
 - (IBAction)refreshAction:(id)sender {
     __weak typeof(self )weakSelf= self;
-    BleDevice *bleDevice =(BleDevice *) [BleManager shareManager].baseBleDevice;
-    [bleDevice sendFileData: [[NSBundle mainBundle] pathForResource:@"water" ofType:@"mp3"] progress:^(float progress) {
-        NSLog(@"====%f",progress);
-        if(progress==1){
-            [bleDevice sendFinish];
-        }
-//        weakSelf.progressLabel.text = [NSString stringWithFormat:@"=====%f",progress];
-    }];
+//    BleDevice *bleDevice =(BleDevice *) [BleManager shareManager].baseBleDevice;
+//    [bleDevice sendFileData: [[NSBundle mainBundle] pathForResource:@"water" ofType:@"mp3"] progress:^(float progress) {
+//        NSLog(@"====%f",progress);
+//        if(progress==1){
+//            [bleDevice sendFinish];
+//        }
+////        weakSelf.progressLabel.text = [NSString stringWithFormat:@"=====%f",progress];
+//    }];
 //    self.connectIndex=0;
 //    [[BleManager shareManager] disConnectAllPeripheral];
     
-//    [[BleManager shareManager] refresh];
+    [[BleManager shareManager] refresh];
 ////    [[BleManager shareManager].peripheralDataArray removeAllObjects];
 ////    [[BleManager shareManager].multipleArray removeAllObjects];
 //    [self.tableView reloadData];
