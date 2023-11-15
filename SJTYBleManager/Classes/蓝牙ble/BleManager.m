@@ -20,7 +20,7 @@
 
 
 
-
+@property(nonatomic,strong)CBPeripheral *currentConnectPeripheral;
 
 ///是否正在连接
 @property(assign,nonatomic)Boolean isConnecting;
@@ -197,6 +197,7 @@ static BleManager *_instance;
     [self.babyBluetooth setBlockOnDiscoverCharacteristics:^(CBPeripheral *peripheral, CBService *service, NSError *error) {
         //发现特性 设置通知
         NSLog(@"--- 发现特性 ---");
+        weakSelf.currentConnectPeripheral=peripheral;
     }];
     
     
@@ -212,9 +213,6 @@ static BleManager *_instance;
                     [weakSelf.reconnectUUIDArray addObject:peripheral.identifier.UUIDString];
                     [weakSelf saveAutoReconnectUUID:weakSelf.reconnectUUIDArray];
                     [self.connectingArray removeObject:peripheral];
-                    if (weakSelf.ConnectedBlock) {
-                        weakSelf.ConnectedBlock(peripheral.identifier.UUIDString);
-                    }
                     break;
                 }
             }
@@ -223,7 +221,9 @@ static BleManager *_instance;
             }
             
         }
-        
+        if (weakSelf.ConnectedBlock&&weakSelf.currentConnectPeripheral!=nil) {
+            weakSelf.ConnectedBlock(weakSelf.currentConnectPeripheral.identifier.UUIDString);
+        }
         
     }];
     
