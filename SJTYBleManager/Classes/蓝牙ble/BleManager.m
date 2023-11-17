@@ -114,6 +114,9 @@ static BleManager *_instance;
 
 - (void)scanDevice {
     self.isReLoad=NO;
+    if (self.isConnecting) {
+        return;
+    }
     self.babyBluetooth.scanForPeripherals().begin();
 }
 
@@ -505,6 +508,7 @@ static BleManager *_instance;
 
 #pragma mark 连接设备
 - (void)connectedCBPeripheral:(CBPeripheral*)peripheral {
+    self.isConnecting=YES;
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
     [self.babyBluetooth cancelScan];
     [self.connectingArray addObject:peripheral];
@@ -517,6 +521,7 @@ static BleManager *_instance;
 /// @param peripheral 指定设备
 /// @param timeOut 超时时长
 - (void)connectedCBPeripheral:(CBPeripheral*)peripheral timeOut:(NSInteger)timeOut{
+    self.isConnecting=YES;
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
     [self.babyBluetooth cancelScan];
     [self.connectingArray addObject:peripheral];
@@ -529,6 +534,7 @@ static BleManager *_instance;
 
 
 - (void)onConnecTimeOut {
+    self.isConnecting=NO;
     for (CBPeripheral *peripheral in self.connectingArray) {
         [[BabyBluetooth shareBabyBluetooth] cancelPeripheralConnection:peripheral];
         NSInteger index= [[self.peripheralDataArray valueForKey:@"peripheral"] indexOfObject:peripheral];

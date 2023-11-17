@@ -43,9 +43,9 @@
 -(void)initBle{
 [BleManager shareManager].baseBleDevice = [[BleDevice alloc] initWithBluetooth];
 
-[BleManager shareManager].isVerify =YES;
+[BleManager shareManager].isVerify =NO;
 [BleManager shareManager].autoConnected=NO;
-[[BleManager shareManager] setFilterByName:NO];
+[[BleManager shareManager] setFilterByName:YES];
 [[BleManager shareManager] scanDevice];
 
 }
