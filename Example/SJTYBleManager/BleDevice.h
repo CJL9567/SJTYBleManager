@@ -13,8 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 //-(void)sendFileName:(NSString *)fileName;
-
-
+-(void)lightDeviceHue:(NSInteger)hue saturation:(NSInteger)saturation;
+-(void)lightDeviceMode:(NSInteger)lightMode;
 -(void)sendFileData:(NSString *)filePath progress:(void(^)(float progress)) block;
 -(void)sendFinish;
 -(void)sendFileData1:(NSString *)filePath progress:(void(^)(float progress)) block;

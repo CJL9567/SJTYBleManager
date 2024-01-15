@@ -14,6 +14,7 @@
 @interface SJTYViewController ()
 <UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property(assign,nonatomic)Boolean isConnected;
 @end
 
 @implementation SJTYViewController
@@ -98,6 +99,13 @@
     
 
     [[BleManager shareManager] setConnectedBlock:^(NSString * _Nonnull UUID) {
+        if (!self.isConnected) {
+            BleDevice *bleDevice=(BleDevice *)[BleManager shareManager].baseBleDevice;
+            [bleDevice setupOTA];
+            [bleDevice stopVerify];
+            self.isConnected=YES;
+        }
+       
 //        if (![BleManager shareManager].isMultiple) {
 //            TreeBleDevice *treeBleDevice=(TreeBleDevice *)[BleManager shareManager].baseBleDevice;
 ////            [treeBleDevice sendRGBToDevice:255 green:0 blue:0];
@@ -186,7 +194,8 @@
 
 - (IBAction)refreshAction:(id)sender {
     __weak typeof(self )weakSelf= self;
-//    BleDevice *bleDevice =(BleDevice *) [BleManager shareManager].baseBleDevice;
+    BleDevice *bleDevice =(BleDevice *) [BleManager shareManager].baseBleDevice;
+    [bleDevice lightDeviceMode:0x30];
 //    [bleDevice sendFileData: [[NSBundle mainBundle] pathForResource:@"water" ofType:@"mp3"] progress:^(float progress) {
 //        NSLog(@"====%f",progress);
 //        if(progress==1){
@@ -197,7 +206,7 @@
 //    self.connectIndex=0;
 //    [[BleManager shareManager] disConnectAllPeripheral];
     
-    [[BleManager shareManager] refresh];
+//    [[BleManager shareManager] refresh];
 ////    [[BleManager shareManager].peripheralDataArray removeAllObjects];
 ////    [[BleManager shareManager].multipleArray removeAllObjects];
 //    [self.tableView reloadData];

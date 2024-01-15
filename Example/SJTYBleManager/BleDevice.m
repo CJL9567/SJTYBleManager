@@ -10,26 +10,106 @@
 @implementation BleDevice
 
 
--(NSString *)getServiceUUID{
+//-(NSString *)getServiceUUID{
+//    return @"FFF0";
+//
+//}
+//
+//-(NSString *)getWriteUUID{
+//    return @"FFF6";
+//}
+//
+//
+//-(NSString *)getNotifiUUID{
+//    return @"FFF6";
+//}
+//
+//-(NSString *)getBroadcastServiceUUID{
+//    return @"";
+//}
+//
+//-(NSArray *)deviceName{
+//    return @[@"FSRKB"];
+//}
+
+//
+/**
+ 获取服务UUID 子类需覆盖次方法
+ @return serviceUUID
+ */
+-(NSString*)getServiceUUID {
     return @"FFF0";
-
-}
-
--(NSString *)getWriteUUID{
-    return @"FFF6";
 }
 
 
--(NSString *)getNotifiUUID{
-    return @"FFF6";
+/**
+
+ 获取写数据UUID 子类需覆盖次方法
+
+ @return writeUUID
+ */
+-(NSString*)getWriteUUID {
+    return @"FFF2";
 }
 
--(NSString *)getBroadcastServiceUUID{
-    return @"";
+/**
+ 获取通知数据UUID 子类需覆盖次方法
+
+ @return writeUUID
+ */
+-(NSString*)getNotifiUUID {
+
+    return @"FFF1";
 }
+
 
 -(NSArray *)deviceName{
-    return @[@"FSRKB"];
+    return @[@"Ulanzi"];
+}
+
+
+
+-(void)lightDeviceHue:(NSInteger)hue saturation:(NSInteger)saturation{
+    NSMutableString *sendDataString =[NSMutableString string];
+//    NSLog(@"========%d =======%d",hue,saturation);
+    [sendDataString appendString:@"FFA4"];
+    [sendDataString appendString:@"03"];
+    [sendDataString appendString:[BaseUtils stringConvertForShort:hue]];
+    [sendDataString appendString:[BaseUtils stringConvertForByte:saturation]];
+    [sendDataString appendString:[self checkString:[sendDataString substringFromIndex:6]]];
+    [sendDataString appendString:@"AA"];
+    NSData *sendData=[BaseUtils stringToBytes:sendDataString];
+    [self sendCommand:sendData notifyBlock:^(NSData *data, NSString *stringData) {
+        
+    } filterBlock:^NSString *{
+        return @"";
+    }];
+}
+
+-(void)lightDeviceMode:(NSInteger)lightMode{
+    
+    NSMutableString *sendDataString =[NSMutableString string];
+    
+    [sendDataString appendString:@"FFA1"];
+    [sendDataString appendString:@"01"];
+    [sendDataString appendString:[BaseUtils stringConvertForByte:lightMode]];
+    [sendDataString appendString:[self checkString:[sendDataString substringFromIndex:6]]];
+    [sendDataString appendString:@"AA"];
+    NSData *sendData=[BaseUtils stringToBytes:sendDataString];
+    [self sendCommand:sendData notifyBlock:^(NSData *data, NSString *stringData) {
+        
+    } filterBlock:^NSString *{
+        return @"";
+    }];
+}
+
+-(NSString *)checkString:(NSString *)dataString{
+    NSInteger checkValue=0;
+    for (int i=0; i<dataString.length/2; i++) {
+        NSString *string=[dataString substringWithRange:NSMakeRange(i*2, 2)];
+        checkValue+= [BaseUtils intConvertForHexString:string];
+    }
+    return [BaseUtils stringConvertForByte:checkValue];
 }
 
 -(void)sendFileName:(NSInteger)fileSize  fileName:(NSString *)fileName block:(void(^)(void))block{

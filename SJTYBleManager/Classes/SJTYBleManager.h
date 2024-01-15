@@ -11,6 +11,6 @@
 #import <SJTYBleManager/BleManager.h>
 #import <SJTYBleManager/BaseBleDevice.h>
 #import <SJTYBleManager/BaseUtils.h>
-
+#import <SJTYBleManager/BaseBleDevice+BK3432.h>
 
 #endif /* SJTYBleManager_h */
