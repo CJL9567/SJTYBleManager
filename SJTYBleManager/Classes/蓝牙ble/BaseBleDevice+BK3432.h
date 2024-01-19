@@ -37,12 +37,16 @@ typedef enum : NSUInteger {
 }NOTIFY;
 
 @interface BaseBleDevice (BK3432)
+
+//开始升级前需要先调用此函数,初始化通道
+-(void)setupOTA;
+
 /// 开始OTA升级
 /// @param filePah 文件路径
 /// @param otaBlock ota 回调
 -(void)startOTAWithFile:(NSString *)filePah progress:(OTABlock)otaBlock;
 
--(void)setupOTA;
+
 
 ///跳过校验
 -(void)stopVerify;

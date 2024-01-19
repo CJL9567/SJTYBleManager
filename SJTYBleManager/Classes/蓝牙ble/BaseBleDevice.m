@@ -278,7 +278,9 @@
     if ([peripheral.identifier.UUIDString isEqualToString:self.activityCBPeripheral.identifier.UUIDString] ) {//接收的peripheral 要与当前的activityCBPeripheral 为同一个。
         NSData * data = characteristics.value;
         NSString * strData =  [BaseUtils stringConvertForData:characteristics.value];
-        
+        if (data.length==0) {
+            return;
+        }
         BabyLog(@"接受的数据为:%@",strData);
         Byte *byte= (Byte *)[data bytes];
         if(byte[0]==0xBB&&byte[1]==0xB6){

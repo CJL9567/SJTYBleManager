@@ -224,9 +224,12 @@ static BleManager *_instance;
             }
             
         }
-        if (weakSelf.ConnectedBlock&&weakSelf.currentConnectPeripheral!=nil) {
-            weakSelf.ConnectedBlock(weakSelf.currentConnectPeripheral.identifier.UUIDString);
+        if ([characteristic.UUID.UUIDString isEqualToString:[self.baseBleDevice getNotifiUUID]]) {
+            if (weakSelf.ConnectedBlock&&weakSelf.currentConnectPeripheral!=nil) {
+                weakSelf.ConnectedBlock(weakSelf.currentConnectPeripheral.identifier.UUIDString);
+            }
         }
+        
         
     }];
     
