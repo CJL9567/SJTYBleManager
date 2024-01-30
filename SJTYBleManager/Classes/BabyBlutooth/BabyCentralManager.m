@@ -27,7 +27,7 @@
                                  //蓝牙power没打开时alert提示框
                                  [NSNumber numberWithBool:NO],CBCentralManagerOptionShowPowerAlertKey,
                                  //重设centralManager恢复的IdentifierKey
-                                 @"babyBluetoothRestore",CBCentralManagerOptionRestoreIdentifierKey,
+//                                 @"babyBluetoothRestore",CBCentralManagerOptionRestoreIdentifierKey, ///这个参数会持有蓝牙对象,需要自己关闭app才能断开设备
                                  nil];
         
 #else
@@ -47,7 +47,7 @@
             //非后台模式
             centralManager = [[CBCentralManager alloc]initWithDelegate:self queue:nil options:options];
         }
-        
+        NSArray *array =  [centralManager retrieveConnectedPeripheralsWithServices:@[[CBUUID UUIDWithString:@"FFF0"]]];
         //pocket
         pocket = [[NSMutableDictionary alloc]init];
         connectedPeripherals = [[NSMutableArray alloc]init];

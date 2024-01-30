@@ -28,6 +28,10 @@
 	<string>请求访问蓝牙</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>请求访问蓝牙</string>
+	<key>NSCameraUsageDescription</key>
+	<string>请求访问相机</string>
+	<key>UIBackgroundModes</key>
+	<array/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
