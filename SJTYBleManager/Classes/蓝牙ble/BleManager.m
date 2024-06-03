@@ -99,8 +99,12 @@ static BleManager *_instance;
 -(void)setFilterByUUID:(BOOL)filter{
     NSDictionary *scanForPeripheralsWithOptions = @{CBCentralManagerScanOptionAllowDuplicatesKey:@YES};
       if (filter) {
+          NSMutableArray *serviceArray=[NSMutableArray array];
+          for (NSString *uuid in [self.baseBleDevice  getBroadcastServiceUUID] ) {
+              [serviceArray addObject:[CBUUID UUIDWithString:uuid]];
+          }
           //连接设备->
-          [self.babyBluetooth setBabyOptionsWithScanForPeripheralsWithOptions:scanForPeripheralsWithOptions connectPeripheralWithOptions:nil scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:[self.baseBleDevice  getBroadcastServiceUUID]]]  discoverWithServices:nil  discoverWithCharacteristics:nil];
+          [self.babyBluetooth setBabyOptionsWithScanForPeripheralsWithOptions:scanForPeripheralsWithOptions connectPeripheralWithOptions:nil scanForPeripheralsWithServices:serviceArray  discoverWithServices:nil  discoverWithCharacteristics:nil];
       }else{
           //连接设备->
           [self.babyBluetooth setBabyOptionsWithScanForPeripheralsWithOptions:scanForPeripheralsWithOptions connectPeripheralWithOptions:nil scanForPeripheralsWithServices:nil  discoverWithServices:nil  discoverWithCharacteristics:nil];
@@ -224,14 +228,19 @@ static BleManager *_instance;
             }
             
         }
-        if ([characteristic.UUID.UUIDString isEqualToString:[self.baseBleDevice getNotifiUUID]]) {
-            if (weakSelf.ConnectedBlock&&weakSelf.currentConnectPeripheral!=nil) {
-                weakSelf.ConnectedBlock(weakSelf.currentConnectPeripheral.identifier.UUIDString);
+        for (NSString *uuid in [self.baseBleDevice getNotifiUUID]) {
+            if ([characteristic.UUID.UUIDString isEqualToString:uuid]) {
+                if (weakSelf.ConnectedBlock&&weakSelf.currentConnectPeripheral!=nil) {
+                    weakSelf.ConnectedBlock(weakSelf.currentConnectPeripheral.identifier.UUIDString);
+                }
+                break;
             }
         }
         
         
+        
     }];
+//    self.babyBluetooth setblockread
     
     
     [self.babyBluetooth setBlockOnDisconnect:^(CBCentralManager *central, CBPeripheral *peripheral, NSError *error) {

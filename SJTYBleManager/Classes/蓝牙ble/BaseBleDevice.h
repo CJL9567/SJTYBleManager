@@ -40,7 +40,7 @@ typedef NSString*(^FilterNotifyValueBlock)(void);
 
  @return serviceUUID
  */
--(NSString*)getServiceUUID;
+-(NSArray <NSString*> *)getServiceUUID;
 
 
 /**
@@ -49,7 +49,7 @@ typedef NSString*(^FilterNotifyValueBlock)(void);
  
  @return writeUUID
  */
--(NSString*)getWriteUUID;
+-(NSArray <NSString*> *)getWriteUUID;
 
 
 /**
@@ -58,7 +58,7 @@ typedef NSString*(^FilterNotifyValueBlock)(void);
  
  @return writeUUID
  */
--(NSString*)getNotifiUUID;
+-(NSArray <NSString*> *)getNotifiUUID;
 
 /**
  
@@ -66,7 +66,7 @@ typedef NSString*(^FilterNotifyValueBlock)(void);
  
  @return writeUUID
  */
--(NSString *)getBroadcastServiceUUID;
+-(NSArray <NSString*> *)getBroadcastServiceUUID;
 
 /**
  设备名字 子类需覆盖次方法

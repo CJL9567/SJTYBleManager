@@ -65,23 +65,45 @@
     return _spiltDataArray;
 }
 
--(NSString*)getServiceUUID{
-    return @"";
+/**
+ 获取服务UUID 子类需覆盖次方法
+
+ @return serviceUUID
+ */
+-(NSArray <NSString*> *)getServiceUUID{
+    return @[];
 }
 
 
--(NSString*)getWriteUUID{
-    return @"";
+/**
+ 
+ 获取写数据UUID 子类需覆盖次方法
+ 
+ @return writeUUID
+ */
+-(NSArray <NSString*> *)getWriteUUID{
+    return @[];
 }
 
 
--(NSString*)getNotifiUUID{
-    return @"";
+/**
+ 
+ 获取通知数据UUID 子类需覆盖次方法
+ 
+ @return writeUUID
+ */
+-(NSArray <NSString*> *)getNotifiUUID{
+    return @[];
 }
 
-
--(NSString *)getBroadcastServiceUUID{
-    return @"";
+/**
+ 
+ 获取广播数据UUID 子类需覆盖次方法
+ 
+ @return writeUUID
+ */
+-(NSArray <NSString*> *)getBroadcastServiceUUID{
+    return @[];
 }
 
 -(NSArray*)deviceName{
@@ -186,11 +208,15 @@
     if (_writeCharacteristic == nil) {
         for (CBCharacteristic *characteristic in self.cbService.characteristics ) {
            // NSLog(@"characteristic.UUID==%@",characteristic.UUID.UUIDString);
-            if ([characteristic.UUID.UUIDString isEqualToString:[[self getWriteUUID] uppercaseString]])
-                {
-                    _writeCharacteristic = characteristic;
+            for (NSString *uuid in [self getWriteUUID]) {
+                if ([characteristic.UUID.UUIDString isEqualToString:[uuid uppercaseString]])
+                    {
+                        _writeCharacteristic = characteristic;
+                        return _writeCharacteristic;
+                    }
                 }
             }
+            
         
         }
     return _writeCharacteristic;
@@ -201,12 +227,15 @@
         
         
         for (CBCharacteristic *characteristic in self.cbService.characteristics ) {
-           // NSLog(@"notifiUUID==%@",characteristic.UUID.UUIDString);
-
-            if ([characteristic.UUID.UUIDString  isEqualToString:[[self getNotifiUUID] uppercaseString]])
-            {
-                _notifyCharacteristic = characteristic;
+            // NSLog(@"notifiUUID==%@",characteristic.UUID.UUIDString);
+            for (NSString *uuid in [self getNotifiUUID]) {
+                if ([characteristic.UUID.UUIDString isEqualToString:[uuid uppercaseString]])
+                {
+                    _notifyCharacteristic = characteristic;
+                    return _notifyCharacteristic;
+                }
             }
+            
         }
     }
     return _notifyCharacteristic;
@@ -215,11 +244,13 @@
 -(CBService*)cbService{
     if (_cbService == nil) {
         for ( CBService *service in self.activityCBPeripheral.services ) {
-          //  NSLog(@"serviceUUID==%@",service.UUID.UUIDString);
-            NSString *uuid=   [self getServiceUUID];
-            if ([service.UUID.UUIDString isEqualToString:[[self getServiceUUID] uppercaseString]]) {
-                _cbService = service;
+            for (NSString *uuid in [self getServiceUUID]) {
+                if ([service.UUID.UUIDString isEqualToString:[uuid uppercaseString]]) {
+                    _cbService = service;
+                    return _cbService;
+                }
             }
+            
         }
     }
     return _cbService;

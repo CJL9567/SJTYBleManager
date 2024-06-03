@@ -47,7 +47,6 @@
             //非后台模式
             centralManager = [[CBCentralManager alloc]initWithDelegate:self queue:nil options:options];
         }
-        NSArray *array =  [centralManager retrieveConnectedPeripheralsWithServices:@[[CBUUID UUIDWithString:@"FFF0"]]];
         //pocket
         pocket = [[NSMutableDictionary alloc]init];
         connectedPeripherals = [[NSMutableArray alloc]init];

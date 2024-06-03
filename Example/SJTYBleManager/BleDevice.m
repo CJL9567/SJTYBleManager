@@ -37,8 +37,8 @@
  获取服务UUID 子类需覆盖次方法
  @return serviceUUID
  */
--(NSString*)getServiceUUID {
-    return @"FFF0";
+-(NSArray<NSString *> *)getServiceUUID {
+    return @[@"FFB0",@"6E400001-B5A3-F393-E0A9-E50E24DCCA9E"];
 }
 
 
@@ -48,8 +48,8 @@
 
  @return writeUUID
  */
--(NSString*)getWriteUUID {
-    return @"FFF2";
+-(NSArray<NSString *> *)getWriteUUID {
+    return @[@"FFB1",@"6E400002-B5A3-F393-E0A9-E50E24DCCA9E"];
 }
 
 /**
@@ -57,14 +57,14 @@
 
  @return writeUUID
  */
--(NSString*)getNotifiUUID {
+-(NSArray<NSString *> *)getNotifiUUID {
 
-    return @"FFF1";
+    return @[@"FFB2",@"6E400003-B5A3-F393-E0A9-E50E24DCCA9E"];
 }
 
 
 -(NSArray *)deviceName{
-    return @[@"Ulanzi"];
+    return @[@"YDSC",@"EMS"];
 }
 
 
