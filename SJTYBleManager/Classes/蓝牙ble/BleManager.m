@@ -125,7 +125,9 @@ static BleManager *_instance;
 }
 
 -(void)disConnectAllPeripheral{
-   
+    if (self.isConnecting) {
+        self.isConnecting=NO;
+    }
     self.autoDisConnected=NO;
     [self.babyBluetooth cancelAllPeripheralsConnection];
     [self.peripheralDataArray removeAllObjects];
@@ -136,7 +138,9 @@ static BleManager *_instance;
 
 -(void)disConnectPeripheral:(CBPeripheral *)peripheral{
     self.autoDisConnected=NO;
-    
+    if (self.isConnecting) {
+        self.isConnecting=NO;
+    }
     [self.babyBluetooth cancelPeripheralConnection:peripheral];
     NSInteger index= [[self.peripheralDataArray valueForKey:@"peripheral"] indexOfObject:peripheral];
     if (index>=0&&index<self.peripheralDataArray.count ) {
@@ -151,7 +155,9 @@ static BleManager *_instance;
 }
 
 -(void)refresh{
-    
+    if (self.isConnecting) {
+        self.isConnecting=NO;
+    }
     NSMutableArray *peripherDataArray=[NSMutableArray array];
     
     for (NSDictionary * item in self.peripheralDataArray) {
