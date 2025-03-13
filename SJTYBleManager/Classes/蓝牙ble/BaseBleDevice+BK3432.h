@@ -41,6 +41,9 @@ typedef enum : NSUInteger {
 //开始升级前需要先调用此函数,初始化通道
 -(void)setupOTA;
 
+//查询设备固件版本号,如果只是查询固件版本号需要先调用 -(void)setupOTA 函数
+-(void)otaQueryVersion:(void(^)(NSInteger version,NSInteger romVersion))block;
+
 /// 开始OTA升级
 /// @param filePah 文件路径
 /// @param otaBlock ota 回调
