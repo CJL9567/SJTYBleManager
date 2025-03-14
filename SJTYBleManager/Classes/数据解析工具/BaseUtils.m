@@ -77,29 +77,25 @@
  * NSData转换成16进制数字字符串
  **/
 +(NSString *)stringConvertForData:(NSData *) data{
-    Byte *bytes = (Byte *)[data bytes];
-    NSString *hexStr=@"";
-    for(int i=0;i<[data length];i++){
-        NSString *newHexStr = [NSString stringWithFormat:@"%x",bytes[i]&0xff];///16进制数
-        if([newHexStr length]==1)
-            hexStr = [NSString stringWithFormat:@"%@0%@",hexStr,newHexStr];
-        else
-            hexStr = [NSString stringWithFormat:@"%@%@",hexStr,newHexStr];
+    if (!data) {
+        return nil;
     }
-    return hexStr;
+    const unsigned char *bytes = (const unsigned char *)[data bytes];
+    NSUInteger length = [data length];
+    NSMutableString *hexString = [NSMutableString stringWithCapacity:length * 2];
+
+    for (NSUInteger i = 0; i < length; i++) {
+        [hexString appendFormat:@"%02X", bytes[i]];
+    }
+
+    return [hexString copy];
 }
+
 /**
  * Byte转换成16进制数字字符串
  **/
 +(NSString *)stringConvertForByte:(Byte) data{
-    NSString *newHexStr = [NSString stringWithFormat:@"%x",data&0xff];///16进制数
-    
-    NSString *hexStr=@"";
-    if([newHexStr length]==1)
-        hexStr = [NSString stringWithFormat:@"%@0%@",hexStr,newHexStr];
-    else
-        hexStr = [NSString stringWithFormat:@"%@%@",hexStr,newHexStr];
-    return hexStr;
+    return [NSString stringWithFormat:@"%02X", data];
 }
 /**
  *2个字节转化转换成16进制
