@@ -408,6 +408,10 @@
     }
 }
 
+-(void)peripheralIsReadyToSendWriteWithoutResponse:(CBPeripheral *)peripheral{
+    [[NSNotificationCenter defaultCenter]postNotificationName:BabyNotificationAtPeripheralIsReadyToSendWriteWithoutResponse object:@{@"peripheral":peripheral}];
+}
+
 # if  __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_8_0
 - (void)peripheralDidUpdateRSSI:(CBPeripheral *)peripheral error:(nullable NSError *)error {
     [[NSNotificationCenter defaultCenter]postNotificationName:BabyNotificationAtDidReadRSSI object:@{@"peripheral":peripheral,@"RSSI":peripheral.RSSI,@"error":error?error:@""}];

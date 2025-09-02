@@ -15,6 +15,8 @@
 <UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(assign,nonatomic)Boolean isConnected;
+@property(nonatomic,strong)NSTimer *timer;
+@property(assign,nonatomic)NSInteger count;
 @end
 
 @implementation SJTYViewController
@@ -99,12 +101,12 @@
     
 
     [[BleManager shareManager] setConnectedBlock:^(NSString * _Nonnull UUID) {
-        if (!self.isConnected) {
-            BleDevice *bleDevice=(BleDevice *)[BleManager shareManager].baseBleDevice;
-            [bleDevice setupOTA];
-            [bleDevice stopVerify];
-            self.isConnected=YES;
-        }
+//        if (!self.isConnected) {
+//            BleDevice *bleDevice=(BleDevice *)[BleManager shareManager].baseBleDevice;
+//            [bleDevice setupOTA];
+//            [bleDevice stopVerify];
+//            self.isConnected=YES;
+//        }
        
 //        if (![BleManager shareManager].isMultiple) {
 //            TreeBleDevice *treeBleDevice=(TreeBleDevice *)[BleManager shareManager].baseBleDevice;
@@ -194,8 +196,12 @@
 
 - (IBAction)refreshAction:(id)sender {
     __weak typeof(self )weakSelf= self;
-    BleDevice *bleDevice =(BleDevice *) [BleManager shareManager].baseBleDevice;
-    [bleDevice lightDeviceMode:0x30];
+    self.timer = [NSTimer timerWithTimeInterval:0.02 target:self selector:@selector(sendDataTodevice) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSDefaultRunLoopMode];
+//    BleDevice *bleDevice=(BleDevice *)[BleManager shareManager].baseBleDevice;
+//    bleDevice
+//    BleDevice *bleDevice =(BleDevice *) [BleManager shareManager].baseBleDevice;
+//    [bleDevice lightDeviceMode:0x30];
 //    [bleDevice sendFileData: [[NSBundle mainBundle] pathForResource:@"water" ofType:@"mp3"] progress:^(float progress) {
 //        NSLog(@"====%f",progress);
 //        if(progress==1){
@@ -212,6 +218,19 @@
 //    [self.tableView reloadData];
     
 }
+
+-(void)sendDataTodevice{
+    BleDevice *bleDevice =(BleDevice *) [BleManager shareManager].baseBleDevice;
+    [bleDevice sendModeToBigDataDevice:self.count];
+    self.count++;
+    if (self.count==1) {
+        self.count=0;
+        [self.timer invalidate];
+    }
+}
+
+
+
 - (IBAction)disconnect:(id)sender {
 //    self.connectIndex=0;
 //    [[BleManager shareManager].peripheralDataArray removeAllObjects];

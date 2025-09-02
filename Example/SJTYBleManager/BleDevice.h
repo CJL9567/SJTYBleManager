@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BleDevice : BaseBleDevice
 
+-(void)sendModeToBigDataDevice:(NSInteger)value;
 
 //-(void)sendFileName:(NSString *)fileName;
 -(void)lightDeviceHue:(NSInteger)hue saturation:(NSInteger)saturation;

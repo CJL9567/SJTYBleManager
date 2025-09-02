@@ -35,6 +35,14 @@
 
 
 @property(assign,nonatomic)Boolean isChecked;
+
+///发送数据数组--->用于防止发送数据过快导致无法发送成功
+@property(nonatomic,strong)NSMutableArray *sendDataArray;
+
+///已经准备好了可以发送数据了
+@property(assign,nonatomic)Boolean isReadyToSend;
+
+
 @end
 
 @implementation BaseBleDevice
@@ -49,8 +57,11 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotifcationValue:) name:BabyNotificationAtDidUpdateValueForCharacteristic object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didDisconnectPeripheralNotifcationValue:) name:BabyNotificationAtDidDisconnectPeripheral object:nil];
         
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(peripheralIsReadyToSendWriteWithoutResponse:) name:BabyNotificationAtPeripheralIsReadyToSendWriteWithoutResponse object:nil];
+        
         self.queue = [[NSQueue alloc] init];
         
+        self.isReadyToSend = true;
     }
     return self;
 }
@@ -359,6 +370,23 @@
     
 }
 
+-(void)peripheralIsReadyToSendWriteWithoutResponse:(NSNotification*)notification{
+    NSDictionary*dic = notification.object;
+    CBPeripheral* peripheral = dic[@"peripheral"];
+    if (self.activityCBPeripheral==peripheral) {
+        self.isReadyToSend=YES;
+        if (self.sendDataArray.count>0) {
+            NSData * data = [self.sendDataArray firstObject];
+            if (data!=nil) {
+                [self.activityCBPeripheral writeValue:data forCharacteristic:self.writeCharacteristic type:self.characteristicWriteType];
+                [self.sendDataArray removeObjectAtIndex:0];
+                self.isReadyToSend=NO;
+            }
+        }
+        
+    }
+}
+
 -(void)sendVerifyData:(NSData *)data {
     NSMutableString *sendDataString =[NSMutableString string];
     
@@ -395,5 +423,11 @@
     }
 }
 
+-(NSMutableArray *)sendDataArray{
+    if (_sendDataArray==nil) {
+        _sendDataArray = [NSMutableArray array];
+    }
+    return _sendDataArray;
+}
 
 @end

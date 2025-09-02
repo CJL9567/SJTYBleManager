@@ -32,39 +32,87 @@
 //    return @[@"FSRKB"];
 //}
 
+////
+///**
+// 获取服务UUID 子类需覆盖次方法
+// @return serviceUUID
+// */
+//-(NSArray<NSString *> *)getServiceUUID {
+//    return @[@"FFB0",@"6E400001-B5A3-F393-E0A9-E50E24DCCA9E"];
+//}
 //
-/**
- 获取服务UUID 子类需覆盖次方法
- @return serviceUUID
- */
--(NSArray<NSString *> *)getServiceUUID {
-    return @[@"FFB0",@"6E400001-B5A3-F393-E0A9-E50E24DCCA9E"];
+//
+///**
+//
+// 获取写数据UUID 子类需覆盖次方法
+//
+// @return writeUUID
+// */
+//-(NSArray<NSString *> *)getWriteUUID {
+//    return @[@"FFB1",@"6E400002-B5A3-F393-E0A9-E50E24DCCA9E"];
+//}
+//
+///**
+// 获取通知数据UUID 子类需覆盖次方法
+//
+// @return writeUUID
+// */
+//-(NSArray<NSString *> *)getNotifiUUID {
+//
+//    return @[@"FFB2",@"6E400003-B5A3-F393-E0A9-E50E24DCCA9E"];
+//}
+//
+//
+//-(NSArray *)deviceName{
+//    return @[@"YDSC",@"EMS"];
+//}
+
+
+
+-(NSArray<NSString *> *)getServiceUUID{
+    
+    return @[@"AE00"];
 }
 
-
-/**
-
- 获取写数据UUID 子类需覆盖次方法
-
- @return writeUUID
- */
--(NSArray<NSString *> *)getWriteUUID {
-    return @[@"FFB1",@"6E400002-B5A3-F393-E0A9-E50E24DCCA9E"];
+-(NSArray<NSString *> *)getWriteUUID{
+    return @[@"AE01"];
 }
 
-/**
- 获取通知数据UUID 子类需覆盖次方法
-
- @return writeUUID
- */
--(NSArray<NSString *> *)getNotifiUUID {
-
-    return @[@"FFB2",@"6E400003-B5A3-F393-E0A9-E50E24DCCA9E"];
+-(NSArray<NSString *> *)getNotifiUUID{
+    return @[@"AE02"];
 }
 
 
 -(NSArray *)deviceName{
-    return @[@"YDSC",@"EMS"];
+    return @[@"Ani"];
+    
+}
+
+-(void)sendModeToBigDataDevice:(NSInteger)value{
+    //    NSString *string=@"AAAE1501160D";
+    // 计算需要生成的字节数
+    NSUInteger targetSize = 512;
+    
+//    // 创建数据缓冲区
+    NSMutableData *data = [NSMutableData dataWithCapacity:targetSize];
+    
+    
+    [data appendData:[NSData dataWithBytes:&value length:1]];
+    
+    // 填充数据直到达到目标大小
+    uint8_t byte = 0x55; // 使用0x55作为填充字节，可以根据需要修改
+    for (NSUInteger i = 0; i < targetSize-1; i++) {
+        [data appendBytes:&byte length:1];
+        // 简单的字节变化，使文件内容不完全相同
+        byte = (byte + 1) % 0xFF;
+    }
+    
+    [self sendCommand:data notifyBlock:^(NSData *data, NSString *stringData) {
+        
+    } filterBlock:^NSString *{
+        return @"";
+    }];
+    
 }
 
 

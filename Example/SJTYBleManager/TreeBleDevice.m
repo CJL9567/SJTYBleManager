@@ -27,23 +27,6 @@
 }
 
 
-//-(NSString *)getServiceUUID{
-//    return @"AE00";
-////    return @"AE30";
-//}
-//
-//-(NSString *)getWriteUUID{
-////    return @"AE01";
-//    return @"AE01";
-//}
-//
-//
-//-(NSString *)getNotifiUUID{
-//    return @"AE02";
-////    return @"FFF1";
-//}
-
-
 
 -(void)sendPowerToDevice:(Boolean)power{
     NSMutableString *sendDataString =[NSMutableString string];

@@ -57,6 +57,8 @@
 //did read rssi and receiced value notification
 #define BabyNotificationAtDidReadRSSI @"BabyNotificationAtDidReadRSSI"
 
+#define BabyNotificationAtPeripheralIsReadyToSendWriteWithoutResponse @"BabyNotificationAtPeripheralIsReadyToSendWriteWithoutResponse"
+
 //蓝牙扩展通知
 // did centralManager enable notification
 #define BabyNotificationAtCentralManagerEnable @"BabyNotificationAtCentralManagerEnable"

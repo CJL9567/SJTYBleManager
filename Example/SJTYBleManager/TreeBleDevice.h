@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)sendPowerToDevice:(Boolean)power;
 
 -(void)sendRGBToDevice:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue;
-
+-(void)sendModeToBigDataDevice:(NSInteger)value;
 
 @end
 
