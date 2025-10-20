@@ -32,8 +32,8 @@
 //    return @[@"FSRKB"];
 //}
 
-////
-///**
+//
+/**
 // 获取服务UUID 子类需覆盖次方法
 // @return serviceUUID
 // */
@@ -84,7 +84,7 @@
 
 
 -(NSArray *)deviceName{
-    return @[@"Ani"];
+    return @[@"4Pods Rock Kit"];
     
 }
 
@@ -151,6 +151,33 @@
     }];
 }
 
+
+-(void)sendStartToDevice:(void(^)(Boolean sucess))block{
+//    self.timerInterval=[NSDate timeIntervalSinceReferenceDate];
+    
+    NSMutableString *sendDataString =[NSMutableString string];
+    
+    [sendDataString appendString:@"3B00070002"];
+    [sendDataString appendString:[self checkString1:sendDataString]];
+    [sendDataString appendString:@"0A"];
+    NSData *sendData=[BaseUtils stringToBytes:sendDataString];
+    [self sendCommand:sendData notifyBlock:^(NSData *data, NSString *stringData) {
+        Byte *byte=(Byte *)[data bytes];
+        if (byte[5]==0x55) {
+            if (block) {
+                block(true);
+            }
+        }else{
+            if (block) {
+                block(false);
+            }
+        }
+    } filterBlock:^NSString *{
+        return @"3B00080002";
+    }];
+}
+
+
 -(NSString *)checkString:(NSString *)dataString{
     NSInteger checkValue=0;
     for (int i=0; i<dataString.length/2; i++) {
@@ -158,6 +185,18 @@
         checkValue+= [BaseUtils intConvertForHexString:string];
     }
     return [BaseUtils stringConvertForByte:checkValue];
+}
+
+-(NSString *)checkString1:(NSMutableString *)dataString{
+    NSInteger totalValue=0;
+    for (int i=0; i<dataString.length/2; i++) {
+        
+        totalValue +=[BaseUtils intConvertForHexString:[dataString substringWithRange:NSMakeRange(i*2, 2)]];
+    }
+    NSString *resultString=[BaseUtils stringConvertForShort:totalValue];
+    NSString *result= [resultString substringFromIndex:resultString.length-2];
+    
+    return result;
 }
 
 -(void)sendFileName:(NSInteger)fileSize  fileName:(NSString *)fileName block:(void(^)(void))block{

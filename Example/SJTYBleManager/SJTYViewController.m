@@ -45,7 +45,7 @@
 
 -(void)initBle{
 [BleManager shareManager].baseBleDevice = [[BleDevice alloc] initWithBluetooth];
-
+//[BleManager shareManager].characteristicWriteType=CBCharacteristicWriteWithResponse;
 [BleManager shareManager].isVerify =NO;
 [BleManager shareManager].autoConnected=NO;
 [[BleManager shareManager] setFilterByName:YES];
@@ -102,7 +102,13 @@
 
     [[BleManager shareManager] setConnectedBlock:^(NSString * _Nonnull UUID) {
 //        if (!self.isConnected) {
-//            BleDevice *bleDevice=(BleDevice *)[BleManager shareManager].baseBleDevice;
+            BleDevice *bleDevice=(BleDevice *)[BleManager shareManager].baseBleDevice;
+        for (int i=0; i<100; i++) {
+            [bleDevice sendStartToDevice:^(Boolean sucess) {
+                        
+            }];
+        }
+        
 //            [bleDevice setupOTA];
 //            [bleDevice stopVerify];
 //            self.isConnected=YES;
@@ -195,9 +201,9 @@
 }
 
 - (IBAction)refreshAction:(id)sender {
-    __weak typeof(self )weakSelf= self;
-    self.timer = [NSTimer timerWithTimeInterval:0.02 target:self selector:@selector(sendDataTodevice) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSDefaultRunLoopMode];
+//    __weak typeof(self )weakSelf= self;
+//    self.timer = [NSTimer timerWithTimeInterval:0.02 target:self selector:@selector(sendDataTodevice) userInfo:nil repeats:YES];
+//    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSDefaultRunLoopMode];
 //    BleDevice *bleDevice=(BleDevice *)[BleManager shareManager].baseBleDevice;
 //    bleDevice
 //    BleDevice *bleDevice =(BleDevice *) [BleManager shareManager].baseBleDevice;
@@ -212,7 +218,7 @@
 //    self.connectIndex=0;
 //    [[BleManager shareManager] disConnectAllPeripheral];
     
-//    [[BleManager shareManager] refresh];
+    [[BleManager shareManager] refresh];
 ////    [[BleManager shareManager].peripheralDataArray removeAllObjects];
 ////    [[BleManager shareManager].multipleArray removeAllObjects];
 //    [self.tableView reloadData];

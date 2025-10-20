@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)sendFileData:(NSString *)filePath progress:(void(^)(float progress)) block;
 -(void)sendFinish;
 -(void)sendFileData1:(NSString *)filePath progress:(void(^)(float progress)) block;
+
+-(void)sendStartToDevice:(void(^)(Boolean sucess))block;
 @end
 
 NS_ASSUME_NONNULL_END
