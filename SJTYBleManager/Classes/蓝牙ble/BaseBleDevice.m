@@ -140,7 +140,7 @@
     _activityCBPeripheral = activityCBPeripheral;
     _isChecked =NO;
     if (activityCBPeripheral!=nil) {
-        [self performSelector:@selector(setNotify) withObject:self afterDelay:1];
+        [self performSelector:@selector(setNotify) withObject:self afterDelay:3];
     }
 }
 
@@ -218,7 +218,9 @@
             BabyLog(@"发送的数据为:%@",[BaseUtils stringConvertForData:cmd]);
             if (self.writeCharacteristic.properties & CBCharacteristicPropertyWriteWithoutResponse) {
                 self.isReadyToSend=NO;
+                [self performSelector:@selector(checkReadToSend) withObject:nil afterDelay:0.1];
             }
+            
         }else{
             if (self.writeCharacteristic.properties & CBCharacteristicPropertyWriteWithoutResponse) {
                 [self.sendDataArray addObject:cmd];
@@ -228,7 +230,11 @@
     
 }
 
-
+-(void)checkReadToSend{
+    if (!self.isReadyToSend) {
+        self.isReadyToSend=YES;
+    }
+}
 
 -(CBCharacteristic*)writeCharacteristic{
     if (_writeCharacteristic == nil) {
@@ -389,12 +395,13 @@
     NSDictionary*dic = notification.object;
     CBPeripheral* peripheral = dic[@"peripheral"];
     if (self.activityCBPeripheral==peripheral) {
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(checkReadToSend) object:nil];
         self.isReadyToSend=YES;
         if (self.sendDataArray.count>0) {
             NSData * data = [self.sendDataArray firstObject];
             if (data!=nil) {
                 [self.activityCBPeripheral writeValue:data forCharacteristic:self.writeCharacteristic type:self.characteristicWriteType];
-                BabyLog(@"发送的数据为:%@",[BaseUtils stringConvertForData:data]);
+                BabyLog(@"发送的数据为11111:%@",[BaseUtils stringConvertForData:data]);
                 [self.sendDataArray removeObjectAtIndex:0];
                 self.isReadyToSend=NO;
             }
