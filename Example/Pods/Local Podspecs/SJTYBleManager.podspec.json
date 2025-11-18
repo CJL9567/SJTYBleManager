@@ -1,9 +1,9 @@
 {
   "name": "SJTYBleManager",
-  "version": "0.1.0",
-  "summary": "A short description of SJTYBleManager.",
+  "version": "1.2.7",
+  "summary": "SJTYBleManager",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/caijialiang/SJTYBleManager",
+  "homepage": "https://github.com/CJL9567/SJTYBleManager",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,16 @@
     "caijialiang": "1350027967@qq.com"
   },
   "source": {
-    "git": "https://github.com/caijialiang/SJTYBleManager.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/CJL9567/SJTYBleManager.git",
+    "tag": "1.2.7"
   },
   "platforms": {
     "ios": "10.0"
   },
-  "source_files": "SJTYBleManager/Classes/**/*"
+  "source_files": "SJTYBleManager/Classes/**/*",
+  "dependencies": {
+    "SJTYLogManager": [
+
+    ]
+  }
 }

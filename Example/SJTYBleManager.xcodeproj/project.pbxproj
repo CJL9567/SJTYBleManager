@@ -342,10 +342,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SJTYBleManager_Example/Pods-SJTYBleManager_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SJTYBleManager/SJTYBleManager.framework",
+				"${BUILT_PRODUCTS_DIR}/SJTYLogManager/SJTYLogManager.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SJTYBleManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SJTYLogManager.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -1,3 +1,5 @@
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/CJL9567/SJTYLogManagerSpecs.git'
 use_frameworks!
 
 platform :ios, '10.0'

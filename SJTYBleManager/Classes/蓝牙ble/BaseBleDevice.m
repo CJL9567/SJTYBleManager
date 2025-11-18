@@ -10,7 +10,7 @@
 #import "NSQueue.h"
 #import "BabyBluetooth.h"
 #import "SJTYBLESecret.h"
-
+#import <SJTYLogManager/SJTYLogManager.h>
 ///通知 -- 设备非法 即非四聚通用开发的设备,此时需要断开蓝牙并通知非法设备
 #define BLE_DEVICE_ERROR  @"BLE_DEVICE_ERROR"
 
@@ -193,7 +193,8 @@
     if (cmd) {
         if (self.activityCBPeripheral && self.activityCBPeripheral.state == CBPeripheralStateConnected &&self.writeCharacteristic!=nil&&self.isReadyToSend) {
             [self.activityCBPeripheral writeValue:cmd forCharacteristic:self.writeCharacteristic type:self.characteristicWriteType];
-            BabyLog(@"发送的数据为:%@",[BaseUtils stringConvertForData:cmd]);
+//            BabyLog(@"发送的数据为:%@",[BaseUtils stringConvertForData:cmd]);
+            SJTYLog(LogLevelInfo, @"发送的数据为:%@",[BaseUtils stringConvertForData:cmd]);
             if (self.writeCharacteristic.properties & CBCharacteristicPropertyWriteWithoutResponse) {
                 self.isReadyToSend=NO;
             }
@@ -215,7 +216,7 @@
     if (cmd) {
         if (self.activityCBPeripheral && self.activityCBPeripheral.state == CBPeripheralStateConnected &&self.writeCharacteristic!=nil&&self.isReadyToSend) {
             [self.activityCBPeripheral writeValue:cmd forCharacteristic:self.writeCharacteristic type:self.characteristicWriteType];
-            BabyLog(@"发送的数据为:%@",[BaseUtils stringConvertForData:cmd]);
+            SJTYLog(LogLevelInfo, @"发送的数据为:%@",[BaseUtils stringConvertForData:cmd]);
             if (self.writeCharacteristic.properties & CBCharacteristicPropertyWriteWithoutResponse) {
                 self.isReadyToSend=NO;
                 [self performSelector:@selector(checkReadToSend) withObject:nil afterDelay:0.1];
@@ -344,7 +345,8 @@
         if (data.length==0) {
             return;
         }
-        BabyLog(@"接受的数据为:%@",strData);
+//        BabyLog(@"接受的数据为:%@",strData);
+        SJTYLog(LogLevelInfo, @"接受的数据为:%@",strData);
         Byte *byte= (Byte *)[data bytes];
         if(byte[0]==0xBB&&byte[1]==0xB6){
             self.isChecked =YES;
@@ -401,7 +403,7 @@
             NSData * data = [self.sendDataArray firstObject];
             if (data!=nil) {
                 [self.activityCBPeripheral writeValue:data forCharacteristic:self.writeCharacteristic type:self.characteristicWriteType];
-                BabyLog(@"发送的数据为11111:%@",[BaseUtils stringConvertForData:data]);
+                SJTYLog(LogLevelInfo, @"准备好重新发送的数据为:%@",[BaseUtils stringConvertForData:data]);
                 [self.sendDataArray removeObjectAtIndex:0];
                 self.isReadyToSend=NO;
             }

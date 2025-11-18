@@ -1,16 +1,23 @@
 PODS:
-  - SJTYBleManager (0.1.0)
+  - SJTYBleManager (1.2.7):
+    - SJTYLogManager
+  - SJTYLogManager (1.0.1)
 
 DEPENDENCIES:
   - SJTYBleManager (from `../`)
+
+SPEC REPOS:
+  https://github.com/CJL9567/SJTYLogManagerSpecs.git:
+    - SJTYLogManager
 
 EXTERNAL SOURCES:
   SJTYBleManager:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SJTYBleManager: 2e74090b49c247f5791dd70b9ec2281a20487695
+  SJTYBleManager: e3877ce4467227576813daa983a40968519a2f7f
+  SJTYLogManager: 6e66cc1c3bcde02ec08710b8cc1de810fffc644f
 
-PODFILE CHECKSUM: b578157001d265c92b3eb6faa8b0bcf2afa3a0f3
+PODFILE CHECKSUM: 37d636c2749848334f8aa455c40bed10ce1a240d
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.16.2

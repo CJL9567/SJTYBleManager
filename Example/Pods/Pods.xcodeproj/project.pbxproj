@@ -7,178 +7,200 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00D238F8607B7B98CABCCFCE2F081A43 /* SJTYBleManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2A53BDBB755CC9FC4263114BCA2B26 /* SJTYBleManager-dummy.m */; };
-		12D2022728FA68E0DB35D36EFDB73499 /* Pods-SJTYBleManager_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 503EDFA573893B4C014CC8BAE9F6595B /* Pods-SJTYBleManager_Example-dummy.m */; };
-		463C186263740DB58D055AACE7A303EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		531B0A8C338C7C2C5007B56D70EBF9C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		730CB8CA287537CC0019F4DE /* BaseUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 730CB8AC287537CC0019F4DE /* BaseUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		730CB8CB287537CC0019F4DE /* BaseUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 730CB8AD287537CC0019F4DE /* BaseUtils.m */; };
-		730CB8CC287537CC0019F4DE /* BabyRhythm.h in Headers */ = {isa = PBXBuildFile; fileRef = 730CB8AF287537CC0019F4DE /* BabyRhythm.h */; };
-		730CB8CD287537CC0019F4DE /* BabySpeaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 730CB8B0287537CC0019F4DE /* BabySpeaker.h */; };
-		730CB8CE287537CC0019F4DE /* BabyToy.m in Sources */ = {isa = PBXBuildFile; fileRef = 730CB8B1287537CC0019F4DE /* BabyToy.m */; };
-		730CB8CF287537CC0019F4DE /* BabyCentralManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 730CB8B2287537CC0019F4DE /* BabyCentralManager.h */; };
-		730CB8D0287537CC0019F4DE /* BabyPeripheralManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 730CB8B3287537CC0019F4DE /* BabyPeripheralManager.h */; };
-		730CB8D1287537CC0019F4DE /* BabyDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 730CB8B4287537CC0019F4DE /* BabyDefine.h */; };
-		730CB8D2287537CC0019F4DE /* BabyBluetooth.h in Headers */ = {isa = PBXBuildFile; fileRef = 730CB8B5287537CC0019F4DE /* BabyBluetooth.h */; };
-		730CB8D3287537CC0019F4DE /* BabyOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 730CB8B6287537CC0019F4DE /* BabyOptions.m */; };
-		730CB8D4287537CC0019F4DE /* BabyCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 730CB8B7287537CC0019F4DE /* BabyCallback.m */; };
-		730CB8D5287537CC0019F4DE /* BabyPeripheralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 730CB8B8287537CC0019F4DE /* BabyPeripheralManager.m */; };
-		730CB8D6287537CC0019F4DE /* BabyCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 730CB8B9287537CC0019F4DE /* BabyCentralManager.m */; };
-		730CB8D7287537CC0019F4DE /* BabySpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 730CB8BA287537CC0019F4DE /* BabySpeaker.m */; };
-		730CB8D8287537CC0019F4DE /* BabyToy.h in Headers */ = {isa = PBXBuildFile; fileRef = 730CB8BB287537CC0019F4DE /* BabyToy.h */; };
-		730CB8D9287537CC0019F4DE /* BabyRhythm.m in Sources */ = {isa = PBXBuildFile; fileRef = 730CB8BC287537CC0019F4DE /* BabyRhythm.m */; };
-		730CB8DA287537CC0019F4DE /* BabyOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 730CB8BD287537CC0019F4DE /* BabyOptions.h */; };
-		730CB8DB287537CC0019F4DE /* BabyBluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = 730CB8BE287537CC0019F4DE /* BabyBluetooth.m */; };
-		730CB8DC287537CC0019F4DE /* BabyDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 730CB8BF287537CC0019F4DE /* BabyDefine.m */; };
-		730CB8DD287537CC0019F4DE /* BabyCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = 730CB8C0287537CC0019F4DE /* BabyCallback.h */; };
-		730CB8DE287537CC0019F4DE /* NSQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 730CB8C2287537CC0019F4DE /* NSQueue.h */; };
-		730CB8DF287537CC0019F4DE /* BaseBleDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 730CB8C3287537CC0019F4DE /* BaseBleDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		730CB8E1287537CC0019F4DE /* BleManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 730CB8C5287537CC0019F4DE /* BleManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		730CB8E2287537CC0019F4DE /* NSQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 730CB8C6287537CC0019F4DE /* NSQueue.m */; };
-		730CB8E3287537CC0019F4DE /* BaseBleDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 730CB8C7287537CC0019F4DE /* BaseBleDevice.m */; };
-		730CB8E4287537CC0019F4DE /* BleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 730CB8C8287537CC0019F4DE /* BleManager.m */; };
-		730CB8EB28759A3C0019F4DE /* SJTYBleManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 730CB8EA28759A3C0019F4DE /* SJTYBleManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		733BDD982B55396D00012549 /* BaseBleDevice+BK3432.h in Headers */ = {isa = PBXBuildFile; fileRef = 733BDD962B55396D00012549 /* BaseBleDevice+BK3432.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		733BDD992B55396D00012549 /* BaseBleDevice+BK3432.m in Sources */ = {isa = PBXBuildFile; fileRef = 733BDD972B55396D00012549 /* BaseBleDevice+BK3432.m */; };
-		733BDD9C2B55398500012549 /* BKOTAManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 733BDD9A2B55398500012549 /* BKOTAManager.h */; };
-		733BDD9D2B55398500012549 /* BKOTAManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 733BDD9B2B55398500012549 /* BKOTAManager.m */; };
-		73A6002529F236DD0067A86E /* SJTYBLESecret.h in Headers */ = {isa = PBXBuildFile; fileRef = 73A6002329F236DC0067A86E /* SJTYBLESecret.h */; };
-		73A6002629F236DD0067A86E /* SJTYBLESecret.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A6002429F236DD0067A86E /* SJTYBLESecret.m */; };
-		79FD297B81375A8D564504F711F073B5 /* Pods-SJTYBleManager_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FE94B09873F4508C93D81BCE9A4A21 /* Pods-SJTYBleManager_Tests-dummy.m */; };
-		87E9F5F73E4DF4EFDA4BB2F6613DA222 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		8863A7910A25CA8EDE5CA7600ECFA46C /* SJTYBleManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EFF941A5807CF6F00A3AA7DB31FE92B0 /* SJTYBleManager-umbrella.h */; };
-		ECDFDCE22E16F2BC47D7CD33564F437D /* Pods-SJTYBleManager_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CCB55D868C76082114276D1DB078A9C /* Pods-SJTYBleManager_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F422CAF5ED7C7DEA71714F4987991A7C /* Pods-SJTYBleManager_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 026E86B04F1EC7366DD5A6E290674E3A /* Pods-SJTYBleManager_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00DBACAF48DAB44F1C9E3B6479664B67 /* BabyToy.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BE81FE4C2B9C4A0E6E24A516DFA949 /* BabyToy.m */; };
+		083AACDC4F2EB82CB83A1D364C18E08B /* SJTYBleManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0474E2D25A3DF401909D28226B449777 /* SJTYBleManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08CDBF05BE7BBE93B2661B016E15A04D /* BabyDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FFE05616DE3985A4574ABF38E771AE /* BabyDefine.m */; };
+		0C33C26877C81BDA8DA2ACB98664AF44 /* Pods-SJTYBleManager_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CCB55D868C76082114276D1DB078A9C /* Pods-SJTYBleManager_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		18965A32DF8F574B792BF91D74FD60BF /* Pods-SJTYBleManager_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FE94B09873F4508C93D81BCE9A4A21 /* Pods-SJTYBleManager_Tests-dummy.m */; };
+		1D136E62E325A4B47CC479661084D5D1 /* BabyOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B8EF7E6EAFA0DCD7FE1C5DFEFF5FBF1 /* BabyOptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1ED0FD4CD0D05C5DBB75A179763F4672 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		1F61ADCD934AF2A135D50F4818528F7A /* BabyPeripheralManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A77A58B525AD28CB1A321478057B5C26 /* BabyPeripheralManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A330482ACE6EF5E89E5F3CFA784BAF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		30E3109706149BE4B0EFE5050D548254 /* SJTYLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F74F55E6AA807B7B2A1E317093C3B02 /* SJTYLogManager.m */; };
+		39CB09B14022EC124388FFA78437D765 /* SJTYBLESecret.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAF35981972513DCFBBFD6D189B7E9 /* SJTYBLESecret.m */; };
+		448B0353863C0EB86144A2AF82A381E1 /* NSQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D5CFC54410BA8FEBBB7AF5AEEBB488B /* NSQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4D27A27E02949D834DAA03ADCFE7B695 /* BaseUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BD5F5E1982270206C02136A3B157F95 /* BaseUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		51CA96AF180A3FABBD3F6D86A4737D1E /* BabyRhythm.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EFD363C7BC6D684C40432C9C55CF77F /* BabyRhythm.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56691DAEDBF91C221CC8E6433A490242 /* SJTYBLESecret.h in Headers */ = {isa = PBXBuildFile; fileRef = 41E3E40C554863C316C84E2910AE849B /* SJTYBLESecret.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F08D377728DF2BB17950F30B16C19CD /* BKOTAManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B262144BFC6F29BBA4A0B7065A021E0 /* BKOTAManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74E85DB378BBEFE2584BE256BFF7F6F1 /* BabyDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = D997909C3C8DEFB3151259B0841C1C94 /* BabyDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D809C01B4836934BE61C0E739747DF7 /* Pods-SJTYBleManager_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 503EDFA573893B4C014CC8BAE9F6595B /* Pods-SJTYBleManager_Example-dummy.m */; };
+		8409D6C8AC3BD1EA3B304D41068FDD9B /* BaseBleDevice+BK3432.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA584A24C24A1D295115F3889DBE2CA /* BaseBleDevice+BK3432.m */; };
+		864ADBDCB01F7DFEA77787911DF953F8 /* BabyRhythm.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBECE4B7A4D63AE9A4ED8C6E4098D88 /* BabyRhythm.m */; };
+		8811C4F007EDF9DD5C05813B8F2579D5 /* SJTYBleManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5074BDFDFFF528C0E3AA952760E97331 /* SJTYBleManager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F675D979B091B70C2BE22ACC20D09C9 /* BabySpeaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 0112C7D7B1F03A2F46767317D43FC414 /* BabySpeaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95C9F63710DE61C13ACC08612FE9BF0C /* BleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A16B0D482731996C7069276ABE87333C /* BleManager.m */; };
+		99B9F8A6D1E3D90F277020F0228AD187 /* BabyCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D522593EEFD7073D1777CAE2BDE217 /* BabyCallback.m */; };
+		9B0EC11DA2976E1FA046071AC21F9CE7 /* BabySpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 011F5B77D362BF490B8A0A41559F428A /* BabySpeaker.m */; };
+		A0241266EB337FA6548D8C6CB48A02FF /* BabyBluetooth.h in Headers */ = {isa = PBXBuildFile; fileRef = AE25A5155F3890D5721663F966E4207A /* BabyBluetooth.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6AB87D6148A0DEB2D1830FB198241B5 /* BleManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E4E2D84F8520E659FD7A9F783E623DA4 /* BleManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A99F7202F577749F788876E2E6003939 /* SJTYLogManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A1B6320E4DE80C62856109A96E19B794 /* SJTYLogManager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA1027E83FBC0A22F6F51DF10F050331 /* BaseBleDevice+BK3432.h in Headers */ = {isa = PBXBuildFile; fileRef = C68EFB18AFD9089F820548DEFDBACC8B /* BaseBleDevice+BK3432.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B016B8BEF825F3B572550D69B8555F0A /* BaseBleDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFC765F30302989E71C9F4330D76043 /* BaseBleDevice.m */; };
+		B4501B64E6F8BBC0E2F174530C5B9DD9 /* BabyOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8840E7394B378922ABFB83CE0A4135 /* BabyOptions.m */; };
+		B589BDA095388A757C4756E3712F8BA1 /* BabyBluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8B27B82667591FFD94F12F0FF750A2 /* BabyBluetooth.m */; };
+		BA66BC9E6F2FA762DD21A3EBDC4D0CF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		C3A9D38A893DA3C0B59FD53BCB61A160 /* NSQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DFF6ACDA9E54CA29AFC47E9B3FC1B5 /* NSQueue.m */; };
+		C48C68A1654EE6C1E8F329BA781C237C /* BabyPeripheralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2BA378BB3E6FA80A8D6E5997D7419C /* BabyPeripheralManager.m */; };
+		CB305E3A8D2189EFEE70D34BE02DC456 /* BaseBleDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 31B7850EC9B443C6EFAC872638D8EB6C /* BaseBleDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D1CF46E7DE71BCBD8B4AFD780D7EDC64 /* SJTYBleManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 288A093D8F16BBF6D8A40293666999A6 /* SJTYBleManager-dummy.m */; };
+		D28F0890E9257A7D574EA6CE60D42761 /* SJTYLogManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B72F1A53481CF944E428DE4D2A412360 /* SJTYLogManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3662F4EE6222AA15E30EE494C3FCAA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		D65EEDE589814732E565D6491E911B1C /* SJTYLogManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F5645095D2DA9A52E9208C3A9CF3DAEF /* SJTYLogManager-dummy.m */; };
+		D818F5C764BA2E89D6FD5C39ACF8CA0B /* Pods-SJTYBleManager_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 026E86B04F1EC7366DD5A6E290674E3A /* Pods-SJTYBleManager_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD9E351E1D1F9414CC9779E971D473C6 /* BabyCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D20614D3F3E05FA973C9F70FF35F52 /* BabyCentralManager.m */; };
+		E5647B0A7D709E8D0793BC7F320F6819 /* BabyCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = 8629B39A61C84457FA7BA694281F1851 /* BabyCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA681F1823BAB0193C1A527419E4355D /* BaseUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FC40B23B7C26C66523D7192AF7A92DC1 /* BaseUtils.m */; };
+		EEC0EF8499B9E68E3C7CD81C74FF0886 /* BabyCentralManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4E824EE0748E94654648FF33DB2D93 /* BabyCentralManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F20FE96DF6D4F471C31CDDFA78C87769 /* BKOTAManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E0060E8CEF639D195F9C98D26302B9E3 /* BKOTAManager.m */; };
+		FA424F460C2D77BA4EB0A1D44A9B7CDB /* BabyToy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F117E6E9F263D312B09B6D40709C975 /* BabyToy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		19DAB56DCFB206ECC7E54ECBB21F3AB7 /* PBXContainerItemProxy */ = {
+		7D86902DF4CDBDFDAF761591177E7481 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 61D51834206063041137502FA6BB6BC6;
-			remoteInfo = "Pods-SJTYBleManager_Example";
+			remoteGlobalIDString = 761AFDE5B7EC962A8BCADDFD6E8A5804;
+			remoteInfo = SJTYLogManager;
 		};
-		C2121A4862CD142C61E758CACA4C9577 /* PBXContainerItemProxy */ = {
+		A7B75757349A04190B259C79076B68FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 761AFDE5B7EC962A8BCADDFD6E8A5804;
+			remoteInfo = SJTYLogManager;
+		};
+		B4E91C7A8FCE2A56697FC1EA96C8292B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 48BD172F3AD3E2937C08D2D5D3B4BEE7;
 			remoteInfo = SJTYBleManager;
 		};
+		DB52461F8636D4F6C159CE6B4621FE37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 61D51834206063041137502FA6BB6BC6;
+			remoteInfo = "Pods-SJTYBleManager_Example";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0112C7D7B1F03A2F46767317D43FC414 /* BabySpeaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BabySpeaker.h; sourceTree = "<group>"; };
+		011F5B77D362BF490B8A0A41559F428A /* BabySpeaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BabySpeaker.m; sourceTree = "<group>"; };
 		0190778C430EF39CABB0B822079EC49F /* Pods-SJTYBleManager_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SJTYBleManager_Example-frameworks.sh"; sourceTree = "<group>"; };
 		026E86B04F1EC7366DD5A6E290674E3A /* Pods-SJTYBleManager_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SJTYBleManager_Example-umbrella.h"; sourceTree = "<group>"; };
+		0474E2D25A3DF401909D28226B449777 /* SJTYBleManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SJTYBleManager.h; path = SJTYBleManager/Classes/SJTYBleManager.h; sourceTree = "<group>"; };
 		0A13F2A870620758B1C5E6DF091F214B /* Pods-SJTYBleManager_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SJTYBleManager_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		0B262144BFC6F29BBA4A0B7065A021E0 /* BKOTAManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BKOTAManager.h; sourceTree = "<group>"; };
+		0E8840E7394B378922ABFB83CE0A4135 /* BabyOptions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BabyOptions.m; sourceTree = "<group>"; };
 		14D3CE8756830A999A8C14DC5D2BE26A /* Pods-SJTYBleManager_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SJTYBleManager_Example.modulemap"; sourceTree = "<group>"; };
 		21F2FBE536A5CFF7AFF36218B1F544A0 /* Pods-SJTYBleManager_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-SJTYBleManager_Tests"; path = Pods_SJTYBleManager_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2653F0C81F6C25C609706487E27CC546 /* Pods-SJTYBleManager_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-SJTYBleManager_Example"; path = Pods_SJTYBleManager_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		30402C5C1ED5C09AEAAC5F463F4BA850 /* SJTYBleManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SJTYBleManager.release.xcconfig; sourceTree = "<group>"; };
+		288A093D8F16BBF6D8A40293666999A6 /* SJTYBleManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SJTYBleManager-dummy.m"; sourceTree = "<group>"; };
+		2EFD363C7BC6D684C40432C9C55CF77F /* BabyRhythm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BabyRhythm.h; sourceTree = "<group>"; };
+		2F117E6E9F263D312B09B6D40709C975 /* BabyToy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BabyToy.h; sourceTree = "<group>"; };
+		31B7850EC9B443C6EFAC872638D8EB6C /* BaseBleDevice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BaseBleDevice.h; sourceTree = "<group>"; };
+		328C76EB7A9484F15FEC8FB6E323410E /* SJTYBleManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SJTYBleManager-prefix.pch"; sourceTree = "<group>"; };
 		377EF0A395B6B3C0A7CCE89357A80F2B /* Pods-SJTYBleManager_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SJTYBleManager_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		3AE4A09E6DD8DBEE5F740129FA1B1EAF /* SJTYBleManager-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SJTYBleManager-Info.plist"; sourceTree = "<group>"; };
+		384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3F74F55E6AA807B7B2A1E317093C3B02 /* SJTYLogManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SJTYLogManager.m; path = SJTYLogManager/Classes/SJTYLogManager.m; sourceTree = "<group>"; };
+		41E3E40C554863C316C84E2910AE849B /* SJTYBLESecret.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SJTYBLESecret.h; sourceTree = "<group>"; };
+		43D20614D3F3E05FA973C9F70FF35F52 /* BabyCentralManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BabyCentralManager.m; sourceTree = "<group>"; };
 		4CCB55D868C76082114276D1DB078A9C /* Pods-SJTYBleManager_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SJTYBleManager_Tests-umbrella.h"; sourceTree = "<group>"; };
+		4EBECE4B7A4D63AE9A4ED8C6E4098D88 /* BabyRhythm.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BabyRhythm.m; sourceTree = "<group>"; };
 		503EDFA573893B4C014CC8BAE9F6595B /* Pods-SJTYBleManager_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SJTYBleManager_Example-dummy.m"; sourceTree = "<group>"; };
+		5074BDFDFFF528C0E3AA952760E97331 /* SJTYBleManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SJTYBleManager-umbrella.h"; sourceTree = "<group>"; };
 		53FE94B09873F4508C93D81BCE9A4A21 /* Pods-SJTYBleManager_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SJTYBleManager_Tests-dummy.m"; sourceTree = "<group>"; };
+		61BE81FE4C2B9C4A0E6E24A516DFA949 /* BabyToy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BabyToy.m; sourceTree = "<group>"; };
 		67D794E6D903E491F09B32D8FC71B33B /* Pods-SJTYBleManager_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SJTYBleManager_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		6CB33076413B888D564A9B06D9410FE3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6B8EF7E6EAFA0DCD7FE1C5DFEFF5FBF1 /* BabyOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BabyOptions.h; sourceTree = "<group>"; };
+		6D2BA378BB3E6FA80A8D6E5997D7419C /* BabyPeripheralManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BabyPeripheralManager.m; sourceTree = "<group>"; };
 		6E90C4251CE105054DC01A7DEA2F6F92 /* Pods-SJTYBleManager_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SJTYBleManager_Example.release.xcconfig"; sourceTree = "<group>"; };
 		709C96C55E927DBEFD688FB52AC0BBE2 /* Pods-SJTYBleManager_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SJTYBleManager_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		71888351150B14043593A1AE4E5B89CA /* SJTYBleManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SJTYBleManager.debug.xcconfig; sourceTree = "<group>"; };
-		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		730CB8AC287537CC0019F4DE /* BaseUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUtils.h; sourceTree = "<group>"; };
-		730CB8AD287537CC0019F4DE /* BaseUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUtils.m; sourceTree = "<group>"; };
-		730CB8AF287537CC0019F4DE /* BabyRhythm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyRhythm.h; sourceTree = "<group>"; };
-		730CB8B0287537CC0019F4DE /* BabySpeaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabySpeaker.h; sourceTree = "<group>"; };
-		730CB8B1287537CC0019F4DE /* BabyToy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyToy.m; sourceTree = "<group>"; };
-		730CB8B2287537CC0019F4DE /* BabyCentralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyCentralManager.h; sourceTree = "<group>"; };
-		730CB8B3287537CC0019F4DE /* BabyPeripheralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyPeripheralManager.h; sourceTree = "<group>"; };
-		730CB8B4287537CC0019F4DE /* BabyDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyDefine.h; sourceTree = "<group>"; };
-		730CB8B5287537CC0019F4DE /* BabyBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyBluetooth.h; sourceTree = "<group>"; };
-		730CB8B6287537CC0019F4DE /* BabyOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyOptions.m; sourceTree = "<group>"; };
-		730CB8B7287537CC0019F4DE /* BabyCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyCallback.m; sourceTree = "<group>"; };
-		730CB8B8287537CC0019F4DE /* BabyPeripheralManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyPeripheralManager.m; sourceTree = "<group>"; };
-		730CB8B9287537CC0019F4DE /* BabyCentralManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyCentralManager.m; sourceTree = "<group>"; };
-		730CB8BA287537CC0019F4DE /* BabySpeaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabySpeaker.m; sourceTree = "<group>"; };
-		730CB8BB287537CC0019F4DE /* BabyToy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyToy.h; sourceTree = "<group>"; };
-		730CB8BC287537CC0019F4DE /* BabyRhythm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyRhythm.m; sourceTree = "<group>"; };
-		730CB8BD287537CC0019F4DE /* BabyOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyOptions.h; sourceTree = "<group>"; };
-		730CB8BE287537CC0019F4DE /* BabyBluetooth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyBluetooth.m; sourceTree = "<group>"; };
-		730CB8BF287537CC0019F4DE /* BabyDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyDefine.m; sourceTree = "<group>"; };
-		730CB8C0287537CC0019F4DE /* BabyCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyCallback.h; sourceTree = "<group>"; };
-		730CB8C2287537CC0019F4DE /* NSQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSQueue.h; sourceTree = "<group>"; };
-		730CB8C3287537CC0019F4DE /* BaseBleDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseBleDevice.h; sourceTree = "<group>"; };
-		730CB8C5287537CC0019F4DE /* BleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BleManager.h; sourceTree = "<group>"; };
-		730CB8C6287537CC0019F4DE /* NSQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSQueue.m; sourceTree = "<group>"; };
-		730CB8C7287537CC0019F4DE /* BaseBleDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseBleDevice.m; sourceTree = "<group>"; };
-		730CB8C8287537CC0019F4DE /* BleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BleManager.m; sourceTree = "<group>"; };
-		730CB8EA28759A3C0019F4DE /* SJTYBleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SJTYBleManager.h; path = SJTYBleManager/Classes/SJTYBleManager.h; sourceTree = "<group>"; };
-		733BDD962B55396D00012549 /* BaseBleDevice+BK3432.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BaseBleDevice+BK3432.h"; sourceTree = "<group>"; };
-		733BDD972B55396D00012549 /* BaseBleDevice+BK3432.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BaseBleDevice+BK3432.m"; sourceTree = "<group>"; };
-		733BDD9A2B55398500012549 /* BKOTAManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKOTAManager.h; sourceTree = "<group>"; };
-		733BDD9B2B55398500012549 /* BKOTAManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKOTAManager.m; sourceTree = "<group>"; };
-		73A6002329F236DC0067A86E /* SJTYBLESecret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJTYBLESecret.h; sourceTree = "<group>"; };
-		73A6002429F236DD0067A86E /* SJTYBLESecret.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJTYBLESecret.m; sourceTree = "<group>"; };
+		76FFE05616DE3985A4574ABF38E771AE /* BabyDefine.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BabyDefine.m; sourceTree = "<group>"; };
 		78FD37980B022BDCB0652877C1AE3794 /* Pods-SJTYBleManager_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SJTYBleManager_Tests-Info.plist"; sourceTree = "<group>"; };
 		792A5CD4840D111410645DBED54A0E47 /* Pods-SJTYBleManager_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SJTYBleManager_Example-Info.plist"; sourceTree = "<group>"; };
+		7D5CFC54410BA8FEBBB7AF5AEEBB488B /* NSQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NSQueue.h; sourceTree = "<group>"; };
+		7DC8332E285A9EED9996F5C70976BA9C /* SJTYBleManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SJTYBleManager.modulemap; sourceTree = "<group>"; };
 		7E7FE8A4A7A925FFA5C8B621B1611394 /* Pods-SJTYBleManager_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SJTYBleManager_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		804AC4A899EB113A2CF511FE28919B13 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		8303C8F0285AD01AB1389C4E8C634F98 /* SJTYBleManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SJTYBleManager-prefix.pch"; sourceTree = "<group>"; };
+		7EC9EB3F979CAD0503D553F0D55C7740 /* SJTYLogManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SJTYLogManager-prefix.pch"; sourceTree = "<group>"; };
+		7EDCBC5D0092C452AC0946091948DEFD /* SJTYLogManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SJTYLogManager.release.xcconfig; sourceTree = "<group>"; };
+		84CE4660D326EDA9E5B628F1A4EBDC5C /* SJTYBleManager.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SJTYBleManager.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8629B39A61C84457FA7BA694281F1851 /* BabyCallback.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BabyCallback.h; sourceTree = "<group>"; };
 		8801CA627D5B991EAF08B99F2A8253A1 /* Pods-SJTYBleManager_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SJTYBleManager_Tests.modulemap"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8BD5F5E1982270206C02136A3B157F95 /* BaseUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BaseUtils.h; sourceTree = "<group>"; };
+		8EBAF35981972513DCFBBFD6D189B7E9 /* SJTYBLESecret.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SJTYBLESecret.m; sourceTree = "<group>"; };
+		8F8B27B82667591FFD94F12F0FF750A2 /* BabyBluetooth.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BabyBluetooth.m; sourceTree = "<group>"; };
+		91D2F8DA0ABCE0A31A86F0B410333151 /* SJTYBleManager-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SJTYBleManager-Info.plist"; sourceTree = "<group>"; };
+		92DFF6ACDA9E54CA29AFC47E9B3FC1B5 /* NSQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NSQueue.m; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DF902A331FA56FAF9E3BFF742F69E4F /* SJTYBleManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SJTYBleManager.debug.xcconfig; sourceTree = "<group>"; };
+		A16B0D482731996C7069276ABE87333C /* BleManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BleManager.m; sourceTree = "<group>"; };
+		A1B6320E4DE80C62856109A96E19B794 /* SJTYLogManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SJTYLogManager-umbrella.h"; sourceTree = "<group>"; };
+		A77A58B525AD28CB1A321478057B5C26 /* BabyPeripheralManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BabyPeripheralManager.h; sourceTree = "<group>"; };
+		AAF770AE7972ED4732F19A81176CCA58 /* SJTYLogManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SJTYLogManager.modulemap; sourceTree = "<group>"; };
+		AE25A5155F3890D5721663F966E4207A /* BabyBluetooth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BabyBluetooth.h; sourceTree = "<group>"; };
+		B48E586831EF5D2CFF0C6D2FB212E03C /* SJTYBleManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SJTYBleManager.release.xcconfig; sourceTree = "<group>"; };
+		B4E319758829B1632AEBD9C074CCE929 /* SJTYLogManager-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SJTYLogManager-Info.plist"; sourceTree = "<group>"; };
+		B72F1A53481CF944E428DE4D2A412360 /* SJTYLogManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SJTYLogManager.h; path = SJTYLogManager/Classes/SJTYLogManager.h; sourceTree = "<group>"; };
+		BAFE901746BBD343004D6DF320D049A7 /* SJTYLogManager */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SJTYLogManager; path = SJTYLogManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4EC0F4A4E6E3DB6F95C876F20D6586E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		C53809090A53377DB6FBB9A807400573 /* Pods-SJTYBleManager_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SJTYBleManager_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CDDD625163CA7EE1B3C630C073DED429 /* SJTYBleManager.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SJTYBleManager.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		E7C601FABD377973923C8ACE927D77F3 /* SJTYBleManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SJTYBleManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C68EFB18AFD9089F820548DEFDBACC8B /* BaseBleDevice+BK3432.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BaseBleDevice+BK3432.h"; sourceTree = "<group>"; };
+		CD0B3EF7F8D7461EA850B0738D6A1A41 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		D997909C3C8DEFB3151259B0841C1C94 /* BabyDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BabyDefine.h; sourceTree = "<group>"; };
+		DEA584A24C24A1D295115F3889DBE2CA /* BaseBleDevice+BK3432.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BaseBleDevice+BK3432.m"; sourceTree = "<group>"; };
+		DFFC765F30302989E71C9F4330D76043 /* BaseBleDevice.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BaseBleDevice.m; sourceTree = "<group>"; };
+		E0060E8CEF639D195F9C98D26302B9E3 /* BKOTAManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BKOTAManager.m; sourceTree = "<group>"; };
+		E4E2D84F8520E659FD7A9F783E623DA4 /* BleManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BleManager.h; sourceTree = "<group>"; };
+		E7C601FABD377973923C8ACE927D77F3 /* SJTYBleManager */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SJTYBleManager; path = SJTYBleManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC450227B1C403E05074AB007956F419 /* Pods-SJTYBleManager_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SJTYBleManager_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EE2A53BDBB755CC9FC4263114BCA2B26 /* SJTYBleManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SJTYBleManager-dummy.m"; sourceTree = "<group>"; };
-		EFF941A5807CF6F00A3AA7DB31FE92B0 /* SJTYBleManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SJTYBleManager-umbrella.h"; sourceTree = "<group>"; };
-		F4E1163E4ED2F357FB8793247078D3DA /* SJTYBleManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SJTYBleManager.modulemap; sourceTree = "<group>"; };
+		F5645095D2DA9A52E9208C3A9CF3DAEF /* SJTYLogManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SJTYLogManager-dummy.m"; sourceTree = "<group>"; };
+		F5D522593EEFD7073D1777CAE2BDE217 /* BabyCallback.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BabyCallback.m; sourceTree = "<group>"; };
+		FA9A401CAA3DAB34D19DFF0A3B137EDB /* SJTYLogManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SJTYLogManager.debug.xcconfig; sourceTree = "<group>"; };
+		FC40B23B7C26C66523D7192AF7A92DC1 /* BaseUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BaseUtils.m; sourceTree = "<group>"; };
+		FD4E824EE0748E94654648FF33DB2D93 /* BabyCentralManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BabyCentralManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CFDFE47952739EEBA70168E6E51EE46B /* Frameworks */ = {
+		0AAA0E69D03D11039E618EC1697DF76D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				463C186263740DB58D055AACE7A303EC /* Foundation.framework in Frameworks */,
+				1ED0FD4CD0D05C5DBB75A179763F4672 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DCBEAB1922CD01933E6C3D8BB06BB100 /* Frameworks */ = {
+		30EA5262C6AD8D8272EA69C89D1411A5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				531B0A8C338C7C2C5007B56D70EBF9C3 /* Foundation.framework in Frameworks */,
+				D3662F4EE6222AA15E30EE494C3FCAA9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4978B77B31EA2BD4818CC08C8C4CA89 /* Frameworks */ = {
+		C611C2E7FA67D99CEFA24FD00FBD4831 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87E9F5F73E4DF4EFDA4BB2F6613DA222 /* Foundation.framework in Frameworks */,
+				BA66BC9E6F2FA762DD21A3EBDC4D0CF1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEABED776169D11206B943DD2ADA7C10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A330482ACE6EF5E89E5F3CFA784BAF7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		25E12770BD37B6EFF8636DAA309DA650 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				F4E1163E4ED2F357FB8793247078D3DA /* SJTYBleManager.modulemap */,
-				EE2A53BDBB755CC9FC4263114BCA2B26 /* SJTYBleManager-dummy.m */,
-				3AE4A09E6DD8DBEE5F740129FA1B1EAF /* SJTYBleManager-Info.plist */,
-				8303C8F0285AD01AB1389C4E8C634F98 /* SJTYBleManager-prefix.pch */,
-				EFF941A5807CF6F00A3AA7DB31FE92B0 /* SJTYBleManager-umbrella.h */,
-				71888351150B14043593A1AE4E5B89CA /* SJTYBleManager.debug.xcconfig */,
-				30402C5C1ED5C09AEAAC5F463F4BA850 /* SJTYBleManager.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/SJTYBleManager";
-			sourceTree = "<group>";
-		};
 		3201643499000C2B90CC2537EF558D0C /* Pods-SJTYBleManager_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,100 +218,142 @@
 			path = "Target Support Files/Pods-SJTYBleManager_Example";
 			sourceTree = "<group>";
 		};
-		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+		395D5A29887FD510C8BBAA95B5CCA18F /* 蓝牙ble */ = {
 			isa = PBXGroup;
 			children = (
-				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		730CB8AB287537CC0019F4DE /* 数据解析工具 */ = {
-			isa = PBXGroup;
-			children = (
-				730CB8AC287537CC0019F4DE /* BaseUtils.h */,
-				730CB8AD287537CC0019F4DE /* BaseUtils.m */,
-			);
-			name = "数据解析工具";
-			path = "SJTYBleManager/Classes/数据解析工具";
-			sourceTree = "<group>";
-		};
-		730CB8AE287537CC0019F4DE /* BabyBlutooth */ = {
-			isa = PBXGroup;
-			children = (
-				730CB8AF287537CC0019F4DE /* BabyRhythm.h */,
-				730CB8B0287537CC0019F4DE /* BabySpeaker.h */,
-				730CB8B1287537CC0019F4DE /* BabyToy.m */,
-				730CB8B2287537CC0019F4DE /* BabyCentralManager.h */,
-				730CB8B3287537CC0019F4DE /* BabyPeripheralManager.h */,
-				730CB8B4287537CC0019F4DE /* BabyDefine.h */,
-				730CB8B5287537CC0019F4DE /* BabyBluetooth.h */,
-				730CB8B6287537CC0019F4DE /* BabyOptions.m */,
-				730CB8B7287537CC0019F4DE /* BabyCallback.m */,
-				730CB8B8287537CC0019F4DE /* BabyPeripheralManager.m */,
-				730CB8B9287537CC0019F4DE /* BabyCentralManager.m */,
-				730CB8BA287537CC0019F4DE /* BabySpeaker.m */,
-				730CB8BB287537CC0019F4DE /* BabyToy.h */,
-				730CB8BC287537CC0019F4DE /* BabyRhythm.m */,
-				730CB8BD287537CC0019F4DE /* BabyOptions.h */,
-				730CB8BE287537CC0019F4DE /* BabyBluetooth.m */,
-				730CB8BF287537CC0019F4DE /* BabyDefine.m */,
-				730CB8C0287537CC0019F4DE /* BabyCallback.h */,
-			);
-			name = BabyBlutooth;
-			path = SJTYBleManager/Classes/BabyBlutooth;
-			sourceTree = "<group>";
-		};
-		730CB8C1287537CC0019F4DE /* 蓝牙ble */ = {
-			isa = PBXGroup;
-			children = (
-				73A6002329F236DC0067A86E /* SJTYBLESecret.h */,
-				73A6002429F236DD0067A86E /* SJTYBLESecret.m */,
-				730CB8C2287537CC0019F4DE /* NSQueue.h */,
-				730CB8C3287537CC0019F4DE /* BaseBleDevice.h */,
-				730CB8C5287537CC0019F4DE /* BleManager.h */,
-				730CB8C6287537CC0019F4DE /* NSQueue.m */,
-				730CB8C7287537CC0019F4DE /* BaseBleDevice.m */,
-				730CB8C8287537CC0019F4DE /* BleManager.m */,
-				733BDD962B55396D00012549 /* BaseBleDevice+BK3432.h */,
-				733BDD972B55396D00012549 /* BaseBleDevice+BK3432.m */,
-				733BDD9A2B55398500012549 /* BKOTAManager.h */,
-				733BDD9B2B55398500012549 /* BKOTAManager.m */,
+				31B7850EC9B443C6EFAC872638D8EB6C /* BaseBleDevice.h */,
+				DFFC765F30302989E71C9F4330D76043 /* BaseBleDevice.m */,
+				C68EFB18AFD9089F820548DEFDBACC8B /* BaseBleDevice+BK3432.h */,
+				DEA584A24C24A1D295115F3889DBE2CA /* BaseBleDevice+BK3432.m */,
+				0B262144BFC6F29BBA4A0B7065A021E0 /* BKOTAManager.h */,
+				E0060E8CEF639D195F9C98D26302B9E3 /* BKOTAManager.m */,
+				E4E2D84F8520E659FD7A9F783E623DA4 /* BleManager.h */,
+				A16B0D482731996C7069276ABE87333C /* BleManager.m */,
+				7D5CFC54410BA8FEBBB7AF5AEEBB488B /* NSQueue.h */,
+				92DFF6ACDA9E54CA29AFC47E9B3FC1B5 /* NSQueue.m */,
+				41E3E40C554863C316C84E2910AE849B /* SJTYBLESecret.h */,
+				8EBAF35981972513DCFBBFD6D189B7E9 /* SJTYBLESecret.m */,
 			);
 			name = "蓝牙ble";
 			path = "SJTYBleManager/Classes/蓝牙ble";
 			sourceTree = "<group>";
 		};
-		834B23C9F90C85BF5783EE7F38F6008C /* Products */ = {
+		62E45B581B1821F7F1584677C1866486 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C0E3475458AC4B3803988E7029963ADD /* SJTYLogManager */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6C5D8379CC6D26E6E7A6A149A43A6A38 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				2653F0C81F6C25C609706487E27CC546 /* Pods-SJTYBleManager_Example */,
 				21F2FBE536A5CFF7AFF36218B1F544A0 /* Pods-SJTYBleManager_Tests */,
-				E7C601FABD377973923C8ACE927D77F3 /* SJTYBleManager.framework */,
+				E7C601FABD377973923C8ACE927D77F3 /* SJTYBleManager */,
+				BAFE901746BBD343004D6DF320D049A7 /* SJTYLogManager */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B893B0D17F399DC2125F2C76CAE5C47B /* Development Pods */ = {
+		81E1974D45ADA6E5D14DC198B1F7F4F5 /* BabyBlutooth */ = {
 			isa = PBXGroup;
 			children = (
-				C6CACBA891B1ED3C71A8D0972D022AA5 /* SJTYBleManager */,
+				AE25A5155F3890D5721663F966E4207A /* BabyBluetooth.h */,
+				8F8B27B82667591FFD94F12F0FF750A2 /* BabyBluetooth.m */,
+				8629B39A61C84457FA7BA694281F1851 /* BabyCallback.h */,
+				F5D522593EEFD7073D1777CAE2BDE217 /* BabyCallback.m */,
+				FD4E824EE0748E94654648FF33DB2D93 /* BabyCentralManager.h */,
+				43D20614D3F3E05FA973C9F70FF35F52 /* BabyCentralManager.m */,
+				D997909C3C8DEFB3151259B0841C1C94 /* BabyDefine.h */,
+				76FFE05616DE3985A4574ABF38E771AE /* BabyDefine.m */,
+				6B8EF7E6EAFA0DCD7FE1C5DFEFF5FBF1 /* BabyOptions.h */,
+				0E8840E7394B378922ABFB83CE0A4135 /* BabyOptions.m */,
+				A77A58B525AD28CB1A321478057B5C26 /* BabyPeripheralManager.h */,
+				6D2BA378BB3E6FA80A8D6E5997D7419C /* BabyPeripheralManager.m */,
+				2EFD363C7BC6D684C40432C9C55CF77F /* BabyRhythm.h */,
+				4EBECE4B7A4D63AE9A4ED8C6E4098D88 /* BabyRhythm.m */,
+				0112C7D7B1F03A2F46767317D43FC414 /* BabySpeaker.h */,
+				011F5B77D362BF490B8A0A41559F428A /* BabySpeaker.m */,
+				2F117E6E9F263D312B09B6D40709C975 /* BabyToy.h */,
+				61BE81FE4C2B9C4A0E6E24A516DFA949 /* BabyToy.m */,
 			);
-			name = "Development Pods";
+			name = BabyBlutooth;
+			path = SJTYBleManager/Classes/BabyBlutooth;
 			sourceTree = "<group>";
 		};
-		C6CACBA891B1ED3C71A8D0972D022AA5 /* SJTYBleManager */ = {
+		97526EE1F45227681882BA25BE9333CC /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				730CB8EA28759A3C0019F4DE /* SJTYBleManager.h */,
-				730CB8C1287537CC0019F4DE /* 蓝牙ble */,
-				730CB8AB287537CC0019F4DE /* 数据解析工具 */,
-				730CB8AE287537CC0019F4DE /* BabyBlutooth */,
-				F292289EFFBA11DE0ADB6AE2808DDF0D /* Pod */,
-				25E12770BD37B6EFF8636DAA309DA650 /* Support Files */,
+				CD0B3EF7F8D7461EA850B0738D6A1A41 /* LICENSE */,
+				C4EC0F4A4E6E3DB6F95C876F20D6586E /* README.md */,
+				84CE4660D326EDA9E5B628F1A4EBDC5C /* SJTYBleManager.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		97F53D8365C86F754ADB833AAA99C308 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7DC8332E285A9EED9996F5C70976BA9C /* SJTYBleManager.modulemap */,
+				288A093D8F16BBF6D8A40293666999A6 /* SJTYBleManager-dummy.m */,
+				91D2F8DA0ABCE0A31A86F0B410333151 /* SJTYBleManager-Info.plist */,
+				328C76EB7A9484F15FEC8FB6E323410E /* SJTYBleManager-prefix.pch */,
+				5074BDFDFFF528C0E3AA952760E97331 /* SJTYBleManager-umbrella.h */,
+				9DF902A331FA56FAF9E3BFF742F69E4F /* SJTYBleManager.debug.xcconfig */,
+				B48E586831EF5D2CFF0C6D2FB212E03C /* SJTYBleManager.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/SJTYBleManager";
+			sourceTree = "<group>";
+		};
+		BA1F190DE2A2908332A7C5F3BBD077C3 /* SJTYBleManager */ = {
+			isa = PBXGroup;
+			children = (
+				0474E2D25A3DF401909D28226B449777 /* SJTYBleManager.h */,
+				81E1974D45ADA6E5D14DC198B1F7F4F5 /* BabyBlutooth */,
+				97526EE1F45227681882BA25BE9333CC /* Pod */,
+				97F53D8365C86F754ADB833AAA99C308 /* Support Files */,
+				D7C8BE430D962E1580A44D89D3583D3A /* 数据解析工具 */,
+				395D5A29887FD510C8BBAA95B5CCA18F /* 蓝牙ble */,
 			);
 			name = SJTYBleManager;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		BDDE9B266E5CE85B2DF45E0E462D79A8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AAF770AE7972ED4732F19A81176CCA58 /* SJTYLogManager.modulemap */,
+				F5645095D2DA9A52E9208C3A9CF3DAEF /* SJTYLogManager-dummy.m */,
+				B4E319758829B1632AEBD9C074CCE929 /* SJTYLogManager-Info.plist */,
+				7EC9EB3F979CAD0503D553F0D55C7740 /* SJTYLogManager-prefix.pch */,
+				A1B6320E4DE80C62856109A96E19B794 /* SJTYLogManager-umbrella.h */,
+				FA9A401CAA3DAB34D19DFF0A3B137EDB /* SJTYLogManager.debug.xcconfig */,
+				7EDCBC5D0092C452AC0946091948DEFD /* SJTYLogManager.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SJTYLogManager";
+			sourceTree = "<group>";
+		};
+		C0E3475458AC4B3803988E7029963ADD /* SJTYLogManager */ = {
+			isa = PBXGroup;
+			children = (
+				B72F1A53481CF944E428DE4D2A412360 /* SJTYLogManager.h */,
+				3F74F55E6AA807B7B2A1E317093C3B02 /* SJTYLogManager.m */,
+				BDDE9B266E5CE85B2DF45E0E462D79A8 /* Support Files */,
+			);
+			name = SJTYLogManager;
+			path = SJTYLogManager;
+			sourceTree = "<group>";
+		};
+		C7826FF04C50E5097CE6A5963416C5BF /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BA1F190DE2A2908332A7C5F3BBD077C3 /* SJTYBleManager */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		CE7BBDECCA7024C119F9A394DE06C240 /* Pods-SJTYBleManager_Tests */ = {
@@ -312,9 +376,10 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				B893B0D17F399DC2125F2C76CAE5C47B /* Development Pods */,
+				C7826FF04C50E5097CE6A5963416C5BF /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				834B23C9F90C85BF5783EE7F38F6008C /* Products */,
+				62E45B581B1821F7F1584677C1866486 /* Pods */,
+				6C5D8379CC6D26E6E7A6A149A43A6A38 /* Products */,
 				F93825C23026A6D154A6E4AC9AFEF253 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -322,19 +387,27 @@
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				578452D2E740E91742655AC8F1636D1F /* iOS */,
+				E4801F62A6B08CD9B5410329F1A18FDE /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F292289EFFBA11DE0ADB6AE2808DDF0D /* Pod */ = {
+		D7C8BE430D962E1580A44D89D3583D3A /* 数据解析工具 */ = {
 			isa = PBXGroup;
 			children = (
-				804AC4A899EB113A2CF511FE28919B13 /* LICENSE */,
-				6CB33076413B888D564A9B06D9410FE3 /* README.md */,
-				CDDD625163CA7EE1B3C630C073DED429 /* SJTYBleManager.podspec */,
+				8BD5F5E1982270206C02136A3B157F95 /* BaseUtils.h */,
+				FC40B23B7C26C66523D7192AF7A92DC1 /* BaseUtils.m */,
 			);
-			name = Pod;
+			name = "数据解析工具";
+			path = "SJTYBleManager/Classes/数据解析工具";
+			sourceTree = "<group>";
+		};
+		E4801F62A6B08CD9B5410329F1A18FDE /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		F93825C23026A6D154A6E4AC9AFEF253 /* Targets Support Files */ = {
@@ -349,44 +422,53 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		099798BA2E31857065E609C4D6EDE4A1 /* Headers */ = {
+		09714B5A79CA7405D0BF4779D0A05A18 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECDFDCE22E16F2BC47D7CD33564F437D /* Pods-SJTYBleManager_Tests-umbrella.h in Headers */,
+				0C33C26877C81BDA8DA2ACB98664AF44 /* Pods-SJTYBleManager_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7CF5266FB8AA37CEA031D10576E1634D /* Headers */ = {
+		19C7685062F786A8B27247F8A613DD92 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				730CB8CD287537CC0019F4DE /* BabySpeaker.h in Headers */,
-				730CB8DF287537CC0019F4DE /* BaseBleDevice.h in Headers */,
-				730CB8CA287537CC0019F4DE /* BaseUtils.h in Headers */,
-				733BDD982B55396D00012549 /* BaseBleDevice+BK3432.h in Headers */,
-				733BDD9C2B55398500012549 /* BKOTAManager.h in Headers */,
-				730CB8E1287537CC0019F4DE /* BleManager.h in Headers */,
-				730CB8EB28759A3C0019F4DE /* SJTYBleManager.h in Headers */,
-				8863A7910A25CA8EDE5CA7600ECFA46C /* SJTYBleManager-umbrella.h in Headers */,
-				730CB8D2287537CC0019F4DE /* BabyBluetooth.h in Headers */,
-				730CB8CC287537CC0019F4DE /* BabyRhythm.h in Headers */,
-				73A6002529F236DD0067A86E /* SJTYBLESecret.h in Headers */,
-				730CB8DE287537CC0019F4DE /* NSQueue.h in Headers */,
-				730CB8DA287537CC0019F4DE /* BabyOptions.h in Headers */,
-				730CB8D1287537CC0019F4DE /* BabyDefine.h in Headers */,
-				730CB8D0287537CC0019F4DE /* BabyPeripheralManager.h in Headers */,
-				730CB8D8287537CC0019F4DE /* BabyToy.h in Headers */,
-				730CB8DD287537CC0019F4DE /* BabyCallback.h in Headers */,
-				730CB8CF287537CC0019F4DE /* BabyCentralManager.h in Headers */,
+				A0241266EB337FA6548D8C6CB48A02FF /* BabyBluetooth.h in Headers */,
+				E5647B0A7D709E8D0793BC7F320F6819 /* BabyCallback.h in Headers */,
+				EEC0EF8499B9E68E3C7CD81C74FF0886 /* BabyCentralManager.h in Headers */,
+				74E85DB378BBEFE2584BE256BFF7F6F1 /* BabyDefine.h in Headers */,
+				1D136E62E325A4B47CC479661084D5D1 /* BabyOptions.h in Headers */,
+				1F61ADCD934AF2A135D50F4818528F7A /* BabyPeripheralManager.h in Headers */,
+				51CA96AF180A3FABBD3F6D86A4737D1E /* BabyRhythm.h in Headers */,
+				8F675D979B091B70C2BE22ACC20D09C9 /* BabySpeaker.h in Headers */,
+				FA424F460C2D77BA4EB0A1D44A9B7CDB /* BabyToy.h in Headers */,
+				CB305E3A8D2189EFEE70D34BE02DC456 /* BaseBleDevice.h in Headers */,
+				AA1027E83FBC0A22F6F51DF10F050331 /* BaseBleDevice+BK3432.h in Headers */,
+				4D27A27E02949D834DAA03ADCFE7B695 /* BaseUtils.h in Headers */,
+				5F08D377728DF2BB17950F30B16C19CD /* BKOTAManager.h in Headers */,
+				A6AB87D6148A0DEB2D1830FB198241B5 /* BleManager.h in Headers */,
+				448B0353863C0EB86144A2AF82A381E1 /* NSQueue.h in Headers */,
+				083AACDC4F2EB82CB83A1D364C18E08B /* SJTYBleManager.h in Headers */,
+				8811C4F007EDF9DD5C05813B8F2579D5 /* SJTYBleManager-umbrella.h in Headers */,
+				56691DAEDBF91C221CC8E6433A490242 /* SJTYBLESecret.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9DD3DFC81C922EBDD124B2748655081F /* Headers */ = {
+		6D6A459401E5C3A0A68E6D071FE9DFC3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F422CAF5ED7C7DEA71714F4987991A7C /* Pods-SJTYBleManager_Example-umbrella.h in Headers */,
+				D28F0890E9257A7D574EA6CE60D42761 /* SJTYLogManager.h in Headers */,
+				A99F7202F577749F788876E2E6003939 /* SJTYLogManager-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7860A82A0FF0888EFA5D1DD41EBCAA15 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D818F5C764BA2E89D6FD5C39ACF8CA0B /* Pods-SJTYBleManager_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,17 +477,17 @@
 /* Begin PBXNativeTarget section */
 		38B2AE53CE178DAB5A9D913DB7F5C7AD /* Pods-SJTYBleManager_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E5CCEAE36360B6F8BA4381349DE5AEF3 /* Build configuration list for PBXNativeTarget "Pods-SJTYBleManager_Tests" */;
+			buildConfigurationList = 29DA02A70C173977BA3111F2B0C84D30 /* Build configuration list for PBXNativeTarget "Pods-SJTYBleManager_Tests" */;
 			buildPhases = (
-				099798BA2E31857065E609C4D6EDE4A1 /* Headers */,
-				3B5D57AE90C6181BCC8AA8A7813B4042 /* Sources */,
-				DCBEAB1922CD01933E6C3D8BB06BB100 /* Frameworks */,
-				8AA098BC39365720B0FC9417B8A5B973 /* Resources */,
+				09714B5A79CA7405D0BF4779D0A05A18 /* Headers */,
+				2544415A9565D4FE52EF344484E7E025 /* Sources */,
+				CEABED776169D11206B943DD2ADA7C10 /* Frameworks */,
+				DBD442D1B73FCB53415AC55498492FE6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				419F370797BFBE2458429FA51EF914AD /* PBXTargetDependency */,
+				34AA16E5BC4167C893B18EB92D8BD310 /* PBXTargetDependency */,
 			);
 			name = "Pods-SJTYBleManager_Tests";
 			productName = Pods_SJTYBleManager_Tests;
@@ -414,39 +496,59 @@
 		};
 		48BD172F3AD3E2937C08D2D5D3B4BEE7 /* SJTYBleManager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AD8CED5DF3329C1379EF79C4BB95F333 /* Build configuration list for PBXNativeTarget "SJTYBleManager" */;
+			buildConfigurationList = F2BE3BFCBE8D6C58E224E194331EB8D1 /* Build configuration list for PBXNativeTarget "SJTYBleManager" */;
 			buildPhases = (
-				7CF5266FB8AA37CEA031D10576E1634D /* Headers */,
-				C1C2CB54D25AC9C68144F86B21026CED /* Sources */,
-				CFDFE47952739EEBA70168E6E51EE46B /* Frameworks */,
-				4F9F5B6C2E01ACCE716D9C31758B846A /* Resources */,
+				19C7685062F786A8B27247F8A613DD92 /* Headers */,
+				8A91C46053F63D63B53FD1678AC3D00D /* Sources */,
+				0AAA0E69D03D11039E618EC1697DF76D /* Frameworks */,
+				E31D7DF20F85269C18C21A30A1CD8373 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1254B4FAC06B58FBD385991ECB0679F4 /* PBXTargetDependency */,
 			);
 			name = SJTYBleManager;
 			productName = SJTYBleManager;
-			productReference = E7C601FABD377973923C8ACE927D77F3 /* SJTYBleManager.framework */;
+			productReference = E7C601FABD377973923C8ACE927D77F3 /* SJTYBleManager */;
 			productType = "com.apple.product-type.framework";
 		};
 		61D51834206063041137502FA6BB6BC6 /* Pods-SJTYBleManager_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 75AD462981EFCF0FB46B9B80294CBB3A /* Build configuration list for PBXNativeTarget "Pods-SJTYBleManager_Example" */;
+			buildConfigurationList = B5B3E27EAD8375C484F62FDC1A1E421A /* Build configuration list for PBXNativeTarget "Pods-SJTYBleManager_Example" */;
 			buildPhases = (
-				9DD3DFC81C922EBDD124B2748655081F /* Headers */,
-				0E41B223E237F4186DB9BCA623B6440D /* Sources */,
-				E4978B77B31EA2BD4818CC08C8C4CA89 /* Frameworks */,
-				DB63CC809EF6D7A8C4BD65DABE3EF428 /* Resources */,
+				7860A82A0FF0888EFA5D1DD41EBCAA15 /* Headers */,
+				82E43EA6FFE29660060BFF28798CAA61 /* Sources */,
+				30EA5262C6AD8D8272EA69C89D1411A5 /* Frameworks */,
+				BBC0E036C35865C3F3A972A656632E81 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0528B04C94B5554D6D4113BBE015BA9C /* PBXTargetDependency */,
+				AB49D4FD1787961AD249D4A74AB8F268 /* PBXTargetDependency */,
+				2440B230A06EDA603097E67999F55742 /* PBXTargetDependency */,
 			);
 			name = "Pods-SJTYBleManager_Example";
 			productName = Pods_SJTYBleManager_Example;
 			productReference = 2653F0C81F6C25C609706487E27CC546 /* Pods-SJTYBleManager_Example */;
+			productType = "com.apple.product-type.framework";
+		};
+		761AFDE5B7EC962A8BCADDFD6E8A5804 /* SJTYLogManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D086544ED46AAA89FE423CC01CA46BD /* Build configuration list for PBXNativeTarget "SJTYLogManager" */;
+			buildPhases = (
+				6D6A459401E5C3A0A68E6D071FE9DFC3 /* Headers */,
+				080145EEBAB02EC01EB64D26197AA06E /* Sources */,
+				C611C2E7FA67D99CEFA24FD00FBD4831 /* Frameworks */,
+				C2A574CF131C05FF1C8784F45B22E531 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SJTYLogManager;
+			productName = SJTYLogManager;
+			productReference = BAFE901746BBD343004D6DF320D049A7 /* SJTYLogManager */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -455,8 +557,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -467,33 +569,43 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 834B23C9F90C85BF5783EE7F38F6008C /* Products */;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6C5D8379CC6D26E6E7A6A149A43A6A38 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				61D51834206063041137502FA6BB6BC6 /* Pods-SJTYBleManager_Example */,
 				38B2AE53CE178DAB5A9D913DB7F5C7AD /* Pods-SJTYBleManager_Tests */,
 				48BD172F3AD3E2937C08D2D5D3B4BEE7 /* SJTYBleManager */,
+				761AFDE5B7EC962A8BCADDFD6E8A5804 /* SJTYLogManager */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4F9F5B6C2E01ACCE716D9C31758B846A /* Resources */ = {
+		BBC0E036C35865C3F3A972A656632E81 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8AA098BC39365720B0FC9417B8A5B973 /* Resources */ = {
+		C2A574CF131C05FF1C8784F45B22E531 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB63CC809EF6D7A8C4BD65DABE3EF428 /* Resources */ = {
+		DBD442D1B73FCB53415AC55498492FE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E31D7DF20F85269C18C21A30A1CD8373 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -503,67 +615,88 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0E41B223E237F4186DB9BCA623B6440D /* Sources */ = {
+		080145EEBAB02EC01EB64D26197AA06E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12D2022728FA68E0DB35D36EFDB73499 /* Pods-SJTYBleManager_Example-dummy.m in Sources */,
+				30E3109706149BE4B0EFE5050D548254 /* SJTYLogManager.m in Sources */,
+				D65EEDE589814732E565D6491E911B1C /* SJTYLogManager-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3B5D57AE90C6181BCC8AA8A7813B4042 /* Sources */ = {
+		2544415A9565D4FE52EF344484E7E025 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79FD297B81375A8D564504F711F073B5 /* Pods-SJTYBleManager_Tests-dummy.m in Sources */,
+				18965A32DF8F574B792BF91D74FD60BF /* Pods-SJTYBleManager_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C1C2CB54D25AC9C68144F86B21026CED /* Sources */ = {
+		82E43EA6FFE29660060BFF28798CAA61 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				730CB8CB287537CC0019F4DE /* BaseUtils.m in Sources */,
-				730CB8D7287537CC0019F4DE /* BabySpeaker.m in Sources */,
-				730CB8E2287537CC0019F4DE /* NSQueue.m in Sources */,
-				733BDD992B55396D00012549 /* BaseBleDevice+BK3432.m in Sources */,
-				730CB8DC287537CC0019F4DE /* BabyDefine.m in Sources */,
-				73A6002629F236DD0067A86E /* SJTYBLESecret.m in Sources */,
-				730CB8D5287537CC0019F4DE /* BabyPeripheralManager.m in Sources */,
-				730CB8E4287537CC0019F4DE /* BleManager.m in Sources */,
-				730CB8CE287537CC0019F4DE /* BabyToy.m in Sources */,
-				730CB8D3287537CC0019F4DE /* BabyOptions.m in Sources */,
-				730CB8D4287537CC0019F4DE /* BabyCallback.m in Sources */,
-				730CB8DB287537CC0019F4DE /* BabyBluetooth.m in Sources */,
-				730CB8E3287537CC0019F4DE /* BaseBleDevice.m in Sources */,
-				730CB8D6287537CC0019F4DE /* BabyCentralManager.m in Sources */,
-				733BDD9D2B55398500012549 /* BKOTAManager.m in Sources */,
-				730CB8D9287537CC0019F4DE /* BabyRhythm.m in Sources */,
-				00D238F8607B7B98CABCCFCE2F081A43 /* SJTYBleManager-dummy.m in Sources */,
+				7D809C01B4836934BE61C0E739747DF7 /* Pods-SJTYBleManager_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A91C46053F63D63B53FD1678AC3D00D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B589BDA095388A757C4756E3712F8BA1 /* BabyBluetooth.m in Sources */,
+				99B9F8A6D1E3D90F277020F0228AD187 /* BabyCallback.m in Sources */,
+				DD9E351E1D1F9414CC9779E971D473C6 /* BabyCentralManager.m in Sources */,
+				08CDBF05BE7BBE93B2661B016E15A04D /* BabyDefine.m in Sources */,
+				B4501B64E6F8BBC0E2F174530C5B9DD9 /* BabyOptions.m in Sources */,
+				C48C68A1654EE6C1E8F329BA781C237C /* BabyPeripheralManager.m in Sources */,
+				864ADBDCB01F7DFEA77787911DF953F8 /* BabyRhythm.m in Sources */,
+				9B0EC11DA2976E1FA046071AC21F9CE7 /* BabySpeaker.m in Sources */,
+				00DBACAF48DAB44F1C9E3B6479664B67 /* BabyToy.m in Sources */,
+				B016B8BEF825F3B572550D69B8555F0A /* BaseBleDevice.m in Sources */,
+				8409D6C8AC3BD1EA3B304D41068FDD9B /* BaseBleDevice+BK3432.m in Sources */,
+				EA681F1823BAB0193C1A527419E4355D /* BaseUtils.m in Sources */,
+				F20FE96DF6D4F471C31CDDFA78C87769 /* BKOTAManager.m in Sources */,
+				95C9F63710DE61C13ACC08612FE9BF0C /* BleManager.m in Sources */,
+				C3A9D38A893DA3C0B59FD53BCB61A160 /* NSQueue.m in Sources */,
+				D1CF46E7DE71BCBD8B4AFD780D7EDC64 /* SJTYBleManager-dummy.m in Sources */,
+				39CB09B14022EC124388FFA78437D765 /* SJTYBLESecret.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0528B04C94B5554D6D4113BBE015BA9C /* PBXTargetDependency */ = {
+		1254B4FAC06B58FBD385991ECB0679F4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SJTYBleManager;
-			target = 48BD172F3AD3E2937C08D2D5D3B4BEE7 /* SJTYBleManager */;
-			targetProxy = C2121A4862CD142C61E758CACA4C9577 /* PBXContainerItemProxy */;
+			name = SJTYLogManager;
+			target = 761AFDE5B7EC962A8BCADDFD6E8A5804 /* SJTYLogManager */;
+			targetProxy = A7B75757349A04190B259C79076B68FA /* PBXContainerItemProxy */;
 		};
-		419F370797BFBE2458429FA51EF914AD /* PBXTargetDependency */ = {
+		2440B230A06EDA603097E67999F55742 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SJTYLogManager;
+			target = 761AFDE5B7EC962A8BCADDFD6E8A5804 /* SJTYLogManager */;
+			targetProxy = 7D86902DF4CDBDFDAF761591177E7481 /* PBXContainerItemProxy */;
+		};
+		34AA16E5BC4167C893B18EB92D8BD310 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-SJTYBleManager_Example";
 			target = 61D51834206063041137502FA6BB6BC6 /* Pods-SJTYBleManager_Example */;
-			targetProxy = 19DAB56DCFB206ECC7E54ECBB21F3AB7 /* PBXContainerItemProxy */;
+			targetProxy = DB52461F8636D4F6C159CE6B4621FE37 /* PBXContainerItemProxy */;
+		};
+		AB49D4FD1787961AD249D4A74AB8F268 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SJTYBleManager;
+			target = 48BD172F3AD3E2937C08D2D5D3B4BEE7 /* SJTYBleManager */;
+			targetProxy = B4E91C7A8FCE2A56697FC1EA96C8292B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0C617849F6FC1C1E483422C12192C5D6 /* Release */ = {
+		2C9DC611012EEC9DBE08F7A0DBFB47DB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30402C5C1ED5C09AEAAC5F463F4BA850 /* SJTYBleManager.release.xcconfig */;
+			baseConfigurationReference = 9DF902A331FA56FAF9E3BFF742F69E4F /* SJTYBleManager.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -574,7 +707,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_PREFIX_HEADER = "Target Support Files/SJTYBleManager/SJTYBleManager-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Target Support Files/SJTYBleManager/SJTYBleManager-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -585,6 +721,77 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		36309BB1017E4C984171F4A94B80BF06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA9A401CAA3DAB34D19DFF0A3B137EDB /* SJTYLogManager.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/SJTYLogManager/SJTYLogManager-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/SJTYLogManager/SJTYLogManager-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SJTYLogManager/SJTYLogManager.modulemap";
+				PRODUCT_MODULE_NAME = SJTYLogManager;
+				PRODUCT_NAME = SJTYLogManager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4A30A18BA1FCA74B522EA856A862A24E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B48E586831EF5D2CFF0C6D2FB212E03C /* SJTYBleManager.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/SJTYBleManager/SJTYBleManager-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/SJTYBleManager/SJTYBleManager-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SJTYBleManager/SJTYBleManager.modulemap";
+				PRODUCT_MODULE_NAME = SJTYBleManager;
+				PRODUCT_NAME = SJTYBleManager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -593,7 +800,7 @@
 			};
 			name = Release;
 		};
-		18555D6ABB923B8CE206038BAD4A66FE /* Debug */ = {
+		5E532B4EB9ED9B5E4C9EA0FD15267647 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0A13F2A870620758B1C5E6DF091F214B /* Pods-SJTYBleManager_Example.debug.xcconfig */;
 			buildSettings = {
@@ -607,6 +814,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "Target Support Files/Pods-SJTYBleManager_Example/Pods-SJTYBleManager_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -681,111 +890,14 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		A03F592DA99AEBC47153A63F32505223 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71888351150B14043593A1AE4E5B89CA /* SJTYBleManager.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SJTYBleManager/SJTYBleManager-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SJTYBleManager/SJTYBleManager-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SJTYBleManager/SJTYBleManager.modulemap";
-				PRODUCT_MODULE_NAME = SJTYBleManager;
-				PRODUCT_NAME = SJTYBleManager;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A373A887809C29A2301DEF5904AB487E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67D794E6D903E491F09B32D8FC71B33B /* Pods-SJTYBleManager_Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SJTYBleManager_Tests/Pods-SJTYBleManager_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SJTYBleManager_Tests/Pods-SJTYBleManager_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C245A2F06DB574225D80C801FE263E8A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 709C96C55E927DBEFD688FB52AC0BBE2 /* Pods-SJTYBleManager_Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SJTYBleManager_Tests/Pods-SJTYBleManager_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SJTYBleManager_Tests/Pods-SJTYBleManager_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D0B789432979A2C63863DB8D118279A4 /* Release */ = {
+		AFA32FBCCD3EEFFA9D67D0535822AFFB /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6E90C4251CE105054DC01A7DEA2F6F92 /* Pods-SJTYBleManager_Example.release.xcconfig */;
 			buildSettings = {
@@ -799,6 +911,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "Target Support Files/Pods-SJTYBleManager_Example/Pods-SJTYBleManager_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -818,6 +932,113 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		C1BF20C28F19D10B74DFC04EB41AB1D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67D794E6D903E491F09B32D8FC71B33B /* Pods-SJTYBleManager_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-SJTYBleManager_Tests/Pods-SJTYBleManager_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SJTYBleManager_Tests/Pods-SJTYBleManager_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C3B2B46E35879DF400474289F1B9F79E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EDCBC5D0092C452AC0946091948DEFD /* SJTYLogManager.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/SJTYLogManager/SJTYLogManager-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/SJTYLogManager/SJTYLogManager-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SJTYLogManager/SJTYLogManager.modulemap";
+				PRODUCT_MODULE_NAME = SJTYLogManager;
+				PRODUCT_NAME = SJTYLogManager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C68EE47B245E01BB6A30CDC235AA3E20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 709C96C55E927DBEFD688FB52AC0BBE2 /* Pods-SJTYBleManager_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-SJTYBleManager_Tests/Pods-SJTYBleManager_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SJTYBleManager_Tests/Pods-SJTYBleManager_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		D299434AB35E7FD6F7921C8EF24742FF /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -888,6 +1109,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		29DA02A70C173977BA3111F2B0C84D30 /* Build configuration list for PBXNativeTarget "Pods-SJTYBleManager_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C68EE47B245E01BB6A30CDC235AA3E20 /* Debug */,
+				C1BF20C28F19D10B74DFC04EB41AB1D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -897,29 +1127,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		75AD462981EFCF0FB46B9B80294CBB3A /* Build configuration list for PBXNativeTarget "Pods-SJTYBleManager_Example" */ = {
+		7D086544ED46AAA89FE423CC01CA46BD /* Build configuration list for PBXNativeTarget "SJTYLogManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				18555D6ABB923B8CE206038BAD4A66FE /* Debug */,
-				D0B789432979A2C63863DB8D118279A4 /* Release */,
+				36309BB1017E4C984171F4A94B80BF06 /* Debug */,
+				C3B2B46E35879DF400474289F1B9F79E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AD8CED5DF3329C1379EF79C4BB95F333 /* Build configuration list for PBXNativeTarget "SJTYBleManager" */ = {
+		B5B3E27EAD8375C484F62FDC1A1E421A /* Build configuration list for PBXNativeTarget "Pods-SJTYBleManager_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A03F592DA99AEBC47153A63F32505223 /* Debug */,
-				0C617849F6FC1C1E483422C12192C5D6 /* Release */,
+				5E532B4EB9ED9B5E4C9EA0FD15267647 /* Debug */,
+				AFA32FBCCD3EEFFA9D67D0535822AFFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E5CCEAE36360B6F8BA4381349DE5AEF3 /* Build configuration list for PBXNativeTarget "Pods-SJTYBleManager_Tests" */ = {
+		F2BE3BFCBE8D6C58E224E194331EB8D1 /* Build configuration list for PBXNativeTarget "SJTYBleManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C245A2F06DB574225D80C801FE263E8A /* Debug */,
-				A373A887809C29A2301DEF5904AB487E /* Release */,
+				2C9DC611012EEC9DBE08F7A0DBFB47DB /* Debug */,
+				4A30A18BA1FCA74B522EA856A862A24E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

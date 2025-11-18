@@ -1,0 +1,6 @@
+framework module SJTYLogManager {
+  umbrella header "SJTYLogManager-umbrella.h"
+
+  export *
+  module * { export * }
+}
