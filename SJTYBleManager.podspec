@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SJTYBleManager'
-  s.version          = '1.2.10'
+  s.version          = '1.2.11'
   s.summary          = 'SJTYBleManager'
 
 # This description is used to generate tags and improve search results.

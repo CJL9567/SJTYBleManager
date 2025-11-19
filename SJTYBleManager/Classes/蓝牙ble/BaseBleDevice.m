@@ -192,13 +192,14 @@
     
     if (cmd) {
         if (self.activityCBPeripheral && self.activityCBPeripheral.state == CBPeripheralStateConnected &&self.writeCharacteristic!=nil&&self.isReadyToSend) {
-            [self.activityCBPeripheral writeValue:cmd forCharacteristic:self.writeCharacteristic type:self.characteristicWriteType];
-//            BabyLog(@"发送的数据为:%@",[BaseUtils stringConvertForData:cmd]);
-            SJTYLog(LogLevelInfo, [NSString stringWithFormat:@"发送的数据为:%@",[BaseUtils stringConvertForData:cmd]]);
             if (self.writeCharacteristic.properties & CBCharacteristicPropertyWriteWithoutResponse) {
                 self.isReadyToSend=NO;
                 [self performSelector:@selector(checkReadToSend) withObject:nil afterDelay:0.1];
             }
+            [self.activityCBPeripheral writeValue:cmd forCharacteristic:self.writeCharacteristic type:self.characteristicWriteType];
+//            BabyLog(@"发送的数据为:%@",[BaseUtils stringConvertForData:cmd]);
+            SJTYLog(LogLevelInfo, [NSString stringWithFormat:@"发送的数据为:%@",[BaseUtils stringConvertForData:cmd]]);
+            
         }else{
             if (self.writeCharacteristic.properties & CBCharacteristicPropertyWriteWithoutResponse) {
                 [self.sendDataArray addObject:cmd];
@@ -216,12 +217,13 @@
     self.iSpiltData=isPiltData;
     if (cmd) {
         if (self.activityCBPeripheral && self.activityCBPeripheral.state == CBPeripheralStateConnected &&self.writeCharacteristic!=nil&&self.isReadyToSend) {
-            [self.activityCBPeripheral writeValue:cmd forCharacteristic:self.writeCharacteristic type:self.characteristicWriteType];
-            SJTYLog(LogLevelInfo, [NSString stringWithFormat:@"发送的数据为:%@",[BaseUtils stringConvertForData:cmd]]);
             if (self.writeCharacteristic.properties & CBCharacteristicPropertyWriteWithoutResponse) {
                 self.isReadyToSend=NO;
                 [self performSelector:@selector(checkReadToSend) withObject:nil afterDelay:0.1];
             }
+            [self.activityCBPeripheral writeValue:cmd forCharacteristic:self.writeCharacteristic type:self.characteristicWriteType];
+            SJTYLog(LogLevelInfo, [NSString stringWithFormat:@"发送的数据为:%@",[BaseUtils stringConvertForData:cmd]]);
+            
             
         }else{
             if (self.writeCharacteristic.properties & CBCharacteristicPropertyWriteWithoutResponse) {
@@ -403,6 +405,7 @@
         if (self.sendDataArray.count>0) {
             NSData * data = [self.sendDataArray firstObject];
             if (data!=nil) {
+                [self performSelector:@selector(checkReadToSend) withObject:nil afterDelay:0.1];
                 [self.activityCBPeripheral writeValue:data forCharacteristic:self.writeCharacteristic type:self.characteristicWriteType];
                 SJTYLog(LogLevelInfo, [NSString stringWithFormat:@"准备好重新发送的数据为:%@",[BaseUtils stringConvertForData:data]]);
                 [self.sendDataArray removeObjectAtIndex:0];
