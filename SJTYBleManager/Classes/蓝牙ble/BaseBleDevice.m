@@ -42,6 +42,9 @@
 ///已经准备好了可以发送数据了
 @property(assign,nonatomic)Boolean isReadyToSend;
 
+///校验是否准备好的定时器
+@property(nonatomic,strong)NSTimer *sendTimer;
+
 
 @end
 
@@ -78,7 +81,7 @@
 
 /**
  获取服务UUID 子类需覆盖次方法
-
+ 
  @return serviceUUID
  */
 -(NSArray <NSString*> *)getServiceUUID{
@@ -172,7 +175,7 @@
     if (self.activityCBPeripheral) {
         if (self.notifyCharacteristic) {
             __weak typeof(self) weekSelf = self;
-//            [self startTimer];
+            //            [self startTimer];
             [self  performSelector:@selector(startTimer) withObject:nil afterDelay:10];
             [self.babyBlutooth notify:weekSelf.activityCBPeripheral characteristic:weekSelf.notifyCharacteristic block:^(CBPeripheral *peripheral, CBCharacteristic *characteristics, NSError *error) {
                 
@@ -183,9 +186,16 @@
 }
 
 
+-(void)checkIsReadyToSend{
+    NSLog(@"====校验");
+    if (!self.isReadyToSend) {
+        self.isReadyToSend=YES;
+    }
+}
+
 - (void)sendCommand:(NSData*)cmd
-       notifyBlock:(ReturnNotifyValueToViewBlock) notifyBlock
-       filterBlock:(FilterNotifyValueBlock) filterBlock{
+        notifyBlock:(ReturnNotifyValueToViewBlock) notifyBlock
+        filterBlock:(FilterNotifyValueBlock) filterBlock{
     self.blockReturnNotifyValueToView = notifyBlock;
     self.blockFilterNotifyValue = filterBlock;
     
@@ -194,10 +204,9 @@
         if (self.activityCBPeripheral && self.activityCBPeripheral.state == CBPeripheralStateConnected &&self.writeCharacteristic!=nil&&self.isReadyToSend) {
             if (self.writeCharacteristic.properties & CBCharacteristicPropertyWriteWithoutResponse) {
                 self.isReadyToSend=NO;
-                [self performSelector:@selector(checkReadToSend) withObject:nil afterDelay:0.1];
+                [self startSendTimer];
             }
             [self.activityCBPeripheral writeValue:cmd forCharacteristic:self.writeCharacteristic type:self.characteristicWriteType];
-//            BabyLog(@"发送的数据为:%@",[BaseUtils stringConvertForData:cmd]);
             SJTYLog(LogLevelInfo, [NSString stringWithFormat:@"发送的数据为:%@",[BaseUtils stringConvertForData:cmd]]);
             
         }else{
@@ -210,7 +219,7 @@
 }
 
 - (void)sendCommand:(NSData*)cmd
-       notifyBlock:(ReturnNotifyValueToViewBlock) notifyBlock
+        notifyBlock:(ReturnNotifyValueToViewBlock) notifyBlock
         filterBlock:(FilterNotifyValueBlock) filterBlock iSpiltData:(Boolean)isPiltData{
     self.blockReturnNotifyValueToView = notifyBlock;
     self.blockFilterNotifyValue = filterBlock;
@@ -219,7 +228,7 @@
         if (self.activityCBPeripheral && self.activityCBPeripheral.state == CBPeripheralStateConnected &&self.writeCharacteristic!=nil&&self.isReadyToSend) {
             if (self.writeCharacteristic.properties & CBCharacteristicPropertyWriteWithoutResponse) {
                 self.isReadyToSend=NO;
-                [self performSelector:@selector(checkReadToSend) withObject:nil afterDelay:0.1];
+                [self startSendTimer];
             }
             [self.activityCBPeripheral writeValue:cmd forCharacteristic:self.writeCharacteristic type:self.characteristicWriteType];
             SJTYLog(LogLevelInfo, [NSString stringWithFormat:@"发送的数据为:%@",[BaseUtils stringConvertForData:cmd]]);
@@ -234,27 +243,22 @@
     
 }
 
--(void)checkReadToSend{
-    if (!self.isReadyToSend) {
-        self.isReadyToSend=YES;
-    }
-}
 
 -(CBCharacteristic*)writeCharacteristic{
     if (_writeCharacteristic == nil) {
         for (CBCharacteristic *characteristic in self.cbService.characteristics ) {
-           // NSLog(@"characteristic.UUID==%@",characteristic.UUID.UUIDString);
+            // NSLog(@"characteristic.UUID==%@",characteristic.UUID.UUIDString);
             for (NSString *uuid in [self getWriteUUID]) {
                 if ([characteristic.UUID.UUIDString isEqualToString:[uuid uppercaseString]])
-                    {
-                        _writeCharacteristic = characteristic;
-                        return _writeCharacteristic;
-                    }
+                {
+                    _writeCharacteristic = characteristic;
+                    return _writeCharacteristic;
                 }
             }
-            
-        
         }
+        
+        
+    }
     return _writeCharacteristic;
 }
 
@@ -341,14 +345,14 @@
     NSDictionary*dic = notification.object;
     CBPeripheral* peripheral = dic[@"peripheral"];
     CBCharacteristic* characteristics = dic[@"characteristic"];
-  
+    
     if ([peripheral.identifier.UUIDString isEqualToString:self.activityCBPeripheral.identifier.UUIDString] ) {//接收的peripheral 要与当前的activityCBPeripheral 为同一个。
         NSData * data = characteristics.value;
         NSString * strData =  [BaseUtils stringConvertForData:characteristics.value];
         if (data.length==0) {
             return;
         }
-//        BabyLog(@"接受的数据为:%@",strData);
+        //        BabyLog(@"接受的数据为:%@",strData);
         SJTYLog(LogLevelInfo, [NSString stringWithFormat:@"接受的数据为:%@",strData]);
         Byte *byte= (Byte *)[data bytes];
         if(byte[0]==0xBB&&byte[1]==0xB6){
@@ -400,20 +404,39 @@
     NSDictionary*dic = notification.object;
     CBPeripheral* peripheral = dic[@"peripheral"];
     if (self.activityCBPeripheral==peripheral) {
-        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(checkReadToSend) object:nil];
         self.isReadyToSend=YES;
+        [self stopSendTimer];
         if (self.sendDataArray.count>0) {
             NSData * data = [self.sendDataArray firstObject];
             if (data!=nil) {
-                [self performSelector:@selector(checkReadToSend) withObject:nil afterDelay:0.1];
+                self.isReadyToSend=NO;
+                [self startSendTimer];
                 [self.activityCBPeripheral writeValue:data forCharacteristic:self.writeCharacteristic type:self.characteristicWriteType];
                 SJTYLog(LogLevelInfo, [NSString stringWithFormat:@"准备好重新发送的数据为:%@",[BaseUtils stringConvertForData:data]]);
                 [self.sendDataArray removeObjectAtIndex:0];
-                self.isReadyToSend=NO;
+                
             }
         }
         
     }
+}
+
+
+- (void)startSendTimer {
+    [self stopSendTimer];
+    self.sendTimer = [NSTimer scheduledTimerWithTimeInterval:0.1
+                                                     target:self
+                                                   selector:@selector(checkIsReadyToSend)
+                                                   userInfo:nil
+                                                    repeats:NO];
+}
+
+- (void)stopSendTimer {
+    if (self.sendTimer) {
+        [self.sendTimer invalidate];
+        self.sendTimer = nil;
+    }
+    
 }
 
 -(void)sendVerifyData:(NSData *)data {

@@ -84,7 +84,7 @@
 
 
 -(NSArray *)deviceName{
-    return @[@"4Pods Rock Kit"];
+    return @[@"4Pods Rock Kit",@"BS"];
     
 }
 
