@@ -197,6 +197,7 @@
             SJTYLog(LogLevelInfo, [NSString stringWithFormat:@"发送的数据为:%@",[BaseUtils stringConvertForData:cmd]]);
             if (self.writeCharacteristic.properties & CBCharacteristicPropertyWriteWithoutResponse) {
                 self.isReadyToSend=NO;
+                [self performSelector:@selector(checkReadToSend) withObject:nil afterDelay:0.1];
             }
         }else{
             if (self.writeCharacteristic.properties & CBCharacteristicPropertyWriteWithoutResponse) {
