@@ -44,7 +44,7 @@
 
 ///校验是否准备好的定时器
 @property(nonatomic,strong)NSTimer *sendTimer;
-
+@property (nonatomic, strong) NSLock *sendLock;
 
 @end
 
@@ -191,6 +191,12 @@
     if (!self.isReadyToSend) {
         self.isReadyToSend=YES;
     }
+}
+
+-(void)setIsReadyToSend:(Boolean)isReadyToSend{
+    [self.sendLock lock];
+    _isReadyToSend = isReadyToSend;
+    [self.sendLock unlock];
 }
 
 - (void)sendCommand:(NSData*)cmd
