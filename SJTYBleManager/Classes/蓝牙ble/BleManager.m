@@ -509,7 +509,11 @@ static BleManager *_instance;
         if (self.UpdateStateBlock) {
             self.UpdateStateBlock(manager.state);
         }
-        
+        if(manager.state==CBManagerStatePoweredOff){
+            if(self.isMultiple){
+                [self.multipleArray removeAllObjects];
+            }
+        }
     } else {
         self.state=manager.state;
         if(manager.state==CBManagerStatePoweredOff){
